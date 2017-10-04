@@ -21,7 +21,10 @@ You can create and download backups from the *Manage* page of your service dashb
 Daily backups of your database are automatically scheduled. To view your existing backups:
 
 1. Navigate to the _Manage_ page of your service Dashboard.
-2. Click **Backups** in the tabs to open the _Backups_ page. A list of available backups is shown, with the most recent backups at the top of the list.
+2. Click **Backups** in the tabs to open the _Backups_ page. A list of available backups is shown:
+
+  ![Available backups](./images/elastic_search-backups-show.png "A list of available backups.")
+
 
 ## Creating a manual backup
 
