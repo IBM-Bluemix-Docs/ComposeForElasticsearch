@@ -11,13 +11,10 @@ Compose For Elasticsearch
 	The Service Dashboard
 		dashboard-overview.md
 		dashboard-backups.md
+		dashboard-settings.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	dashboard-scaling-resources.md
-	dashboard-whitelists.md
-
-
 	{: .topicgroup}
 	Connecting to Compose for Elasticsearch
 		connecting-bluemix-app.md
