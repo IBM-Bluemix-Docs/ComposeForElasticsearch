@@ -13,7 +13,7 @@ lastupdated: "2017-10-20"
 {:tip: .tip}
 
 # Settings
-These features allow you to adapt your {{site.data.keyword.composeForElasticsearch}} service to better suit your needs and requirements.
+These features allow you to adapt your {{site.data.keyword.composeForElasticsearch_full}} service to better suit your needs and requirements.
 
 ## Upgrade Version
 If there is a new version of the database available, a drop-down menu appears, allowing you to select which version you would like to upgrade to. Otherwise, your service is on the newest version available, and the panel displays the current version information.

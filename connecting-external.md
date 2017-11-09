@@ -14,9 +14,9 @@ lastupdated: "2017-07-13"
 # Connecting an external application
 {: #connecting-external-app}
 
-All new Compose Elasticsearch deployments only accept TLS/SSL (`https://`) secured connections which are backed with a Let's Encrypt certificate.
+All new {{site.data.keyword.composeForElasticsearch_full}} deployments accept only TLS/SSL (`https://`) secured connections that are backed with a Let's Encrypt certificate.
 
-Depending on which driver you are using, there are a number of ways to connect to Elasticsearch. {{site.data.keyword.composeForElasticsearch}} uses the URI format to display messages, which is formatted as:
+There are a number of ways to connect to Elasticsearch, depending on which driver you are using. {{site.data.keyword.composeForElasticsearch}} uses the URI format to display messages, which is formatted as:
 
 ```text
 https://[username]:[password]@[host]:[port]/
@@ -25,7 +25,8 @@ https://[username]:[password]@[host]:[port]/
 You'll find your connection string on the *Overview* page of your {{site.data.keyword.composeForElasticsearch}} service.
 
 The examples here cover Node, Go, Java, Ruby and Python. These examples set up a secure connection to {{site.data.keyword.composeForElasticsearch}} then call the Elasticsearch Cluster API to do a basic health check, which will tell you how your cluster is doing. To familiarize yourself with Elasticsearch's API, we suggest that you look at the Elasticsearch [reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html) for Elasticsearch 2.4.
-<div class="callout-info"><h3>Example code</h3><p>The full code for this and subsequent examples [at github.com/compose-ex/elasticsearchconns.](https://github.com/compose-ex/elasticsearchconns).</p></div>
+
+The full code for this and subsequent examples can be found at [github.com/compose-ex/elasticsearchconns.](https://github.com/compose-ex/elasticsearchconns).
 
 ## Node and Elasticsearch
 
@@ -255,9 +256,7 @@ This will result in printing a dictionary of your cluster's health to the termin
 
 ## Connecting to Elasticsearch on the Command Line
 
-To connect to your Elasticsearch deployment from the command line, {{site.data.keyword.composeForElasticsearch}} provides you with the curl commands for your connecting strings. on the *Overview* page of your {{site.data.keyword.composeForElasticsearch}} service.
-
-![Example cluster health calls.](./images/commandLineCall.png)
+To connect to your Elasticsearch deployment from the command line, {{site.data.keyword.composeForElasticsearch}} provides you with the curl commands for your connection strings in the _Connection Strings_ panel of the *Overview* page of your {{site.data.keyword.composeForElasticsearch}} service.
 
 The output in your terminal will look similar to this:
 ```shell
