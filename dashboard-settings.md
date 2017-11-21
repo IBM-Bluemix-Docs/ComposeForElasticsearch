@@ -27,11 +27,11 @@ If your service needs additional storage, or you want to reduce the amount of st
 
 1. Navigate to your service's dashboard overview page.
 2. In the _Deployment Details_ pane, click **Scale Resources**. The Scale Resouces page opens.
-
     ![The Scale Resources panel](./images/elastic_search-scale-show.png "The Scale Resources panel")
-
 3. Adjust the slider to raise or lower the storage allocated to the {{site.data.keyword.composeForElasticsearch}} service. Move the slider to the left to reduce the amount of storage, or move it to the right to increase the storage.
-4. Click **Scale Deployment** to trigger the rescaling and return to the dashboard overview. The _Recipes_ pane contains details of the rescaling job that is now in progress. When the scaling is complete the _Deployment Details_ pane updates to show the current usage and the new value for the available storage.
+4. Click **Scale Deployment** to trigger the rescaling and return to the dashboard overview. 
+
+When the scaling is complete the _Deployment Details_ pane updates to show the current usage and the new value for the available storage.
 
 
 ## Using Whitelists
