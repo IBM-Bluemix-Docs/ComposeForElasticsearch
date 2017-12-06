@@ -2,7 +2,7 @@
 
 Copyright:
   Years: 2017
-lastupdated: "2017-11-20"
+lastupdated: "2017-12-05"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ The _Deployment Details_ panel shows details of your service.
 
 ### Type
 
-The type of database that is offered by the service, and the database version that your service uses.
+The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForElasticsearch/dashboard-settings.html#upgrade-version) section of your service dashboard.
 
 ### Name
 
@@ -34,10 +34,6 @@ An internal identifier for the service.
 ### Usage
 
 The size of your database and the amount of storage provided by your service plan.
-
-## Current Jobs
-
-Making administrative changes to your service (such as scaling, or taking a manual backup) starts a job. While a job is running, the _Current Jobs_ panel appears on the _Overview_ page, showing the job name and a progress bar. When the job is complete, the _Current Jobs_ panel no longer appears on the _Overview_ page.
 
 
 ## Connection Strings

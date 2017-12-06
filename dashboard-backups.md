@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-13"
+lastupdated: "2017-12-05"
 ---
 
 {:new_window: target="_blank"}
@@ -14,7 +14,17 @@ lastupdated: "2017-07-13"
 # Managing Backups
 {: #backups}
 
-You can create and download backups from the *Backups* page of your service dashboard. Both scheduled and manual backups are available.
+You can create and download backups from the _Backups_ tab of the _Manage_ page of your service dashboard. Daily, weekly, monthly, and on-demand backups are available. They are retained according to the following schedule:
+
+Backup type|Retention schedule
+----------|-----------
+Daily|Daily backups are retained for 7 days
+Weekly|Weekly backups are retained for 4 weeks
+Monthly|Monthly backups are retained for 3 months
+On-demand|One on-demand backup is retained. The retained backup is always the most recent on-demand backup.
+{: caption="Table 1. Backup retention schedule" caption-side="top"}
+
+Backup schedules and retention policies are fixed. If you need to keep more backups than the retention schedule allows, you should download backups and retain archives according to your business requirements.
 
 ## Viewing existing backups
 
