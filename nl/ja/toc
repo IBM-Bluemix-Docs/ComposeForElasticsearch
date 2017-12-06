@@ -6,11 +6,17 @@ Compose For Elasticsearch
 
 	{: .navgroup id="learn"}
 	index.md
-	credentials.md
+	
+	{: .topicgroup}
+	サービス・ダッシュボード
+		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
+	{: .navgroup-end}
 
-	{: .topicgroup }
-	関連リンク
-		[サンプル Node.js アプリケーション](https://github.com/IBM-Bluemix/compose-elasticsearch-helloworld-nodejs)
-		[Compose のヘルプ](https://help.compose.com)
-		[Compose の記事](https://www.compose.com/articles/)
+	{: .navgroup id="howto"}
+	{: .topicgroup}
+	Compose for Elasticsearch への接続
+		connecting-bluemix-app.md
+		connecting-external.md
 	{: .navgroup-end}
