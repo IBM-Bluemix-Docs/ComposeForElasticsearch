@@ -38,13 +38,13 @@ The size of your database and the amount of storage provided by your service pla
 
 ## Connection Strings
 
-Connection Strings can be used by some client libraries and contain all the information needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](./connecting-external.html).
+Connection Strings can be used by some client libraries and contain all the information needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 You'll find each Connection String for your service in a different tab in the _Connection Strings_ panel.
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 ### Health
 

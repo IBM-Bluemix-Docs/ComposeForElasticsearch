@@ -17,7 +17,7 @@ To connect an {{site.data.keyword.cloud}} application to your service, use the s
 
 ## Connecting using the 'Hello World' sample app
 
-The [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-elasticsearch-helloworld-nodejs) sample app demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForElasticsearch}} service using the provided credentials. The application creates, reads from, and writes to an Elasticsearch index.
+The [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) sample app demonstrates how to use Node.js to connect to a {{site.data.keyword.composeForElasticsearch}} service using the provided credentials. The application creates, reads from, and writes to an Elasticsearch index.
 
 Download the sample app and follow the instructions in the readme file. Then, in your application details page in {{site.data.keyword.cloud}}, click **View APP** to view the contents of the *examples* index.
 
