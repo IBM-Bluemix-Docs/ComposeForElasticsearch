@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-13"
+  years: 2017,2018
+lastupdated: "2017-12-05"
 ---
 
 {:new_window: target="_blank"}
@@ -14,7 +14,17 @@ lastupdated: "2017-07-13"
 # Gestion des sauvegardes
 {: #backups}
 
-Vous pouvez créer et télécharger des sauvegardes à partir de l'onglet *Backups* du tableau de bord de votre service. Les sauvegardes planifiées comme manuelles sont disponibles.
+Vous pouvez créer et télécharger des sauvegardes à partir de l'onglet _Backups_ de la page _Gérer_ du tableau de bord de votre service. Vous avez le choix entre les sauvegardes quotidiennes, hebdomadaires, mensuelles et à la demande. Elles sont conservées selon la planification suivante :
+
+Type de sauvegarde|Planification de conservation
+----------|-----------
+Quotidienne|Les sauvegardes quotidiennes sont conservées pendant 7 jours
+Hebdomadaire|Les sauvegardes hebdomadaires sont conservées pendant 4 semaines
+Mensuelle|Les sauvegardes mensuelles sont conservées pendant 3 mois
+A la demande|Une seule sauvegarde à la demande est conservée. Il s'agit toujours de la dernière sauvegarde à la demande effectuée.
+{: caption="Tableau 1. Planification de conservation des sauvegardes" caption-side="top"}
+
+Les planifications de sauvegarde et les règles de conservation sont fixées. Si vous avez besoin de conserver davantage de sauvegardes que ne le permet la planification de conservation, vous devez télécharger les sauvegardes et les archiver en fonction de vos exigences métier.
 
 ## Affichage des sauvegardes existantes
 

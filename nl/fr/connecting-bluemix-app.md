@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -18,7 +18,7 @@ Node.js pour établir une connexion à un service {{site.data.keyword.composeFor
 
 ## Connexion à l'aide du modèle d'application 'Hello World'
 
-Le modèle d'application [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-elasticsearch-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForElasticsearch}} à l'aide des données d'identification fournies. L'application crée un index Elasticsearch, le lit et y écrit.
+Le modèle d'application [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) montre comment utiliser Node.js pour établir une connexion à un service {{site.data.keyword.composeForElasticsearch}} à l'aide des données d'identification fournies. L'application crée un index Elasticsearch, le lit et y écrit.
 
 Téléchargez le modèle d'application et suivez les instructions contenues dans le fichier Readme. Ensuite, sur la page des détails d'application d'{{site.data.keyword.cloud}},  cliquez sur **Afficher l'application** pour afficher le contenu de l'index *Exemples*.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "13-07-2017"
+  years: 2017, 2018
+lastupdated: "2017-07-13"
 ---
 
 {:new_window: target="_blank"}
@@ -94,7 +94,7 @@ Existem alguns drivers que trabalham com a linguagem Go. Usaremos o [Elastic](ht
 
 Para obter o pacote Elastic, execute `go get gopkg.in/olivere/elastic.v3` em seu terminal.
 
-No exemplo de código, colocamos todo o código na função `main`. Primeiro, criaremos um `client` e inseriremos as sequências de conexões no método `SetURL`.
+No exemplo de código, colocamos todo o código na função `main`.  Primeiro, criaremos um `client` e inseriremos as sequências de conexões no método `SetURL`.
 
 ```go
 package main
@@ -164,7 +164,7 @@ public class ElasticsearchConnect {
                 .multiThreaded(true)
                 .build());
 ```
-Em seguida, criaremos um novo `JestClientFactory`. O `factory` fornecerá a você um método `setHttpClientConfig` para configurar seu cliente. Use `Arrays.asList` dentro do método `Builder` do Jest para criar uma matriz contendo ambas as sequências de conexões do Compose Elasticsearch. Então você chamará o método `build` para criar a conexão.
+Em seguida, criaremos um novo `JestClientFactory`. O `factory` fornecerá a você um método `setHttpClientConfig` para configurar seu cliente. Use `Arrays.asList` dentro do método `Builder` do Jest para criar uma matriz contendo ambas as sequências de conexões do Compose Elasticsearch. Então você chamará o método `build` para criar a conexão. 
 ```java
         JestClient client = factory.getObject();
         Health health = new Health.Builder().build();

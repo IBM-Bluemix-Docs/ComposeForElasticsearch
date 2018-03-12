@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-06-16"
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2017-06-16"
 
 ## 使用“Hello World”样本应用程序进行连接
 
-[compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Bluemix/compose-elasticsearch-helloworld-nodejs) 样本应用程序演示如何使用 Node.js，通过提供的凭证连接到 {{site.data.keyword.composeForElasticsearch}} 服务。应用程序创建、读取和写入 Elasticsearch 索引。
+[compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) 样本应用程序演示如何使用 Node.js，通过提供的凭证连接到 {{site.data.keyword.composeForElasticsearch}} 服务。应用程序创建、读取和写入 Elasticsearch 索引。
 
 下载样本应用程序，并遵循自述文件中的指示信息。然后，在 {{site.data.keyword.cloud}} 中的应用程序详细信息页面中，单击**查看应用程序**，以查看*示例*索引的内容。
 

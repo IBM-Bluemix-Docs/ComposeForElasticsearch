@@ -1,7 +1,7 @@
 ---
 
 Copyright:
-  Years: 2017
+  years: 2017,2018
 lastupdated: "2017-10-20"
 ---
 
@@ -27,11 +27,11 @@ Si votre service a besoin de plus d'espace de stokage, ou si vous voulez limiter
 
 1. Accédez à la page Vue d'ensemble du tableau de bord de votre service.
 2. Dans le panneau _Deployment Details_, cliquez sur **Scale Resources**. La page Scale Resources s'ouvre.
-
-    ![Page Scale Resources](./images/elastic_search-scale-show.png "Page Scale Resources")
-
+    ![Panneau Scale Resources](./images/elastic_search-scale-show.png "Panneau Scale Resources")
 3. Déplacez le curseur sur la règle pour augmenter ou diminuer la quantité de stockage allouée au service {{site.data.keyword.composeForElasticsearch}}. Déplacez-le vers la gauche pour diminuer la quantité de stockage ou vers la droite pour l'augmenter.
-4. Cliquez sur **Scale Deployment** pour lancer le processus de mise à l'échelle et revenir dans la vue d'ensemble du tableau de bord. Le panneau _Recipes_ contient les détails de la mise à l'échelle en cours de progression. Une fois la mise à l'échelle terminée, le panneau _Deployment Details_ est actualisé pour afficher l'utilisation actuelle et la nouvelle valeur de stockage disponible.
+4. Cliquez sur **Scale Deployment** pour lancer le processus de mise à l'échelle et revenir dans la vue d'ensemble du tableau de bord. 
+
+Une fois la mise à l'échelle terminée, le panneau _Deployment Details_ est actualisé pour afficher l'utilisation actuelle et la nouvelle valeur de stockage disponible.
 
 
 ## Utilisation des listes blanches

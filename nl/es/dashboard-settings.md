@@ -1,7 +1,7 @@
 ---
 
 Copyright:
-  Years: 2017
+  years: 2017,2018
 lastupdated: "2017-10-20"
 ---
 
@@ -27,16 +27,16 @@ Si el servicio necesita más almacenamiento, o si desea reducir la cantidad de a
 
 1. Vaya a la página de visión general del panel de control del servicio.
 2. En el panel _Detalles de despliegue_, pulse **Escalar recursos**. Se abre la página Escalar recursos.
-
     ![El panel Escalar recursos](./images/elastic_search-scale-show.png "El panel Escalar recursos")
-
 3. Ajuste el graduador para aumentar o reducir el almacenamiento asignado al servicio {{site.data.keyword.composeForElasticsearch}}. Mueva el graduador a la izquierda para reducir la cantidad de almacenamiento o muévalo a la derecha para aumentar el almacenamiento.
-4. Pulse **Despliegue de escalado** para activar el escalado y volver a la visión general del panel de control. El panel _Recetas_ contiene detalles del trabajo de escalado en curso. Una vez finalizado el escalado, el panel _Detalles de despliegue_ se actualiza para mostrar el uso actual y el nuevo valor del almacenamiento disponible.
+4. Pulse **Despliegue de escalado** para activar el escalado y volver a la visión general del panel de control. 
+
+Una vez finalizado el escalado, el panel _Detalles de despliegue_ se actualiza para mostrar el uso actual y el nuevo valor del almacenamiento disponible.
 
 
 ## Utilización de listas blancas
 
-Si desea restringir el acceso a las bases de datos, puede crear una lista blanca de direcciones IP o rangos de direcciones IP específicos en el servicio. Cuando no hay direcciones IP en la lista blanca, esta se inhabilita y el despliegue aceptará conexiones procedentes de cualquier sistema de internet.
+Si desea restringir el acceso a las bases de datos, puede crear una lista blanca de direcciones IP o rangos de direcciones IP específicos en el servicio. Cuando no hay direcciones IP en la lista blanca, esta se inhabilita y el despliegue aceptará conexiones procedentes de cualquier sistema de Internet.
 
 ![Lista blanca de IP](./images/elastic_search-whitelist-show.png "Los campos de lista blanca.")
 

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-07-13"
 ---
 
@@ -94,7 +94,7 @@ Es gibt einige Treiber, die die Sprache Go nutzen. Für dieses Beispiel wird [El
 
 Führen Sie zum Abrufen des Elastic-Pakets den Befehl `go get gopkg.in/olivere/elastic.v3` in Ihrem Terminal aus.
 
-Im Codebeispiel ist der gesamte Code in der Funktion `main` enthalten. Als Erstes wird ein `Client` erstellt. Dann werden die Verbindungszeichenfolgen in die Methode `SetURL` eingefügt.
+Im Codebeispiel ist der gesamte Code in der Funktion `main` enthalten.  Als Erstes wird ein `Client` erstellt. Dann werden die Verbindungszeichenfolgen in die Methode `SetURL` eingefügt.
 
 ```go
 package main
@@ -164,7 +164,7 @@ public class ElasticsearchConnect {
                 .multiThreaded(true)
                 .build());
 ```
-Als Nächstes erstellen Sie ein neues Element `JestClientFactory`. Das Element `factory` stellt Ihnen die Methode `setHttpClientConfig` zum Konfigurieren Ihres Clients bereit. Erstellen Sie mithilfe von `Arrays.asList` in der Jest-Methode `Builder` ein Array, das Ihre beiden Compose-Elasticsearch-Verbindungszeichenfolgen enthält. Anschließend rufen Sie die Methode `build` auf, um die Verbindung zu erstellen.
+Als Nächstes erstellen Sie ein neues Element `JestClientFactory`. Das Element `factory` stellt Ihnen die Methode `setHttpClientConfig` zum Konfigurieren Ihres Clients bereit. Erstellen Sie mithilfe von `Arrays.asList` in der Jest-Methode `Builder` ein Array, das Ihre beiden Compose-Elasticsearch-Verbindungszeichenfolgen enthält. Anschließend rufen Sie die Methode `build` auf, um die Verbindung zu erstellen. 
 ```java
         JestClient client = factory.getObject();
         Health health = new Health.Builder().build();
@@ -190,7 +190,7 @@ Verwenden Sie `JestResult`, sobald Sie eine Abfrage erstellt haben, um die Dokum
 ## Ruby und Elasticsearch
 
 ### Client installieren
-Installieren Sie zur Verwendung von Elasticsearch mit Ruby die Funktion [Elasticsearch Ruby gem](https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-api) `gem install elasticsearch`. Nach der Installation können Sie den Befehl `require` für die Bibliothek in Ihrer Ruby-Datei absetzen.  
+Installieren Sie zur Verwendung von Elasticsearch mit Ruby die Funktion [Elasticsearch Ruby gem](https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-api) `gem install elasticsearch`. Nach der Installation können Sie den Befehl `require` für die Bibliothek in Ihrer Ruby-Datei absetzen. 
 
 ### Verbindung erstellen
 

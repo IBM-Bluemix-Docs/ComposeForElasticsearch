@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 lastupdated: "2017-07-13"
 ---
 
@@ -94,7 +94,7 @@ Quelques pilotes fonctionnent avec le langage Go. Pour cet exemple, nous utilise
 
 Pour obtenir le package Elastic, exécutez `go get gopkg.in/olivere/elastic.v3` sur votre terminal.
 
-Dans l'exemple, nous avons placé l'intégralité du code dans la fonction `main`. En premier, nous allons créer un `client` et insérer les chaînes de connexion dans la méthode `SetURL`.
+Dans l'exemple, nous avons placé l'intégralité du code dans la fonction `main`.  En premier, nous allons créer un `client` et insérer les chaînes de connexion dans la méthode `SetURL`.
 
 ```go
 package main
@@ -164,7 +164,7 @@ public class ElasticsearchConnect {
                 .multiThreaded(true)
                 .build());
 ```
-Ensuite, vous créerez une nouvelle fabrique `JestClientFactory`. La `fabrique` vous fournit une méthode `setHttpClientConfig` pour configurer votre client. Utilisez `Arrays.asList` dans la méthode `Builder` de Jest pour créer un tableau contenant vos deux chaînes de connexion Compose Elasticsearch. Ensuite, vous appellerez la méthode `build` pour créer la connexion.
+Ensuite, vous créerez une nouvelle fabrique `JestClientFactory`. La `fabrique` vous fournit une méthode `setHttpClientConfig` pour configurer votre client. Utilisez `Arrays.asList` dans la méthode `Builder` de Jest pour créer un tableau contenant vos deux chaînes de connexion Compose Elasticsearch. Ensuite, vous appellerez la méthode `build` pour créer la connexion. 
 ```java
         JestClient client = factory.getObject();
         Health health = new Health.Builder().build();

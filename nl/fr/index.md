@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-10-18"
 ---
 
@@ -11,23 +11,23 @@ lastupdated: "2017-10-18"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Initiation à {{site.data.keyword.composeForElasticsearch}}
-{: #getting-started-with-compose-for-elasticsearch}
+# A propos de {{site.data.keyword.composeForElasticsearch}}
+{: #about-compose-for-elasticsearch}
 
 {{site.data.keyword.composeForElasticsearch_full}} allie la puissance d'un moteur de recherche en texte intégral à la puissance d'indexation d'une base de données de documents JSON. Combinées, ces deux fonctions constituent un outil puissant dédié aux analyses de données enrichies sur d'importantes quantités de données. Elasticsearch vous permet de définir des scores d'exactitude pour vos recherches, et ainsi, de parcourir votre fichier à la recherche de concordances parfaites et de concordances approximatives que vous pourriez manquer.
 {:shortdesc}
 
 **Remarque :** les instances de service Compose qui ont été mises à disposition avant le 14 septembre 2016 et qui sont toujours actives peuvent encore être utilisées et sont directement accessibles sur le site [https://www.compose.com/](https://www.compose.com). Les instances de service Compose mises à disposition depuis cette date sont directement accessibles et utilisables dans votre compte {{site.data.keyword.cloud}}.
 
-## Création d'une instance de service Compose for Elasticsearch
+## Création d'une instance de service {{site.data.keyword.composeForElasticsearch}}
 
-[Créez une instance {{site.data.keyword.composeForElasticsearch}}](https://console.bluemix.net/catalog/services/compose-for-elasticsearch/).
+Vous pouvez créer un service {{site.data.keyword.composeForElasticsearch}} à partir de la [page {{site.data.keyword.composeForElasticsearch}}](https://console.{DomainName}/catalog/services/compose-for-elasticsearch/) du catalogue {{site.data.keyword.cloud_notm}}.
 
-Lorsque vous créez une instance du service, prenez soin de sélectionner un nom pour votre service et un nom de données d'identification. Laissez le service non lié ; vous pourrez connecter une application à votre service ultérieurement en utilisant les données d'identification fournies lors de la mise à disposition du service. La section *Données d'identification disponibles* répertorie les différentes valeurs de données d'identification.
+Choisissez un nom de service ainsi qu'une région, une organisation et un espace dans lesquels mettre le service à disposition. Vous pouvez utiliser la zone **Select a database version** pour sélectionner parmi les versions de base de données disponibles.
 
-Lorsque vous mettez votre instance {{site.data.keyword.composeForElasticsearch}} à disposition, vous avez le choix entre le plan *Standard* et le plan *Entreprise*. Avec le plan *Entreprise*, vous pouvez mettre votre instance {{site.data.keyword.composeForElasticsearch}} à disposition dans un cluster {{site.data.keyword.composeEnterprise}} disponible. {{site.data.keyword.composeEnterprise}} fournit la sécurité et l'isolement requis par les normes de conformité des entreprises et utilise un réseau dédié pour garantir les performances des bases de données déployées. Pour plus d'informations, voir la [documentation Compose - Entreprise](../ComposeEnterprise/index.html).
+Lorsque vous mettez votre instance {{site.data.keyword.composeForElasticsearch}} à disposition, vous avez le choix entre le plan *Standard* et le plan *Entreprise*. Avec le plan *Entreprise*, vous pouvez mettre votre instance {{site.data.keyword.composeForElasticsearch}} à disposition dans un cluster {{site.data.keyword.composeEnterprise}} disponible. {{site.data.keyword.composeEnterprise}} offre la sécurité et l'isolement requis par les normes de conformité des entreprises et utilise un réseau dédié pour garantir les performances des bases de données déployées. Pour plus d'informations, voir la [documentation Compose - Entreprise](../ComposeEnterprise/index.html).
 
-## Gestion de Compose for Elasticsearch
+## Gestion de {{site.data.keyword.composeForElasticsearch}}
 
 Vous pouvez gérer votre service depuis son tableau de bord. Vous y trouverez des informations concernant la base de données Compose d'{{site.data.keyword.cloud}} et la manière de vous y connecter. Vous pouvez également :
 

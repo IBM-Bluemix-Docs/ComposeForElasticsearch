@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-10-18"
 ---
 
@@ -11,23 +11,23 @@ lastupdated: "2017-10-18"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 开始使用 {{site.data.keyword.composeForElasticsearch}}
-{: #getting-started-with-compose-for-elasticsearch}
+# 关于 {{site.data.keyword.composeForElasticsearch}}
+{: #about-compose-for-elasticsearch}
 
 {{site.data.keyword.composeForElasticsearch_full}} 将全文搜索引擎的强大功能和 JSON 文档数据库的建立索引优势结合在一起。如此一来，创建出强大的工具，可对大量数据执行富数据分析。使用 Elasticsearch，可对您搜索的正确性进行评分，让您深度挖掘您的数据集，以获得那些您可能遗漏的近似匹配项和接近遗漏项。
 {:shortdesc}
 
 **注：**在 2016 年 9 月 14 日之前供应的任何仍处于活动状态的 Compose 服务实例仍可通过 [https://www.compose.com/](https://www.compose.com) 使用和直接访问。从此处供应的任何 Compose 服务实例都可在 {{site.data.keyword.cloud}} 帐户中直接访问和使用。
 
-## 创建 Compose for Elasticsearch 服务实例
+## 创建 {{site.data.keyword.composeForElasticsearch}} 服务实例
 
-[创建 {{site.data.keyword.composeForElasticsearch}} 实例](https://console.bluemix.net/catalog/services/compose-for-elasticsearch/)。
+您可以在 {{site.data.keyword.cloud_notm}}“目录”的 [{{site.data.keyword.composeForElasticsearch}} 页面](https://console.{DomainName}/catalog/services/compose-for-elasticsearch/)中创建 {{site.data.keyword.composeForElasticsearch}} 服务。
 
-当您创建服务实例时，请确保选择服务的名称和凭证名称。保持服务处于未绑定状态；您可以稍后使用供应服务时提供的凭证，将应用程序连接到您的服务。*可用凭证*一节列出各种凭证值。
+选择服务名称以及要在其中供应该服务的区域、组织和空间。可以使用**选择数据库版本**字段从可用数据库版本中进行选择。
 
 供应 {{site.data.keyword.composeForElasticsearch}} 实例时，可以选择*标准*或*企业*套餐。使用*企业*套餐，您可以将 {{site.data.keyword.composeForElasticsearch}} 实例供应到可用的 {{site.data.keyword.composeEnterprise}} 集群中。{{site.data.keyword.composeEnterprise}} 提供企业合规性所需的安全性和隔离，并使用专用网络来确保已部署的数据库的性能。有关更多详细信息，请参阅 [Compose Enterprise 文档](../ComposeEnterprise/index.html)。
 
-## 管理 Compose for Elasticsearch
+## 管理 {{site.data.keyword.composeForElasticsearch}}
 
 您可以从服务仪表板管理服务。您可以在此找到有关 {{site.data.keyword.cloud}} Compose 数据库以及如何连接到该数据库的信息。您还可以：
 

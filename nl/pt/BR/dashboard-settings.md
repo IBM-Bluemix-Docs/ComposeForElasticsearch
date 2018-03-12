@@ -1,7 +1,7 @@
 ---
 
 Copyright:
-  Years: 2017
+  years: 2017,2018
 lastupdated: "2017-10-20"
 ---
 
@@ -27,11 +27,11 @@ Se o seu serviço precisa de armazenamento adicional, ou você deseja reduzir a 
 
 1. Navegue para a página de visão geral do painel de seu serviço.
 2. Na área de janela _Detalhes da implementação_, clique em **Escalar recursos**. A página Escalar recursos é aberta.
-
-    ![The Scale Resources panel](./images/elastic_search-scale-show.png "The Scale Resources panel")
-
+![O painel Escalar recursos](./images/elastic_search-scale-show.png "O painel Escalar recursos")
 3. Ajuste a régua de controle para levantar ou abaixar o armazenamento alocado para o serviço {{site.data.keyword.composeForElasticsearch}}. Mova a régua de controle para a esquerda para reduzir a quantia de armazenamento ou mova-a para a direita para aumentar o armazenamento.
-4. Clique em **Escalar implementação** para acionar o novo ajuste de escala e retorne para a visão geral do painel. O painel _Orientações_ contém detalhes da tarefa de nova escala que está agora em andamento. Quando o ajuste de escala for concluído, a área de janela _Detalhes da implementação_ será atualizada para mostrar o uso atual e o novo valor para o armazenamento disponível.
+4. Clique em **Escalar implementação** para acionar o novo ajuste de escala e retorne para a visão geral do painel. 
+
+Quando o ajuste de escala for concluído, a área de janela _Detalhes da implementação_ será atualizada para mostrar o uso atual e o novo valor para o armazenamento disponível.
 
 
 ## Usando listas de desbloqueio

@@ -1,7 +1,7 @@
 ---
 
 Copyright:
-  Years: 2017
+  years: 2017,2018
 lastupdated: "2017-10-20"
 ---
 
@@ -27,11 +27,11 @@ Wenn Ihr Service zusätzlichen Speicher benötigt oder Sie den Speicherplatz ver
 
 1. Navigieren Sie zur Übersichtsseite Ihres Service-Dashboards.
 2. Klicken Sie in der Anzeige _Bereitstellungsdetails_ auf **Ressourcen skalieren**. Die Seite 'Ressourcen skalieren' wird geöffnet.
-
-    ![Anzeige 'Ressourcen skalieren'](./images/elastic_search-scale-show.png "Anzeige 'Ressourcen skalieren'")
-
+    ![Seite 'Ressourcen skalieren'](./images/elastic_search-scale-show.png "Seite 'Ressourcen skalieren'")
 3. Passen Sie den Schieberegler an, um den Speicher zu erhöhen oder zu verringern, der dem {{site.data.keyword.composeForElasticsearch}}-Service zugeordnet ist. Verschieben Sie den Schieberegler nach links, um den Speicherplatz zu verringern, oder nach rechts, um ihn zu erhöhen.
-4. Klicken Sie auf **Bereitstellung skalieren**, um die Neuskalierung auszulösen und zur Dashboardübersicht zurückzukehren. Die Anzeige _Anleitungen_ enthält Details zu dem Neuskalierungsjob, der gerade in Bearbeitung ist. Nach dem Abschluss der Skalierung wird die Anzeige _Bereitstellungsdetails_ aktualisiert und zeigt die aktuelle Nutzung sowie den neuen Wert für den verfügbaren Speicher an.
+4. Klicken Sie auf **Bereitstellung skalieren**, um die Neuskalierung auszulösen und zur Dashboardübersicht zurückzukehren. 
+
+Nach dem Abschluss der Skalierung wird die Anzeige _Bereitstellungsdetails_ aktualisiert und zeigt die aktuelle Nutzung sowie den neuen Wert für den verfügbaren Speicher an.
 
 
 ## Whitelists verwenden
@@ -56,4 +56,5 @@ Die *Beschreibung* kann ein beliebiger für den Benutzer hilfreicher Text zum Id
 Einträge in die Whitelist werden automatisch zu den Compose-Servern hinzugefügt, damit sie eine Verbindung herstellen können.
 
 ### Entfernen
-Klicken Sie, wenn Sie eine IP-Adresse oder Netzmaske aus der Whitelist entfernen wollen, auf den neben ihr angezeigten Eintrag *Entfernen*. Wenn alle Einträge in der Whitelist entfernt werden, wird die Whitelist inaktiviert und die TCP-Zugriffsportale akzeptieren alle IP-Adressen.
+Klicken Sie, wenn Sie eine IP-Adresse oder Netzmaske aus der Whitelist entfernen wollen, auf den neben ihr angezeigten Eintrag *Entfernen*.
+Wenn alle Einträge in der Whitelist entfernt werden, wird die Whitelist inaktiviert und die TCP-Zugriffsportale akzeptieren alle IP-Adressen.
