@@ -1,7 +1,7 @@
 ---
 
 Copyright:
-  Years: 2017
+  years: 2016,2018
 lastupdated: "2017-12-05"
 ---
 
@@ -64,4 +64,4 @@ The deployment ID is necessary for most calls, and identifies the specific deplo
 
 ### Reference
 
-For more documentation and reference for using the {{site.data.keyword.cloud_notm}} Compose API, across all {{site.data.keyword.cloud_notm}} Compose services, read [The IBM Cloud Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/).
+For more documentation and reference for using the {{site.data.keyword.cloud_notm}} Compose API, across all {{site.data.keyword.cloud_notm}} Compose services, read [The {{site.data.keyword.cloud_notm}} Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/).
