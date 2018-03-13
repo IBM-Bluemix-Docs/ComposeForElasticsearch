@@ -1,12 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-elasticsearch" audience="service" href="/docs/services/ComposeForElasticsearch/getting_started.html"}
+{: .toc subcollection="compose-for-elasticsearch" audience="service" href="/docs/services/ComposeForElasticsearch/index.html"}
 Compose For Elasticsearch
 
 	{: .navgroup id="learn"}
-	getting_started.md
 	index.md
+	getting_started.md
 	pricing.md
 	
 	{: .topicgroup}
