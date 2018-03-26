@@ -1,0 +1,24 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="compose-for-elasticsearch" audience="service" href="/docs/services/ComposeForElasticsearch/getting_started.html"}
+Compose For Elasticsearch
+
+	{: .navgroup id="learn"}
+	getting_started.md
+	index.md
+	pricing.md
+	
+	{: .topicgroup}
+	Il dashboard del servizio
+		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	{: .topicgroup}
+	Connessione a Compose for Elasticsearch
+		connecting-bluemix-app.md
+		connecting-external.md
+	{: .navgroup-end}
