@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-04-19"
 ---
 
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2017-12-05"
 # Managing Backups
 {: #backups}
 
-You can create and download backups from the _Backups_ tab of the _Manage_ page of your service dashboard. Daily, weekly, monthly, and on-demand backups are available. They are retained according to the following schedule:
+You can create and restore backups from the _Backups_ tab of the _Manage_ page of your service dashboard. Daily, weekly, monthly, and on-demand backups are available. They are retained according to the following schedule:
 
 Backup type|Retention schedule
 ----------|-----------
@@ -53,7 +53,7 @@ Send a POST request to the backups endpoint to initiate an manual back up: `POST
 
 ## Restoring a backup
 
-To restore a backup to a new service instance, follow the steps to view existing backups, then click in the corresponding row to expand the options for the backup you want to download. Click on the **Restore** button. A message is displayed to let you know that a restore has been initiated. The new service instance will automatically be named "elasticsearch-restore-[timestamp]", and appears on your dashboard when provisioning starts.
+To restore a backup to a new service instance, follow the steps to view existing backups, then click in the corresponding row to expand the options for the backup you want to restore. Click on the **Restore** button. A message is displayed to let you know that a restore has been initiated. The new service instance will automatically be named "elasticsearch-restore-[timestamp]", and appears on your dashboard when provisioning starts.
 
 ### Restoring via the {{site.data.keyword.cloud_notm}} CLI
 
