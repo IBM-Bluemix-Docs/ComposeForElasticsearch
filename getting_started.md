@@ -14,7 +14,7 @@ lastupdated: "2018-02-16"
 
 
 # Getting started tutorial
-This tutorial uses the [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) sample app to demonstrate how to use Node.js to connect to a {{site.data.keyword.composeForElasticsearch_full}} service using the provided credentials. The application creates, reads from, and writes to a database using data supplied through the app's web interface.
+This tutorial uses the [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) sample app to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForElasticsearch_full}} service using the provided credentials. The application creates, reads from, and writes to a database using data supplied through the app's web interface.
 {: shortdesc}
 
 ## Before you begin
@@ -167,6 +167,6 @@ To start exploring your {{site.data.keyword.composeForElasticsearch}} service, s
 - [Backups](./dashboard-backups.html)
 - [Settings](./dashboard-settings.html)
 
-For information about the credentials you created for the application to connect to your service, see [Available Credentials](./connecting-bluemix-app.html#available-credentials).
+For information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForElasticsearch/connecting-bluemix-app.html#credentials).
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
