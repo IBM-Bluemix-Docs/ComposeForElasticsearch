@@ -26,7 +26,7 @@ Download the sample app and follow the instructions in the readme file. Then, in
 Field Name|Description
 ----------|-----------
 `uri`|The URI to be used when connecting to the service. Includes the schema (`https:`), admin user name and password, host name of server and port number to connect to.
-`uri_direct_1`|An alternative URI that can be used when connecting to the service. Formatted as for `uri`.
+`uri_direct_1`|A secondary URI that can be used when connecting to the service. Formatted as for `uri`.
 `uri_health`|A `curl` command that requests the cluster health from the first haproxy.
 `uri_health_1`|A `curl` command that requests the cluster health from the second haproxy.
 `ca_certificate_base64` `(optional)`|A base64 encoded, self-signed certificate that is used to confirm that an application is connecting to the appropriate server. The certificate is only present on services that have a self-signed instead of a Let's Encrypt certificate. You need to decode the key before you can use it, as shown in the sample application.
