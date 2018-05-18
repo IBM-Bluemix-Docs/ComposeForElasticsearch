@@ -14,7 +14,7 @@ lastupdated: "2018-02-16"
 
 
 # Getting started tutorial
-This tutorial uses the [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) sample app to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForElasticsearch_full}} service using the provided credentials. The application creates, reads from, and writes to a database using data supplied through the app's web interface.
+The getting started tutorial uses the [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) sample app to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForElasticsearch_full}} service using the provided credentials. The application creates, reads from, and writes to a database using data supplied through the app's web interface.
 {: shortdesc}
 
 ## Before you begin

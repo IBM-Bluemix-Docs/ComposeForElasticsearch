@@ -10,7 +10,7 @@ lastupdated: "2018-05-04"
 
 ## Base Configuration
 
-An {{site.data.keyword.composeForElasticsearch_full}} service starts with three identical data nodes. Each has 2 GB of storage and 204 MB of memory, which is equal to two units of resources. The service _includes_ replication and high-availability, so each unit and the price per unit _includes_ the cost of the resources across all three nodes.
+An {{site.data.keyword.composeForElasticsearch_full}} service is configured with three identical data nodes. Each has 2 GB of storage and 204 MB of memory, which is equal to two units of resources. The service _includes_ replication and high-availability, so each unit and the price per unit _includes_ the cost of the resources across all three nodes.
 
 The base configuration also includes the two HAProxy capsules with 64 MB each to support authentication, HTTPS, and IP whitelisting. 
 
@@ -18,7 +18,7 @@ The base service configuration has a set price. Check the catalog tiles on {{sit
 
 ## Increasing resources
 
-If you need more storage or memory for your service, you can increase the resources. Resources are increased in a 10:1 ratio of disk storage to memory unit. Increasing the disk size that is allocated to the deployment also increases the RAM that is allocated. A {{site.data.keyword.composeForElasticsearch}} unit consists of 1 GB of storage and 102 MB of memory. Each unit and the price per unit _includes_ the cost to increase the resources on all three nodes.
+If you need more storage or memory for your service, you can increase the resources. Resources are increased in a 10:1 ratio of disk storage to memory unit and increasing the disk size that is allocated to the deployment also increases the RAM that is allocated. A {{site.data.keyword.composeForElasticsearch}} unit consists of 1 GB of storage and 102 MB of memory. Each unit and the price per unit _includes_ the cost to increase the resources on all three nodes.
 
 ## Calculating the cost of your deployment
 {: #tiered-pricing}
