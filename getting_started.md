@@ -56,9 +56,77 @@ Use npm to install dependencies.
   npm install
   ```
 
+## Step 4: Download and install the {{site.data.keyword.cloud_notm}} CLI tool
+
+The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+
+## Step 5: Connect to {{site.data.keyword.cloud_notm}}
+
+1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
+
+  ```
+  bx login
+  ```
+
+  If you have a federated user ID, use the `bx login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  {: .tip}
+
+2. Make sure you are targetting the correct {{site.data.keyword.cloud_notm}} org and space.
+
+  ```
+  bx target --cf
+  ```
+
+  Choose from the options provided, using the same values you used when you created the service.
+
+## Step 6: Update the app's manifest file
+{: #update-manifest}
+
+{{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
+
+1. In an editor, open a new file and add the following:
+
+  ```
+  ---
+  applications:
+  - name:    compose-elasticsearch-helloworld-nodejs
+    host:    compose-elasticsearch-helloworld-nodejs
+    memory:  128M
+    services:
+      - my-compose-for-elasticsearch-service
+  ```
+
+2. Change the `host` value to something unique. The host you choose will determinate the subdomain of your application's URL:  `<host>.mybluemix.net`.
+3. Change the `name` value. The value you choose will be the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
+4. Update the `services` value to match the name of the service you created in [Create a {{site.data.keyword.composeForElasticsearch}} service instance](#create-service). 
+
+## Step 7: Push the app to {{site.data.keyword.cloud_notm}}.
+
+This step will fail if the service has not finished provisioning from Step 1. You can check its progress by going to the _Manage_ view for the service.
+{: .tip}
+
+When you push the app it will automatically be bound to the service specified in the manifest file.
+
+```
+bx cf push
+```
+
+## Step 8: Check the app is connected to your {{site.data.keyword.composeForElasticsearch}} service
+
+1. Navigate to your {{site.data.keyword.composeForElasticsearch}} service dashboard
+2. Select _Connections_ from the dashboard menu. Your application should be listed under _Connected Applications_.
+
+If your application is not listed, repeat Steps 7 ad 8, making sure you have entered the correct details in [manifest.yml](#update-manifest).
+
+## Step 9: Use the app
+
+Now, when you visit `<host>.mybluemix.net/` you will be able to view the contents of your {{site.data.keyword.composeForElasticsearch}} collection. As you add words and their definitions they are added to the database and displayed. If you stop and restart the app you'll see any words and definitions you've already added are now listed.
+
+## Running the app locally
+
 ## Step 4: Create Service Credentials
 
-Before pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.composeForElasticsearch}} service instance. To connect to the service you'll need to create a set of service credentials.
+Intead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.composeForElasticsearch}} service instance. To connect to the service you'll need to create a set of service credentials.
 
 1. From your {{site.data.keyword.cloud_notm}} dashboard, open your {{site.data.keyword.composeForElasticsearch}} service instance.
 2. Select _Service Credentials_ from the main menu to open the Service Credentials view.
@@ -83,79 +151,13 @@ Before pushing the app into {{site.data.keyword.cloud_notm}} you can run it loca
 To avoid accidentally exposing your credentials when pushing an application to Github or {{site.data.keyword.cloud_notm}} you should make sure that the file containing your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory you'll see that `vcap-local.json` is listed in both, so it won't be included in the files that are uploaded when you push the app to either Github or {{site.data.keyword.cloud_notm}}.
 {: .tip}
 
-## Step 5: Run the app locally
+Now start the local server.
 
 ```
 npm start
 ```
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForElasticsearch}} database. When you stop and restart the app, any words you have already added are displayed when you refresh the page.
-
-The next stage is to connect your app to your service instance and deploy the app to {{site.data.keyword.cloud_notm}}.
-
-## Step 6: Download and install the {{site.data.keyword.cloud_notm}} CLI tool
-
-The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
-
-## Step 7: Connect to {{site.data.keyword.cloud_notm}}
-
-1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
-
-  ```
-  bx login
-  ```
-
-  If you have a federated user ID, use the `bx login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
-  {: .tip}
-
-2. Make sure you are targetting the correct {{site.data.keyword.cloud_notm}} org and space.
-
-  ```
-  bx target --cf
-  ```
-
-  Choose from the options provided, using the same values you used when you created the service.
-
-## Step 8: Update the app's manifest file
-{: #update-manifest}
-
-{{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your manifest file.
-
-1. In an editor, open a new file and add the following:
-
-  ```
-  ---
-  applications:
-  - name:    compose-elasticsearch-helloworld-nodejs
-    host:    compose-elasticsearch-helloworld-nodejs
-    memory:  128M
-    services:
-      - my-compose-for-elasticsearch-service
-  ```
-
-2. Change the `host` value to something unique. The host you choose will determinate the subdomain of your application's URL:  `<host>.mybluemix.net`.
-3. Change the `name` value. The value you choose will be the name of the app as it appears in your {{site.data.keyword.cloud_notm}} dashboard.
-4. Update the `services` value to match the name of the service you created in [Create a {{site.data.keyword.composeForElasticsearch}} service instance](#create-service). 
-
-## Step 9: Push the app to {{site.data.keyword.cloud_notm}}.
-
-When you push the app it will automatically be bound to the service specified in the manifest file.
-
-```
-bx cf push
-```
-
-## Step 10: Check the app is connected to your {{site.data.keyword.composeForElasticsearch}} service
-
-1. Navigate to your {{site.data.keyword.composeForElasticsearch}} service dashboard
-2. Select _Connections_ from the dashboard menu. Your application should be listed under _Connected Applications_.
-
-If your application is not listed, repeat Steps 7 ad 8, making sure you have entered the correct details in [manifest.yml](#update-manifest).
-
-## Step 11: Use the app
-
-Now, when you visit `<host>.mybluemix.net/` you will be able to view the contents of your {{site.data.keyword.composeForElasticsearch}} collection. As you add words and their definitions they are added to the database and displayed. If you stop and restart the app you'll see any words and definitions you've already added are now listed.
-
 
 ## Next steps
 
@@ -170,3 +172,4 @@ To start exploring your {{site.data.keyword.composeForElasticsearch}} service, s
 For information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForElasticsearch/connecting-bluemix-app.html#credentials).
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
+
