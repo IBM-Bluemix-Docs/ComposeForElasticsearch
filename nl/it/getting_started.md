@@ -23,7 +23,7 @@ Assicurati di avere un account [{{site.data.keyword.cloud_notm}}][ibm_cloud_sign
 
 Dovrai anche installare [Node.js](https://nodejs.org/) e [Git](https://git-scm.com/downloads).
 
-## Passo 1: crea un'istanza del servizio {{site.data.keyword.composeForElasticsearch}} 
+## Passo 1: crea una istanza del servizio {{site.data.keyword.composeForElasticsearch}}
 {: #create-service}
 
 Puoi creare un servizio {{site.data.keyword.composeForElasticsearch}} dalla pagina [{{site.data.keyword.composeForElasticsearch}}](https://console.{DomainName}/catalog/services/compose-for-elasticsearch/) nel catalogo {{site.data.keyword.cloud_notm}}.
@@ -44,7 +44,7 @@ git clone https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs.g
 
 Utilizza npm per installare le dipendenze.
 
-1. Dal tuo terminale, modifica la directory in cui si trova l'applicazione di esempio. 
+1. Dal tuo terminale, modifica la directory in cui si trova l'applicazione di esempio.
   
   ```
   cd compose-elasticsearch-helloworld-nodejs
@@ -93,7 +93,7 @@ L'applicazione è ora in esecuzione all'indirizzo [http://localhost:8080](http:/
 
 Il passo successivo è di collegare la tua applicazione alla tua istanza del servizio e distribuirla a {{site.data.keyword.cloud_notm}}.
 
-## Passo 6: scarica e installa lo strumento CLI {{site.data.keyword.cloud_notm}} 
+## Passo 6: scarica e installa lo strumento CLI {{site.data.keyword.cloud_notm}}
 
 Lo strumento CLI {{site.data.keyword.cloud_notm}} è quello che utilizzerai per comunicare con {{site.data.keyword.cloud_notm}} dal tuo terminale o dalla riga di comando. Per i dettagli, consulta [Scarica e installa la CLI {{site.data.keyword.cloud_notm}}](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
@@ -135,19 +135,19 @@ Lo strumento CLI {{site.data.keyword.cloud_notm}} è quello che utilizzerai per 
 
 2. Modifica il valore `host` con qualcosa di univoco. L'host che scegli determinerà il dominio secondario dell'URL della tua applicazione:  `<host>.mybluemix.net`.
 3. Modifica il valore `name`. Il valore che scegli sarà il nome dell'applicazione come viene visualizzato nel tuo dashboard {{site.data.keyword.cloud_notm}}.
-4. Aggiorna il valore `services` in modo che corrisponda al nome del servizio che hai creato in [Crea un'istanza del servizio {{site.data.keyword.composeForElasticsearch}}](#create-service). 
+4. Aggiorna il valore `services` in modo che corrisponda al nome del servizio che hai creato in [Crea una istanza del servizio {{site.data.keyword.composeForElasticsearch}}](#create-service). 
 
 ## Passo 9: trasmetti la tua applicazione a {{site.data.keyword.cloud_notm}}.
 
-Quando trasmetti l'applicazione sarà automaticamente associata al servizio specificato nel file manifest. 
+Quando trasmetti l'applicazione sarà automaticamente associata al servizio specificato nel file manifest.
 
 ```
 bx cf push
 ```
 
-## Passo 10: controlla che l'applicazione sia collegata al tuo servizio {{site.data.keyword.composeForElasticsearch}} 
+## Passo 10: controlla che l'applicazione sia collegata al tuo servizio {{site.data.keyword.composeForElasticsearch}}
 
-1. Passa al tuo dashboard del servizio {{site.data.keyword.composeForElasticsearch}} 
+1. Passa al tuo dashboard del servizio {{site.data.keyword.composeForElasticsearch}}
 2. Seleziona _Connections_ dal menu del dashboard. La tua applicazione dovrebbe essere elencata in _Connected Applications_.
 
 Se la tua applicazione non è elencata, ripeti i passi da 7 a 8, assicurandoti di aver immesso i dettagli corretti in [manifest.yml](#update-manifest).

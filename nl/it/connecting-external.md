@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2016, 2018
 lastupdated: "2017-07-13"
 ---
 
@@ -178,7 +178,7 @@ Successivamente, creerai un nuovo `JestClientFactory`. `factory` ti fornirà un 
 }
 ```
 
-Dopo aver creato la connessione, puoi creare un'istanza `JestClient` dall'oggetto factory di connessione `factory.getObject()`. `JestClient` sarà utilizzato per richiamare il metodo `execute` per tutte le query Elasticsearch che hai creato. In questo esempio, `creiamo` una query `Health` per ricercare l'integrità del cluster utilizzando le classi del builder di Elasticsearch. 
+Dopo aver creato la connessione, puoi creare una istanza `JestClient` dall'oggetto factory di connessione `factory.getObject()`. `JestClient` sarà utilizzato per richiamare il metodo `execute` per tutte le query Elasticsearch che hai creato. In questo esempio, `creiamo` una query `Health` per ricercare l'integrità del cluster utilizzando le classi del builder di Elasticsearch. 
 
 Dopo aver creato una query, utilizza `JestResult` per ottenere i documenti e stamparli nel terminale come un oggetto JSON, quindi chiudi il client con `shutdownClient`. 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-10-18"
+lastupdated: "2018-03-26"
 ---
 
 {:new_window: target="_blank"}
@@ -37,9 +37,12 @@ Vous pouvez gérer votre service depuis son tableau de bord. Vous y trouverez de
 
 Pour plus d'informations, voir [Paramètres](./dashboard-settings.html).
 
+{{site.data.keyword.composeForElasticsearch}} repose sur les rôles Cloud Foundry pour la gestion de l'accès au service. Seuls les utilisateurs dotés du rôle Développeur peuvent voir ou utiliser le tableau de bord du service. Pour plus d'informations sur les rôles Cloud Foundry, voir les pages [Accès Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) et [Gestion de l'accès Cloud Foundry](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+{: .tip}
+
 ## Connexion à {{site.data.keyword.composeForElasticsearch}}
 
-Vous pouvez vous connecter à votre service avec les données d'identification créées en même temps que le service ou avec les chaînes de connexion et la ligne de commande fournies dans l'onglet *Vue d'ensemble* du tableau de bord de votre service.
+Vous pouvez vous connecter à votre service avec les données d'identification créées en même temps que le service ou avec les chaînes de connexion et la ligne de commande fournies dans l'onglet de vue d'ensemble du tableau de bord de votre service.
 
 ## Connexion d'une application {{site.data.keyword.cloud_notm}} à {{site.data.keyword.composeForElasticsearch}}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2017-10-18"
+lastupdated: "2018-03-26"
 ---
 
 {:new_window: target="_blank"}
@@ -36,6 +36,9 @@ lastupdated: "2017-10-18"
 - ホワイトリストを使用してデータベースへのアクセスを制限する。
 
 詳しくは、[設定](./dashboard-settings.html)を参照してください。
+
+{{site.data.keyword.composeForElasticsearch}} は、Cloud Foundry の役割を利用して、サービスへのアクセスを管理します。開発者役割を持つユーザーのみが、サービス・ダッシュボードを表示または使用できます。Cloud Foundry の役割について詳しくは、『[Cloud Foundry アクセス権限](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess)』および 『[Cloud Foundry のアクセス権限の管理](https://console.bluemix.net/docs/iam/mngcf.html#mngcf)』のページを参照してください。
+{: .tip}
 
 ## {{site.data.keyword.composeForElasticsearch}} への接続
 

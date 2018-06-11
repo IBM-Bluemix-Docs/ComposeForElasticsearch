@@ -20,7 +20,7 @@ Un service {{site.data.keyword.composeForElasticsearch_full}} démarre avec troi
 La configuration de base inclut également deux capsules HAProxy, chacune de 64 Mo, pour la prise en charge de l'authentification, des accès HTTPS et des listes blanches d'adresses IP. 
 
 ### Coût
-Le prix de la configuration du service de base est défini. Consultez les vignettes du catalogue sur {{site.data.keyword.cloud_notm}} pour connaître la tarification de base dans votre devise locale. Par exemple, le prix de base en dollars US est de 36 $/mois. 
+Le prix de la configuration du service de base est défini. Consultez les vignettes du catalogue sur {{site.data.keyword.cloud_notm}} pour connaître la tarification de base dans votre devise locale. Par exemple, le prix de base en dollars US est de 36 $/mois.
 
 
 ## Options d'extension

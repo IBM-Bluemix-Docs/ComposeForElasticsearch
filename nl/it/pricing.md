@@ -14,7 +14,7 @@ lastupdated: "2018-01-11"
 # Prezzi
 {: #pricing}
 
-## Configurazione di base 
+## Configurazione di base
 Un servizio {{site.data.keyword.composeForElasticsearch_full}} viene fornito con tre nodi di dati identici, ognuno con 2GB di archiviazione e 204MB di memoria, che equivale a 2 unità di risorse. Il servizio _include_ la replica e l'elevata disponibilità, per cui ogni unità e il prezzo per unità _include_ il costo delle risorse in tutti e tre i nodi.
 
 La configurazione di base include anche le due capsule HAProxy con 64MB ognuna per supportare l'autenticazione, HTTPS e la whitelist di IP. 
@@ -32,14 +32,14 @@ Ogni unità aggiuntiva (1GB di archiviazione/102MB di memoria) ha un prezzo per 
 ### Prezzi a livelli
 Numero di unità |Sconto a livelli 
 ----------|-----------
-2 - 9 unità|prezzo per unità di base -- $18.00 USD/Unità
-10 - 24 unità|10% di riduzione -- $16.20 USD/Unità
-25 - 49 unità|20% di riduzione -- $14.40 USD/Unità
-50 - 99 unità|30% di riduzione -- $12.60 USD/Unità
-100 - 499 unità|40% di riduzione --$10.80 USD/Unità
-500 - 999 unità|50% di riduzione -- $9.00 USD/Unità
-1.000 - 4.999 unità|60% di riduzione -- $7.20 USD/Unità
-5.000+ unità|70% di riduzione -- $5.40 USD/Unità
-{: caption="Tabella 1. Prezzi a livelli di {{site.data.keyword.composeForElasticsearch}} " caption-side="top"}
+2 - 9 unità|prezzo per unità di base -- $18,00 USD/Unità
+10 - 24 unità|10% di riduzione -- $16,20 USD/Unità
+25 - 49 unità|20% di riduzione -- $14,40 USD/Unità
+50 - 99 unità|30% di riduzione -- $12,60 USD/Unità
+100 - 499 unità|40% di riduzione --$10,80 USD/Unità
+500 - 999 unità|50% di riduzione -- $9,00 USD/Unità
+1.000 - 4.999 unità|60% di riduzione -- $7,20 USD/Unità
+5.000+ unità|70% di riduzione -- $5,40 USD/Unità
+{: caption="Tabella 1. Prezzi a livelli di {{site.data.keyword.composeForElasticsearch}}" caption-side="top"}
 
 

@@ -95,7 +95,7 @@ Als Nächstes muss Ihre App mit Ihrer Serviceinstanz verbunden und in {{site.dat
 
 ## Schritt 6: {{site.data.keyword.cloud_notm}}-CLI-Tool herunterladen und installieren
 
-Sie verwenden das {{site.data.keyword.cloud_notm}}-CLI-Tool für die Kommunikation mit {{site.data.keyword.cloud_notm}} über Ihr Terminal oder Ihre Befehlszeile.Details hierzu finden Sie unter [{{site.data.keyword.cloud_notm}}-CLI herunterladen und installieren](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+Sie verwenden das {{site.data.keyword.cloud_notm}}-CLI-Tool für die Kommunikation mit {{site.data.keyword.cloud_notm}} über Ihr Terminal oder Ihre Befehlszeile. Details hierzu finden Sie unter [{{site.data.keyword.cloud_notm}}-CLI herunterladen und installieren](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
 ## Schritt 7: Verbindung zu {{site.data.keyword.cloud_notm}} herstellen
 
