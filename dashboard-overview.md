@@ -15,7 +15,7 @@ lastupdated: "2018-05-07"
 
 You can manage your {{site.data.keyword.composeForElasticsearch_full}} service from the service dashboard.
 
-The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use with tools or make use of tools to connect to your database.
+The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You can also find a section for connection strings that you can use to connect to your database.
 
 ## Deployment Details
 
@@ -38,13 +38,13 @@ The size of your database and the amount of storage provided by your service pla
 
 ## Connection Strings
 
-Connection Strings can be used by some client libraries and contain all the information needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Connection Strings can be used by some client libraries. They contain all the information that is needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
-You'll find each Connection String for your service in a different tab in the _Connection Strings_ panel.
+You can find each Connection String for your service in a different tab in the _Connection Strings_ panel.
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries. It contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 ### Health
 
@@ -56,7 +56,7 @@ You can manage your {{site.data.keyword.composeForElasticsearch}} service throug
 
 ### Foundation Endpoint
 
-The foundation endpoint is composed of the region the service resides in and the service instance id. It will be at the start of every endpoint.
+The foundation endpoint is composed of the region the service resides in and the service instance ID. It is at the start of every endpoint.
 
 ### Deployment ID
 

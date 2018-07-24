@@ -11,7 +11,7 @@ lastupdated: "2018-04-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Managing Backups
+# Managing backups
 {: #backups}
 
 You can create and restore backups from the _Backups_ tab of the _Manage_ page of your service dashboard. Daily, weekly, monthly, and on-demand backups are available. They are retained according to the following schedule:
@@ -26,48 +26,54 @@ On-demand|One on-demand backup is retained. The retained backup is always the mo
 
 ## Viewing existing backups
 
-Daily backups of your database are automatically scheduled. To view your existing backups:
+Daily backups of your database are automatically scheduled. You can view your existing backups from your service dashboard.
 
 1. Navigate to your service Dashboard.
 2. Click **Backups** in the tabs to open the _Backups_ page. A list of available backups is shown:
 
   ![Available backups](./images/elastic_search-backups-show.png "A list of available backups.")
 
-Click on the corresponding row to expand the options for any available backup.
+Click the corresponding row to expand the options for any available backup.
   ![Backup Options](./images/elastic_search-backups-options.png "Options for a backup.") 
 
 ### Using the API to view existing backups
 
-A list of backups is available at the `GET /2016-07/deployments/:id/backups` endpoint. The Foundation Endpoint with the service instance id and the deployment id are both shown in the service's _Overview_. For example: 
+A list of backups is available at the `GET /2016-07/deployments/:id/backups` endpoint. The Foundation Endpoint with the service instance ID and the deployment ID are shown in the service's _Overview_. For example: 
 ``` 
 https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
 ```  
 
 ## Creating a manual backup
 
-As well as scheduled backups you can create a backup manually. To create a manual backup, follow the steps to view existing backups, then click **Back up now** above the list of available backups. A message is displayed to let you know that a backup has been initiated, and a 'pending' backup is added to the list of available backups.
+To create a manual backup, follow the steps to view existing backups, then click **Back up now** above the list of available backups. A message is displayed to let you know that a backup has started, and a 'pending' backup is added to the list of available backups.
 
 ### Using the API to create a backup
 
-Send a POST request to the backups endpoint to initiate an manual back up: `POST /2016-07/deployments/:id/backups`. It returns immediately with the recipe id and information about the backup as it is running. You will have to check the backups endpoint to see if the backup finished and find its backup_id before using it. Use `GET /2016-07/deployments/:id/backups/`.
+Send a POST request to the backups endpoint to initiate a manual backup: `POST /2016-07/deployments/:id/backups`. It returns immediately with the recipe ID and information about the backup as it is running. Before using the backup you need to check the backups endpoint to verify that the backup has finished, and find the `backup_id` value before using it.
+
+```
+GET /2016-07/deployments/:id/backups/
+```
 
 ## Restoring a backup
 
-To restore a backup to a new service instance, follow the steps to view existing backups, then click in the corresponding row to expand the options for the backup you want to restore. Click on the **Restore** button. A message is displayed to let you know that a restore has been initiated. The new service instance will automatically be named "elasticsearch-restore-[timestamp]", and appears on your dashboard when provisioning starts.
+1. Follow the steps to view existing backups.
+2. Click the corresponding row to expand the options for the backup you want to restore.
+3. Click the **Restore** button. A message is displayed to let you know that a restore has started. The new service instance appears on your dashboard when provisioning starts, and has the generated name `elasticsearch-restore-[timestamp]`.
 
 ### Restoring via the {{site.data.keyword.cloud_notm}} CLI
 
 Use the following steps to restore a backup from a running Elasticsearch service to a new Elasticsearch service using the {{site.data.keyword.cloud_notm}} CLI. 
-1. If you need to, [download and install it](https://console.bluemix.net/docs/cli/index.html#overview). 
-2. Find the backup you would like to restore from on the _Backups_ page on your service and copy the backup id.  
+1. If you need to, [download and install the CLI](https://console.{DomainName}/docs/cli/index.html#overview). 
+2. Find the backup that you would like to restore from on the _Backups_ page on your service and copy the backup ID.  
   **Or**  
-  Use the `GET /2016-07/deployments/:id/backups` to find a backup and its id through the Compose API. The Foundation Endpoint and the service instance ID are both shown in the service's _Overview_. For example: 
+  Use the `GET /2016-07/deployments/:id/backups` to find a backup and its ID through the Compose API. The Foundation Endpoint and the service instance ID are both shown in the service's _Overview_. For example: 
   ``` 
   https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
   ```  
-  The response includes a list of all available backups for that service instance. Pick the backup you want to restore from and copy its id.
+  The response includes a list of all available backups for that service instance. Pick the backup you want to restore from and copy its ID.
 
-3. Login with the appropriate account and credentials. `bx login` (or `bx login -help` to see all the login options).
+3. Log in with the appropriate account and credentials. `bx login` (or `bx login -help` to see all the login options).
 
 4. Switch to your Organization and Space `bx target -o "$YOUR_ORG" -s "YOUR_SPACE"`
 
@@ -75,7 +81,7 @@ Use the following steps to restore a backup from a running Elasticsearch service
 ``` 
 bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
 ```
-  The _SERVICE_ field should be compose-for-elasticsearch, and _PLAN_ field should be either Standard or Enterprise depending on your environment. _SERVICE\_INSTANCE\_NAME_ is where you will put the name for your new service. The _source\_service\_instance\_id_ is the service instance id of the source of the backup; it can be obtained by running `bx cf service DISPLAY_NAME --guid` where _DISPLAY\_NAME_ is the name of the service the backup is from. 
+  The _SERVICE_ field should be `compose-for-elasticsearch`, and _PLAN_ field should be either Standard or Enterprise depending on your environment. _SERVICE\_INSTANCE\_NAME_ is where you will put the name for your new service. The _source\_service\_instance\_id_ is the service instance id of the source of the backup; it can be obtained by running `bx cf service DISPLAY_NAME --guid` where _DISPLAY\_NAME_ is the name of the service the backup is from. 
   
   Enterprise users also need to specify which cluster to deploy to in the JSON object with the `"cluster_id": "$CLUSTER_ID"` parameter.
   
@@ -89,5 +95,8 @@ bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instan
 ```
 
 For example, restoring an older version of a {{site.data.keyword.composeForElasticsearch}} service to a new service running Elasticsearch 6.2.2 looks like this:
+
 ```
 bx service create compose-for-elasticsearch Standard migrated_elastic -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"6.2.2"  }'
+```
+

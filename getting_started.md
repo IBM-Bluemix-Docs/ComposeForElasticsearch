@@ -30,7 +30,7 @@ You can create a {{site.data.keyword.composeForElasticsearch}} service from the 
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [Compose Enterprise](../ComposeEnterprise/index.html) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
 
 ## Step 2: Clone the Hello World sample app from Github
 
@@ -65,16 +65,16 @@ The {{site.data.keyword.cloud_notm}} CLI tool tool is what you'll use to communi
 1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
 
   ```
-  bx login
+  ibmcloud login
   ```
 
-  If you have a federated user ID, use the `bx login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
+  If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
   {: .tip}
 
 2. Make sure you are targetting the correct {{site.data.keyword.cloud_notm}} org and space.
 
   ```
-  bx target --cf
+  ibmcloud target --cf
   ```
 
   Choose from the options provided, using the same values you used when you created the service.
@@ -108,7 +108,7 @@ This step will fail if the service has not finished provisioning from Step 1. Yo
 When you push the app it will automatically be bound to the service specified in the manifest file.
 
 ```
-bx cf push
+ibmcloud cf push
 ```
 
 ## Step 8: Check the app is connected to your {{site.data.keyword.composeForElasticsearch}} service
@@ -123,8 +123,6 @@ If your application is not listed, repeat Steps 7 ad 8, making sure you have ent
 Now, when you visit `<host>.mybluemix.net/` you will be able to view the contents of your {{site.data.keyword.composeForElasticsearch}} collection. As you add words and their definitions they are added to the database and displayed. If you stop and restart the app you'll see any words and definitions you've already added are now listed.
 
 ## Running the app locally
-
-## Step 4: Create Service Credentials
 
 Intead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.composeForElasticsearch}} service instance. To connect to the service you'll need to create a set of service credentials.
 

@@ -8,7 +8,7 @@ Compose For Elasticsearch
 	index.md
 	getting_started.md
 	pricing.md
-	
+
 	{: .topicgroup}
 	The Service Dashboard
 		dashboard-overview.md
@@ -21,4 +21,11 @@ Compose For Elasticsearch
 	Connecting to Compose for Elasticsearch
 		connecting-bluemix-app.md
 		connecting-external.md
+	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	reference-versions.md
+	reference-architecture.md
+	reference-connections.md
+	reference-other-offerings.md
 	{: .navgroup-end}
