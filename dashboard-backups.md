@@ -61,7 +61,11 @@ GET /2016-07/deployments/:id/backups/
 2. Click the corresponding row to expand the options for the backup you want to restore.
 3. Click the **Restore** button. A message is displayed to let you know that a restore has started. The new service instance appears on your dashboard when provisioning starts, and has the generated name `elasticsearch-restore-[timestamp]`.
 
-### Restoring via the {{site.data.keyword.cloud_notm}} CLI
+When restoring from a backup, your data will be restored to the most recent minor version available for {{site.data.keyword.composeForElasticsearch}}. You can override this setting by restoring through the {{site.data.keyword.cloud_notm}} CLI and sending in the version you want to restore to.
+
+**Note:** You can only restore to a version that is available for provisioning.
+
+### Restoring via CLI
 
 Use the following steps to restore a backup from a running Elasticsearch service to a new Elasticsearch service using the {{site.data.keyword.cloud_notm}} CLI. 
 1. If you need to, [download and install the CLI](https://console.{DomainName}/docs/cli/index.html#overview). 
@@ -73,30 +77,17 @@ Use the following steps to restore a backup from a running Elasticsearch service
   ```  
   The response includes a list of all available backups for that service instance. Pick the backup you want to restore from and copy its ID.
 
-3. Log in with the appropriate account and credentials. `bx login` (or `bx login -help` to see all the login options).
+3. Log in with the appropriate account and credentials. `ibmcloud login` (or `ibmcloud login -help` to see all the login options).
 
-4. Switch to your Organization and Space `bx target -o "$YOUR_ORG" -s "YOUR_SPACE"`
+4. Switch to your Organization and Space `ibmcloud target -o "$YOUR_ORG" -s "YOUR_SPACE"`
 
 5. Use the `service create` command to provision a new service, and provide the source service and the specific backup that you are restoring in a JSON object. For example:
 ``` 
-bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
+ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
 ```
-  The _SERVICE_ field should be `compose-for-elasticsearch`, and _PLAN_ field should be either Standard or Enterprise depending on your environment. _SERVICE\_INSTANCE\_NAME_ is where you will put the name for your new service. The _source\_service\_instance\_id_ is the service instance id of the source of the backup; it can be obtained by running `bx cf service DISPLAY_NAME --guid` where _DISPLAY\_NAME_ is the name of the service the backup is from. 
+  The _SERVICE_ field should be `compose-for-elasticsearch`, and _PLAN_ field should be either Standard or Enterprise depending on your environment. _SERVICE\_INSTANCE\_NAME_ is where you will put the name for your new service. The _source\_service\_instance\_id_ is the service instance id of the source of the backup; it can be obtained by running `ibmcloud cf service DISPLAY_NAME --guid` where _DISPLAY\_NAME_ is the name of the service the backup is from. 
+
+  There is an optional JSON parameter "db_version" if you need to specify which version of Elasticsearch to restore to. This parameter is also used to [upgrade to a major version of Elasticsearch](./upgrading.html).
   
   Enterprise users also need to specify which cluster to deploy to in the JSON object with the `"cluster_id": "$CLUSTER_ID"` parameter.
-  
-
-### Migrating to a New Version
-
-Some major version upgrades are not available in the current running deployment. You will need to provision a new service that is running the upgraded version, and then migrate your data into it using a backup. This process is the same a restoring a backup above, except you will specify the version you would like to upgrade to.
-
-``` 
-bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'
-```
-
-For example, restoring an older version of a {{site.data.keyword.composeForElasticsearch}} service to a new service running Elasticsearch 6.2.2 looks like this:
-
-```
-bx service create compose-for-elasticsearch Standard migrated_elastic -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"6.2.2"  }'
-```
 

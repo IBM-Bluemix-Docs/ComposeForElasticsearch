@@ -21,6 +21,8 @@ Compose For Elasticsearch
 	Connecting to Compose for Elasticsearch
 		connecting-bluemix-app.md
 		connecting-external.md
+	
+	upgrading.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}

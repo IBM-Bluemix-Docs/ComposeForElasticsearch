@@ -29,7 +29,7 @@ Field Name|Description
 `uri_direct_1`|A secondary URI that can be used when connecting to the service. Formatted as for `uri`.
 `uri_health`|A `curl` command that requests the cluster health from the first haproxy.
 `uri_health_1`|A `curl` command that requests the cluster health from the second haproxy.
-`ca_certificate_base64` `(optional)`|A base64 encoded, self-signed certificate that is used to confirm that an application is connecting to the appropriate server. The certificate is only present on services that have a self-signed instead of a Let's Encrypt certificate. You need to decode the key before you can use it, as shown in the sample application.
+`ca_certificate_base64` `(optional)`|A base64 encoded, self-signed certificate that is used to confirm that an application is connecting to the appropriate server. The certificate is not present on services that have a Let's Encrypt certificate. You need to decode the key before you can use it, as shown in the sample application. You need to decode the key before you can use it, as shown in the sample application.
 `deployment_id`|An internal identifier for the service as created within Compose.
 `db_type`|The type of database that is offered by the service; in this case `elastic_search`.
 `name`|The database deployment name.
