@@ -16,7 +16,7 @@ lastupdated: "2017-07-13"
 
 All new {{site.data.keyword.composeForElasticsearch_full}} deployments accept only TLS/SSL (`https://`) secured connections that are backed with a Let's Encrypt certificate.
 
-You can connect to Elasticsearch in a number of ways, depending on which driver you are using. {{site.data.keyword.composeForElasticsearch}} uses the URI format to display messages, which is formatted as:
+You can connect to Elasticsearch in a number of ways, depending on which driver you are using. {{site.data.keyword.composeForElasticsearch}} uses the URI format to display messages:
 
 ```text
 https://[username]:[password]@[host]:[port]/
@@ -24,27 +24,28 @@ https://[username]:[password]@[host]:[port]/
 
 You can find your connection string on the *Overview* page of your {{site.data.keyword.composeForElasticsearch}} service.
 
-The examples here cover Node, Go, Java, Ruby, and Python. These examples set up a secure connection to {{site.data.keyword.composeForElasticsearch}} then call the Elasticsearch Cluster API to do a basic health check, which tells you how your cluster is doing. To familiarize yourself with Elasticsearch's API, look at the Elasticsearch [reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html) for Elasticsearch 2.4.
+The examples here cover Node, Go, Java, Ruby, and Python. They set up a secure connection to {{site.data.keyword.composeForElasticsearch}}, then call the Elasticsearch Cluster API to do a basic health check. To familiarize yourself with the Elasticsearch API, look at the [reference documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html) for Elasticsearch 2.4.
 
-The full code for this and subsequent examples can be found at [github.com/compose-ex/elasticsearchconns.](https://github.com/compose-ex/elasticsearchconns).
+You can find the full code for this and other examples at [github.com/compose-ex/elasticsearchconns](https://github.com/compose-ex/elasticsearchconns).
+{: .tip}
 
 ## Node and Elasticsearch
 
 ### Installing the Client
 {: #installing-client-node}
 
-Create your project then install the [`elasticsearch`](https://www.npmjs.com/package/elasticsearch) package with `npm install elasticsearch --save`. With that installed you can write the code to connect to your deployment.
+Create your project, then install the [`elasticsearch`](https://www.npmjs.com/package/elasticsearch) package with `npm install elasticsearch --save`. With that installed you can write the code to connect to your deployment.
 
 ### Creating the Connection
 {: #creating-connection-node}
 
-First, you will need to `require` the `elasticsearch` library that you have installed in your project's `node_modules` folder and saved as a dependency in the `package.json` file.
+First, you need to `require` the `elasticsearch` library that you have installed in your project's `node_modules` folder and saved as a dependency in the `package.json` file.
 
 ```javascript
 const elasticsearch = require('elasticsearch');
 ```
 
-The elasticsearch package offers a Client prototype which you use to create a connection to Elasticsearch:
+The elasticsearch package offers a Client prototype, which you use to create a connection to Elasticsearch:
 
 ```javascript
 const client = new elasticsearch.Client({
@@ -55,9 +56,9 @@ const client = new elasticsearch.Client({
 });
 ```
 
-Start by creating a variable `client` and a connection using the `elasticsearch` library's `Client` prototype. This takes, among other parameters, a `host` key with an array value which should contain your connection strings URLs from the Overview page.
+Start by creating a variable `client` and a connection by using the `elasticsearch` library's `Client` prototype. This takes, among other parameters, a `host` key with an array value, which should contain your connection strings URLs from the Overview page.
 
-The client object implements the [wide API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-4.html). In this example though, you use that API to query the health of the cluster by means of the `cluster.health` call.
+The client object implements the [wide API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-4.html). In this example though, you use that API to query the health of the cluster by using the `cluster.health` call.
 
 ```javascript
 client.cluster.health((err, res) => {
@@ -68,7 +69,7 @@ client.cluster.health((err, res) => {
 });
 ```
 
-The call returns a Javascript object with details of the cluster's health. The code then prints that, closes the client and exits.
+The call returns a JavaScript object with details of the cluster's health, prints the results, closes the client and exits.
 
 ```shell
 { cluster_name: 'latest-elasticsearch',
@@ -93,11 +94,11 @@ The call returns a Javascript object with details of the cluster's health. The c
 ### Installing the client
 {: #installing-client-go}
 
-There are a few drivers that work with the Go language. This example uses [Elastic](https://github.com/olivere/elastic) - see the documentation and examples on the [Elastic](https://olivere.github.io/elastic/) site and [GoDocs](https://godoc.org/gopkg.in/olivere/elastic.v3) for Elastic. As of writing, Compose supports Elasticsearch 2.4.0, which means that you have to use version 3.0 of the Elastic package. 
+There are a few drivers that work with the Go language. This example uses [Elastic](https://github.com/olivere/elastic) - see the documentation and examples on the [Elastic](https://olivere.github.io/elastic/) site and [GoDocs](https://godoc.org/gopkg.in/olivere/elastic.v3) for Elastic. As of writing, Compose supports Elasticsearch 2.4.0, which means that you must use version 3.0 of the Elastic package. 
 
 To get the Elastic package, run `go get gopkg.in/olivere/elastic.v3` in your terminal.
 
-In the code example, all of the code is in the `main` function.  First, create a `client` and insert the connection strings into the `SetURL` method.
+In the code example, all of the code is in the `main` function. First, create a `client` and insert the connection strings into the `SetURL` method.
 
 ```go
 package main
@@ -120,7 +121,7 @@ func main() {
 			}
 ```
 
-After setting up the connection and creating the `client`, you can call its `ClusterHealth` method to set up a request for the cluster health. Invoking the `Do` method on the result of that executes that request. The method returns a `Health` struct and prints the results into your terminal. 
+After you set up the connection and creating the `client`, you can call its `ClusterHealth` method to set up a request for the cluster health. Invoking the `Do` method on the result of that executes the request. The method returns a `Health` struct and prints the results into your terminal. 
 
 ```go
 // create a variable that stores the result 
@@ -144,12 +145,12 @@ After setting up the connection and creating the `client`, you can call its `Clu
 ### Installing the client
 {: #installing-client-java}
 
-The client in the following example is [Jest](https://github.com/searchbox-io/Jest), which provides you with an easy HTTP REST client for Java. You can follow their installation guide and view code examples on their [Github repository](https://github.com/searchbox-io/Jest/tree/master/jest).
+The client in the following example is [Jest](https://github.com/searchbox-io/Jest), which provides you with an easy HTTP REST client for Java. You can follow their installation guide and view code examples on their [GitHub repository](https://github.com/searchbox-io/Jest/tree/master/jest).
 
 ### Creating a connection
 {: #creating-connection-java}
 
-In the example all the code is contained within the `main` method. First, add ` BasicConfigurator.configure();` from Apache's Log4j library to show the connection process in the console. If you do not add it, you can still connect to your deployment but you will receive a warning telling you to use Log4j. 
+In the example all the code is contained within the `main` method. First, add ` BasicConfigurator.configure();` from Apache's Log4j library to show the connection process in the console. If you do not add it, you can still connect to your deployment but you receive a warning to use Log4j. 
 
 ```java
 public class ElasticsearchConnect {
@@ -169,7 +170,7 @@ public class ElasticsearchConnect {
                 .multiThreaded(true)
                 .build());
 ```
-Next, you will create a new `JestClientFactory`. The `factory` provides you with a `setHttpClientConfig` method to configure your client. Use `Arrays.asList` within Jest's `Builder` method to create an array containing both of your Compose Elasticsearch connection strings. Then, you invoke the `build` method to create the connection. 
+Next, create a new `JestClientFactory`. The `factory` provides you with a `setHttpClientConfig` method to configure your client. Use `Arrays.asList` within Jest's `Builder` method to create an array that contains both of your Compose Elasticsearch connection strings. Then, you invoke the `build` method to create the connection. 
 
 ```java
         JestClient client = factory.getObject();
@@ -184,7 +185,7 @@ Next, you will create a new `JestClientFactory`. The `factory` provides you with
 }
 ```
 
-After the connection has been built, you can create a `JestClient` instance from the connection factory object `factory.getObject()`. The `JestClient` is used to invoke the `execute` method on any Elasticsearch queries that you build. This example uses `build` to build a `Health` query to look at the health of the cluster using Elasticsearch's builder classes. 
+After the connection has been built, you can create a `JestClient` instance from the connection factory object `factory.getObject()`. The `JestClient` is used to invoke the `execute` method on any Elasticsearch queries that you build. This example uses `build` to build a `Health` query to look at the health of the cluster by using Elasticsearch's builder classes. 
 
 After you have built a query, use `JestResult` to get the documents and print it to the terminal as a JSON object then close down the client with `shutdownClient`. 
 
@@ -203,19 +204,19 @@ To use Elasticsearch with Ruby, install the [Elasticsearch Ruby gem](https://git
 ### Creating a connection
 {: #creating-connection-ruby}
 
-First, you will have to `require` the `elasticsearch` library into your Ruby file.
+First, you have to `require` the `elasticsearch` library into your Ruby file.
 
 ```ruby
 require 'elasticsearch'
 ```
 
-Then create a new client by defining a variable and assigning it to the `ElasticSearch::Client` constructor. Within the constructor, use the `urls` argument and place your connection strings there. Other arguments such as `host`, `port`, `user` and `password` are available and allow you to parse your connection string, but it will accept the entire connection string.
+Then, create a new client by defining a variable and assigning it to the `ElasticSearch::Client` constructor. Within the constructor, use the `urls` argument and place your connection strings there. Other arguments such as `host`, `port`, `user, and `password` are available and allow you to parse your connection string, but it accepts the entire connection string.
 
 ```ruby
 client = Elasticsearch::Client.new urls: 'https://username:password@portal113-2.latest-elasticsearch.compose-3.composedb.com:10113/, https://username:password@portal164-1.latest-elasticsearch.compose-3.composedb.com:10164/'
 ```
 
-Then to view the health of your Elasticsearch cluster, you will simply use the connection `client` you created and use the classes and methods provided by the [Elasticsearch API](http://www.rubydoc.info/gems/elasticsearch-api). This example prints a hash of the results of the cluster's health to the terminal.
+Then, to view the health of your Elasticsearch cluster, you use the connection `client` you created and use the classes and methods that are provided by the [Elasticsearch API](http://www.rubydoc.info/gems/elasticsearch-api). This example prints a hash of the results of the cluster's health to the terminal.
 
 ```ruby
 p client.cluster.health
@@ -230,18 +231,18 @@ p client.cluster.health
 ### Installing the client
 {: #installing-client-python}
 
-Using Elasticsearch with Python requires you to install the library using `pip install elasticsearch` and then importing it into your Elasticsearch project. With that installed you will `import` the library into your Python project.
+Using Elasticsearch with Python requires you to install the library by using `pip install elasticsearch` and then importing it into your Elasticsearch project. With that installed you `import` the library into your Python project.
 
 ### Creating a connection
 {: #creating-connection-python}
 
-Like the Ruby connection, you will first need to import Elasticsearch into your project file:
+Like the Ruby connection, you first need to import Elasticsearch into your project file:
 
 ```python
 from elasticsearch import Elasticsearch
 ```
 
-Next, define a variable and assign it to the `Elasticsearch` class which contains an array with your connection strings. The class will allow you to define `hosts` as an array or as a single connection string, or as a dictionary including a `host` and `port`. It also has arguments to set sniffing options and SSL/TLS options.
+Next, define a variable and assign it to the `Elasticsearch` class, which contains an array with your connection strings. The class allows you to define `hosts` as an array or as a single connection string, or as a dictionary including a `host` and `port`. It also has arguments to set sniffing options and SSL/TLS options.
 
 ```python
 es = Elasticsearch(
@@ -253,13 +254,13 @@ es = Elasticsearch(
 )
 ```
 
-Then to print the cluster's health all you need to use is the `cluster` class to invoke the `health` method, which is printed on the terminal using the `print` function. Other classes and methods that are available are found in Python's [Elasticsearch API documentation](http://elasticsearch-py.readthedocs.io/en/master/api.html).
+Then, to print the cluster's health all you need to use is the `cluster` class to invoke the `health` method, which is printed on the terminal by using the `print` function. Other classes and methods that are available are found in Python's [Elasticsearch API documentation](http://elasticsearch-py.readthedocs.io/en/master/api.html).
 
 ```python
 print(es.cluster.health())
 ```
 
-This will result in printing a dictionary of your cluster's health to the terminal.
+This prints a dictionary of your cluster's health to the terminal.
 
 ```shell
 {u'status': u'green', u'number_of_nodes': 3, u'unassigned_shards': 0, u'number_of_pending_tasks': 0, u'number_of_in_flight_fetch': 0, u'timed_out': False, u'active_primary_shards': 21, u'task_max_waiting_in_queue_millis': 0, u'cluster_name': u'latest-elasticsearch', u'relocating_shards': 0, u'active_shards_percent_as_number': 100.0, u'active_shards': 57, u'initializing_shards': 0, u'number_of_data_nodes': 3, u'delayed_unassigned_shards': 0}

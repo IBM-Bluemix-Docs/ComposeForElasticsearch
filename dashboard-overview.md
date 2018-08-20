@@ -19,9 +19,9 @@ The _Overview_ page shows you information about your {{site.data.keyword.cloud}}
 
 ## Deployment Details
 
-The _Deployment Details_ panel shows details of your service.
+The _Deployment Details_ pane shows details of your service.
 
-![Deployment Details](./images/elastic_search-deployment-details.png "A view of the Deployment Details panel")
+![Deployment Details](./images/elastic_search-deployment-details.png "A view of the Deployment Details pane")
 
 ### Type
 
@@ -33,18 +33,18 @@ An internal identifier for the service.
 
 ### Usage
 
-The size of your database and the amount of storage provided by your service plan.
+The size of your database and the amount of storage that is provided by your service plan.
 
 
 ## Connection Strings
 
 Connection Strings can be used by some client libraries. They contain all the information that is needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
-You can find each Connection String for your service in a different tab in the _Connection Strings_ panel.
+You can find each Connection String for your service in a different tab in the _Connection Strings_ pane.
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries. It contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries. It contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 ### Health
 
@@ -54,6 +54,8 @@ An example call that you can use to find out the health of the Elasticsearch clu
 
 You can manage your {{site.data.keyword.composeForElasticsearch}} service through the {{site.data.keyword.cloud_notm}} Compose API.
 
+For more documentation and reference for using the {{site.data.keyword.cloud_notm}} Compose API, across all {{site.data.keyword.cloud_notm}} Compose services, read [The {{site.data.keyword.cloud_notm}} Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/).
+
 ### Foundation Endpoint
 
 The foundation endpoint is composed of the region the service resides in and the service instance ID. It is at the start of every endpoint.
@@ -61,7 +63,3 @@ The foundation endpoint is composed of the region the service resides in and the
 ### Deployment ID
 
 The deployment ID is necessary for most calls, and identifies the specific deployment instance.
-
-### Reference
-
-For more documentation and reference for using the {{site.data.keyword.cloud_notm}} Compose API, across all {{site.data.keyword.cloud_notm}} Compose services, read [The {{site.data.keyword.cloud_notm}} Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api/).

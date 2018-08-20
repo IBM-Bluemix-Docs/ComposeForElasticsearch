@@ -14,10 +14,10 @@ lastupdated: "2018-05-04"
 # About {{site.data.keyword.composeForElasticsearch}}
 {: #about-compose-for-elasticsearch}
 
-{{site.data.keyword.composeForElasticsearch_full}} combines the power of a full text search engine with the indexing strengths of a JSON document database. Together they create a powerful tool for rich data analysis on large volumes of data. With Elasticsearch, your searching can be scored for exactness, so you can dig through your data set for those close matches and near misses that you might be missing.
+{{site.data.keyword.composeForElasticsearch_full}} combines the power of a full text search engine with the indexing strengths of a JSON document database. Together they create a powerful tool for rich data analysis on large volumes of data. Elasticsearch can score your searches for exactness, so you can dig through your data set for those close matches and near misses that you might be missing.
 {:shortdesc}
 
-**Note:** Any Compose service instances that were provisioned before 14 September 2016 that are still active can still be used and directly accessed at [https://www.compose.com/](https://www.compose.com). Any Compose service instance that is provisioned from this point forward is directly accessed and used within your {{site.data.keyword.cloud}} account.
+**Note:** Any Compose service instances that were provisioned before 14 September 2016, and which are still active, can be directly accessed at [https://www.compose.com/](https://www.compose.com). Any Compose service instance that is provisioned from this point forward is directly accessed and used from your {{site.data.keyword.cloud}} account.
 
 ## Creating a {{site.data.keyword.composeForElasticsearch}} service instance
 
@@ -31,13 +31,13 @@ When you provision your {{site.data.keyword.composeForElasticsearch}} instance, 
 
 You can manage your service from the service dashboard. Here you can find information about your {{site.data.keyword.cloud}} Compose database and how to connect to it. You can also:
 
-- manage your backups
-- allocate more resources for your service 
-- use whitelists to restrict access to your databases.
+- Manage your backups
+- Allocate more resources for your service 
+- Use whitelists to restrict access to your databases.
 
 For more information, see [Settings](./dashboard-settings.html).
 
-{{site.data.keyword.composeForElasticsearch}} relies on Cloud Foundry roles to manage access to the service. Only users with the Developer role can see or use the service dashboard. For more information on Cloud Foundry roles, see the [Cloud Foundry access](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) and the [Managing Cloud Foundry access](https://console.{DomainName}/docs/iam/mngcf.html#mngcf) pages.
+{{site.data.keyword.composeForElasticsearch}} relies on Cloud Foundry roles to manage access to the service. Only users with the Developer role can see or use the service dashboard. For more information about Cloud Foundry roles, see the [Cloud Foundry access](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) and the [Managing Cloud Foundry access](https://console.{DomainName}/docs/iam/mngcf.html#mngcf) pages.
 {: .tip}
 
 ## Connecting to {{site.data.keyword.composeForElasticsearch}}
