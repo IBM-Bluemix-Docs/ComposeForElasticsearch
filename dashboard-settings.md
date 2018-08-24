@@ -44,7 +44,7 @@ If you want to restrict access to your databases, you can whitelist specific IP 
 The *IP* field can take a single complete IPv4 address or IPv6 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. 
 
 Although the IP entry allows for IPv6, no Compose deployments are currently available to IPv6 networking and so these addresses cannot be filtered on.
-{: .tip}
+{: tip}
 
 ### Netmasks
 To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified. That means entering, for example, `192.168.1.0/24` rather than `192.168.1/24`.

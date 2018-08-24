@@ -44,7 +44,7 @@ Elasticsearch usually supports reading indices that were created in the previous
 If you have indices that were created in Elasticsearch 2.x, they are **not** readable in Elasticsearch 6.x. You will need to reindex those indices in Elasticsearch 5.x before migrating to 6.x. If your data contains indices that were made in Elasticsearch 2.x and you attempt to migrate to Elasticsearch 6.x, the nodes will fail to start and the migration will fail.
 
 [Re-indexing can be done in-place](https://www.elastic.co/guide/en/elasticsearch/reference/current/reindex-upgrade-inplace.html) in Elasticsearch 5.x before migrating to 6.x through the [Reindex API](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html).
-{: .tip}
+{: tip}
 
 #### Index mappings
 

@@ -27,7 +27,7 @@ You can find your connection string on the *Overview* page of your {{site.data.k
 The examples here cover Node, Go, Java, Ruby, and Python. They set up a secure connection to {{site.data.keyword.composeForElasticsearch}}, then call the Elasticsearch Cluster API to do a basic health check. To familiarize yourself with the Elasticsearch API, look at the [reference documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html) for Elasticsearch 2.4.
 
 You can find the full code for this and other examples at [github.com/compose-ex/elasticsearchconns](https://github.com/compose-ex/elasticsearchconns).
-{: .tip}
+{: tip}
 
 ## Node and Elasticsearch
 

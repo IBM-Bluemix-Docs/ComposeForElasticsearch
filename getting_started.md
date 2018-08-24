@@ -23,7 +23,7 @@ Make sure that you have an [{{site.data.keyword.cloud_notm}} account][ibm_cloud_
 
 You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-scm.com/downloads).
 
-## Step 1: Create a {{site.data.keyword.composeForElasticsearch}} service instance
+## Step 1. Create a {{site.data.keyword.composeForElasticsearch}} service instance
 {: #create-service}
 
 You can create a {{site.data.keyword.composeForElasticsearch}} service from the [{{site.data.keyword.composeForElasticsearch}} page](https://console.{DomainName}/catalog/services/compose-for-elasticsearch/) in the {{site.data.keyword.cloud_notm}} catalog.
@@ -32,7 +32,7 @@ Choose a service name, region, organization and space to provision the service i
 
 Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
 
-## Step 2: Clone the Hello World sample app from GitHub
+## Step 2. Clone the Hello World sample app from GitHub
 
 Clone the Hello World app to your local environment from your terminal by using the following command:
 
@@ -40,7 +40,7 @@ Clone the Hello World app to your local environment from your terminal by using 
 git clone https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs.git
 ```
 
-## Step 3: Install the app dependencies
+## Step 3. Install the app dependencies
 
 Use npm to install dependencies.
 
@@ -56,11 +56,11 @@ Use npm to install dependencies.
   npm install
   ```
 
-## Step 4: Download and install the {{site.data.keyword.cloud_notm}} CLI tool
+## Step 4. Download and install the {{site.data.keyword.cloud_notm}} CLI tool
 
-The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For details, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate with {{site.data.keyword.cloud_notm}} from your terminal or command line. For more information, see [Download and install {{site.data.keyword.cloud_notm}} CLI](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
 
-## Step 5: Connect to {{site.data.keyword.cloud_notm}}
+## Step 5. Connect to {{site.data.keyword.cloud_notm}}
 
 1. Connect to {{site.data.keyword.cloud_notm}} in the command line tool and follow the prompts to log in.
 
@@ -69,7 +69,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
   ```
 
   If you have a federated user ID, use the `ibmcloud login --sso` command to log in with your single sign-on ID. See [Logging in with a federated ID](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) to learn more.
-  {: .tip}
+  {: tip}
 
 2. Make sure you're targetting the correct {{site.data.keyword.cloud_notm}} org atargeting
   ```
@@ -78,7 +78,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 
   Choose from the options provided, by using the same values that you used when you created the service.
 
-## Step 6: Update the app's manifest file
+## Step 6. Update the app's manifest file
 {: #update-manifest}
 
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your file.
@@ -99,10 +99,10 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 3. Change the `name` value. The value that you choose is displayed in your {{site.data.keyword.cloud_notm}} dashboard.
 4. Update the `services` value to match the name of the service you created in [Create a {{site.data.keyword.composeForElasticsearch}} service instance](#create-service). 
 
-## Step 7: Push the app to {{site.data.keyword.cloud_notm}}.
+## Step 7. Push the app to {{site.data.keyword.cloud_notm}}.
 
 This step fails if the service provisioning from [Step 1](#create-service) is not complete. You can check its progress by going to the _Manage_ view for the service.
-{: .tip}
+{: tip}
 
 When you push the app, it is automatically bound to the service specified in the manifest file.
 
@@ -110,27 +110,27 @@ When you push the app, it is automatically bound to the service specified in the
 ibmcloud cf push
 ```
 
-## Step 8: Check that the app is connected to your {{site.data.keyword.composeForElasticsearch}} service
+## Step 8. Check that the app is connected to your {{site.data.keyword.composeForElasticsearch}} service
 
 1. Navigate to your {{site.data.keyword.composeForElasticsearch}} service dashboard
 2. Select _Connections_ from the dashboard menu. Your application should be listed under _Connected Applications_.
 
-If your application is not listed, repeat Steps 7 ad 8, making sure that you have entered the correct details in [manifest.yml](#update-manifest).
+If your application is not listed, repeat Steps 7 and 8, making sure that you enter the correct details in [manifest.yml](#update-manifest).
 
-## Step 9: Use the app
+## Step 9. Use the app
 
-Now, when you visit `<host>.mybluemix.net/` you can view the contents of your {{site.data.keyword.composeForElasticsearch}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you'll see any words and definitions you've already added are now listed.
+When you visit `<host>.mybluemix.net/`, you can view the contents of your {{site.data.keyword.composeForElasticsearch}} collection. As you add words and their definitions, they are added to the database and displayed. If you stop and restart the app, you'll see any words and definitions you've already added are now listed.
 
 ## Running the app locally
 
-Intead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.composeForElasticsearch}} service instance. To connect to the service, you need to create a set of service credentials.
+Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it locally to test the connection to your {{site.data.keyword.composeForElasticsearch}} service instance. To connect to the service, you need to create a set of service credentials.
 
 1. From your {{site.data.keyword.cloud_notm}} dashboard, open your {{site.data.keyword.composeForElasticsearch}} service instance.
 2. Select _Service Credentials_ from the main menu to open the Service Credentials view.
 3. Click **New Credential**.
 4. Choose a name for your credentials and click **Add**.
 5. Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
-6. In your editor of choice, create a new file with the following, inserting your credentials as shown:
+6. In your editor of choice, create a new file with the following, inserting your credentials.
 
   ```
   {
@@ -146,7 +146,7 @@ Intead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it l
 6. Save the file as `vcap-local.json` in the directory where the sample app is located.
 
 To avoid accidentally exposing your credentials when you push an application to GitHub or {{site.data.keyword.cloud_notm}}, you should make sure that the file that contains your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory you'll see that `vcap-local.json` is listed in both, so it won't be included in the files that are uploaded when you push the app to either GitHub or {{site.data.keyword.cloud_notm}}.
-{: .tip}
+{: tip}
 
 Now start the local server.
 

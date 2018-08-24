@@ -22,7 +22,7 @@ An {{site.data.keyword.composeForElasticsearch_full}} service consists of three 
 
 All {{site.data.keyword.composeForElasticsearch}} services have encryption at rest. Your data resides on servers that have volume-level encryption enabled. 
 
-Because {{site.data.keyword.composeForElastcisearch}} is a managed service, it's possible for {{site.data.keyword.cloud}} Compose operators to see data. In addition to the disk encryption, we recommend that you encrypt personal information before storing it in the database or use extensions or features to enable encryption on the database itself. While these methods might impact usability or performance, it's good practice to ensure that personal information is protected with encryption.
+Because {{site.data.keyword.composeForElasticsearch}} is a managed service, it's possible for {{site.data.keyword.cloud}} Compose operators to see data. In addition to the disk encryption, we recommend that you encrypt personal information before storing it in the database or use extensions or features to enable encryption on the database itself. While these methods might impact usability or performance, it's good practice to ensure that personal information is protected with encryption.
 
 ## Auto-scaling
 
@@ -31,4 +31,4 @@ Resources are scaled automatically based on the total disk storage use of the El
 Auto-scaling is designed to respond to the short-to-medium term trends of your database. Every hour, your service is checked and if it is running short on disk space, then more units are allocated to the deployment. Re-allocation happens once in every 24-hour period. If you are planning on running operations that might put a spike in the usual RAM usage, or any data operations that could overflow your allotted storage, you should manually scale your service's resources up first to avoid hitting any resource limits that would affect cluster operations.
 
 Auto-scaling does not scale down deployments when disk/memory usage shrinks. The resources provisioned to your databases will remain for your future needs, or until you scale down your deployment manually.
-{: .tip}
+{: tip}
