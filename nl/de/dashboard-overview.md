@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2016,2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2017-12-05"
 
 Sie können Ihren {{site.data.keyword.composeForElasticsearch_full}}-Service über das Service-Dashboard verwalten.
 
-Auf der Seite _Übersicht_ finden Sie Informationen zu Ihrer {{site.data.keyword.cloud}} Compose-Datenbank. Die Übersicht enthält die zentralen Identifikationsinformationen sowie die aktuelle Ressourcennutzung. Außerdem finden Sie einen Abschnitt für Verbindungszeichenfolgen, die Sie mit Tools verwenden können, und Angaben zum Herstellen von Verbindungen zu Ihrer Datenbank mithilfe von Tools.
+Auf der Seite _Übersicht_ finden Sie Informationen zu Ihrer {{site.data.keyword.cloud}} Compose-Datenbank. Die Übersicht enthält die zentralen Identifikationsinformationen sowie die aktuelle Ressourcennutzung. Außerdem ist ein Abschnitt für Verbindungszeichenfolgen vorhanden, die Sie für die Verbindungsherstellung mit Ihrer Datenbank verwenden können.
 
 ## Bereitstellungsdetails
 
@@ -27,7 +27,7 @@ Die Anzeige _Bereitstellungsdetails_ enthält Details zu Ihrem Service.
 
 Der Datenbanktyp, der vom Service angeboten wird, und die Datenbankversion, die Ihr Service verwendet. Wenn eine neuere Datenbankversion verfügbar ist, wird eine Benachrichtigung zusammen mit einem Link zum Abschnitt [Upgradeversion](/docs/services/ComposeForElasticsearch/dashboard-settings.html#upgrade-version) Ihres Service-Dashboards angezeigt.
 
-### Name
+### ID
 
 Eine interne ID für den Service.
 
@@ -38,13 +38,13 @@ Die Größe Ihrer Datenbank und der von Ihrem Serviceplan bereitgestellte Speich
 
 ## Verbindungszeichenfolgen
 
-Verbindungszeichenfolgen können von bestimmten Clientbibliotheken verwendet werden und enthalten alle Informationen, die andere Bibliotheken zum Herstellen einer Verbindung benötigen. Informationen dazu, wie sich mithilfe einer Verbindungszeichenfolge eine Verbindung zu Ihrem Service herstellen lässt, finden Sie im Abschnitt [Externe Anwendung verbinden](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Verbindungszeichenfolgen können von bestimmten Clientbibliotheken verwendet werden. Sie enthalten alle Informationen, die andere Bibliotheken zum Herstellen einer Verbindung benötigen. Informationen dazu, wie sich mithilfe einer Verbindungszeichenfolge eine Verbindung zu Ihrem Service herstellen lässt, finden Sie im Abschnitt [Externe Anwendung verbinden](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 Die einzelnen Verbindungszeichenfolgen für Ihren Service befinden sich jeweils auf einer eigenen Registerkarte der Anzeige _Verbindungszeichenfolgen_.
 
 ### HTTPS
 
-Eine per URI formatierte Verbindungszeichenfolge kann von bestimmten Clientbibliotheken verwendet werden und enthält alle Informationen, die andere Bibliotheken zum Herstellen einer Verbindung benötigen. Informationen dazu, wie sich mithilfe der Verbindungszeichenfolge eine Verbindung herstellen lässt, finden Sie im Abschnitt [Externe Anwendung verbinden](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Eine per URI formatierte Verbindungszeichenfolge, die von bestimmten Clientbibliotheken verwendet werden kann. Sie enthält alle Informationen, die andere Bibliotheken zum Herstellen einer Verbindung benötigen. Informationen dazu, wie sich mithilfe der Verbindungszeichenfolge eine Verbindung herstellen lässt, finden Sie im Abschnitt [Externe Anwendung verbinden](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 ### Status
 
@@ -56,7 +56,7 @@ Sie können Ihren {{site.data.keyword.composeForElasticsearch}}-Service über di
 
 ### Basisendpunkt
 
-Der Basisendpunkt setzt sich aus der Region, in der sich der Service befindet, und der Serviceinstanz-ID zusammen. Er steht am Anfang von jedem Endpunkt.
+Der Basisendpunkt setzt sich aus der Region, in der sich der Service befindet, und der Serviceinstanz-ID zusammen. Er steht am Anfang eines jeden Endpunkts.
 
 ### Bereitstellungs-ID
 

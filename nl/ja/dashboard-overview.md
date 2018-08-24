@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2016,2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2017-12-05"
 
 サービス・ダッシュボードから {{site.data.keyword.composeForElasticsearch_full}} サービスを管理できます。
 
-{{site.data.keyword.cloud}} Compose データベースに関する情報は_「概要」_ページに表示されます。 概要には、必要不可欠な識別情報と現在のリソース使用率が含まれます。 ツールで使用する接続ストリングのセクションもあります。接続ストリングを使用してツールからデータベースに接続することもできます。
+{{site.data.keyword.cloud}} Compose データベースに関する情報は_「概要」_ページに表示されます。 概要には、必要不可欠な識別情報と現在のリソース使用率が含まれます。 データベース接続で使用できる接続ストリングのセクションもあります。
 
 ## デプロイメントの詳細 (Deployment Details)
 
@@ -27,7 +27,7 @@ _「デプロイメントの詳細 (Deployment Details)」_パネルには、サ
 
 サービスによって提供されるデータベースのタイプ、およびサービスが使用するデータベースのバージョン。 より新しいバージョンのデータベースが利用可能な場合は、通知が表示され、サービス・ダッシュボードの[「バージョンのアップグレード」](/docs/services/ComposeForElasticsearch/dashboard-settings.html#upgrade-version)セクションへのリンクが示されます。
 
-### 名前
+### ID
 
 サービスの内部 ID。
 
@@ -38,13 +38,13 @@ _「デプロイメントの詳細 (Deployment Details)」_パネルには、サ
 
 ## 接続ストリング (Connection Strings)
 
-接続ストリングはいくつかのクライアント・ライブラリーで使用でき、他のライブラリーが接続するために必要なすべての情報を含んでいます。 接続ストリングを使用してサービスに接続する方法については、[外部アプリケーションの接続](/docs/services/ComposeForElasticsearch/connecting-external.html)を参照してください。
+接続ストリングはいくつかのクライアント・ライブラリーで使用できます。 接続ストリングには、他のライブラリーが接続するために必要なすべての情報が含まれています。 接続ストリングを使用してサービスに接続する方法については、[外部アプリケーションの接続](/docs/services/ComposeForElasticsearch/connecting-external.html)を参照してください。
 
 _「接続ストリング」_パネルの各タブで、サービスで使用できるそれぞれの接続ストリングを確認できます。
 
 ### HTTPS
 
-いくつかのクライアント・ライブラリーで使用できる URI フォーマットの接続ストリングで、他のライブラリーが接続するために必要なすべての情報を含んでいます。 接続ストリングを使用して接続する方法については、[外部アプリケーションの接続](/docs/services/ComposeForElasticsearch/connecting-external.html)を参照してください。
+いくつかのクライアント・ライブラリーで使用できる URI フォーマットの接続ストリング。 接続ストリングに、他のライブラリーからの接続に必要な情報をすべて組み込みます。 接続ストリングを使用して接続する方法については、[外部アプリケーションの接続](/docs/services/ComposeForElasticsearch/connecting-external.html)を参照してください。
 
 ### 正常性
 

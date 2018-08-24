@@ -26,7 +26,7 @@ lastupdated: "2018-04-19"
 
 ## 기존 백업 보기
 
-데이터베이스의 일간 백업이 자동으로 스케줄됩니다. 기존 백업을 보려면 다음을 수행하십시오.
+데이터베이스의 일간 백업이 자동으로 스케줄됩니다. 서비스 대시보드에서 기존 백업을 볼 수 있습니다.
 
 1. 서비스 대시보드로 이동하십시오.
 2. 탭에서 **백업**을 클릭하여 _백업_ 페이지를 여십시오. 사용 가능한 백업 목록이 표시됩니다.
@@ -45,20 +45,26 @@ https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INST
 
 ## 수동 백업 작성
 
-스케줄된 백업은 물론 수동으로 백업을 작성할 수도 있습니다. 수동 백업을 작성하려면 단계에 따라 기존 백업을 확인한 후 사용 가능한 백업 목록 위에 있는 **지금 백업**을 클릭하십시오. 백업이 시작되었음을 알리는 메시지가 표시되고 '보류 중인' 백업이 사용 가능한 백업 목록에 추가됩니다.
+수동 백업을 작성하려면 단계에 따라 기존 백업을 확인한 후 사용 가능한 백업 목록 위에 있는 **지금 백업**을 클릭하십시오. 백업이 시작되었음을 알리는 메시지가 표시되고 '보류 중인' 백업이 사용 가능한 백업 목록에 추가됩니다.
 
 ### API를 사용하여 백업 작성
 
-`POST /2016-07/deployments/:id/backups`를 통해 백업 엔드포인트에 POST 요청을 전송하여 수동 백업을 시작하십시오. 실행 중인 백업에 대한 정보와 레시피 ID를 즉시 리턴합니다. 백업 엔드포인트를 확인하여 백업이 완료되었는지 알아보고 백업을 사용하기 전에 해당 backup_id를 찾아야 합니다. `GET /2016-07/deployments/:id/backups/`를 사용하십시오.
+`POST /2016-07/deployments/:id/backups`를 통해 백업 엔드포인트에 POST 요청을 전송하여 수동 백업을 시작하십시오. 실행 중인 백업에 대한 정보와 레시피 ID를 즉시 리턴합니다. 백업을 사용하기 전에 백업 엔드포인트를 확인하여 백업이 완료되었는지 확인하고 ` backup_id ` 값을 찾아야 합니다.
+
+```
+GET /2016-07/deployments/:id/backups/
+```
 
 ## 백업 복원
 
-백업을 새 서비스 인스턴스에 복원하려면 단계에 따라 기존 백업을 확인한 후 해당 행을 클릭하여 복원할 백업에 대한 옵션을 펼치십시오. **복원** 단추를 클릭하십시오. 복원이 시작되었음을 알리는 메시지가 표시됩니다. 새 서비스 인스턴스가 자동으로 "elasticsearch-restore-[timestamp]"로 이름 지정되고 프로비저닝이 시작될 때 대시보드에 표시됩니다.
+1. 기존 백업을 보려면 다음 단계를 수행하십시오.
+2. 해당 행을 클릭하여 복원할 백업 옵션을 펼치십시오.
+3. **복원** 단추를 클릭하십시오. 복원이 시작되었음을 알리는 메시지가 표시됩니다. 프로비저닝이 시작되면 새로운 서비스 인스턴스가 대시보드에 표시되고 생성된 이름은 `elasticsearch-restore-[timestamp]`입니다.
 
 ### {{site.data.keyword.cloud_notm}} CLI를 통해 복원
 
 {{site.data.keyword.cloud_notm}} CLI를 사용하여 실행 중인 Elasticsearch 서비스의 백업을 새 Elasticsearch 서비스에 복원하려면 다음 단계를 사용하십시오. 
-1. 필요한 경우 [이를 다운로드하여 설치](https://console.bluemix.net/docs/cli/index.html#overview)하십시오. 
+1. 필요한 경우 [CLI를 다운로드하여 설치](https://console.{DomainName}/docs/cli/index.html#overview)하십시오. 
 2. 서비스에 대한 _백업_ 페이지에서 복원하려는 백업을 찾아 백업 ID를 복사하십시오.  
   **또는**  
   `GET /2016-07/deployments/:id/backups`를 사용하여 Compose API를 통해 백업 및 해당 ID를 찾으십시오. 기반 엔드포인트와 서비스 인스턴스 ID가 모두 서비스의 _개요_에 표시됩니다. 예를 들어, 다음과 같습니다. 
@@ -75,7 +81,7 @@ https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INST
 ``` 
 bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": "$BACKUP_ID" }'
 ```
-  _SERVICE_ 필드는 compose-for-elasticsearch여야 하며 _PLAN_ 필드는 사용자 환경에 따라 Standard 또는 Enterprise여야 합니다. _SERVICE\_INSTANCE\_NAME_은 새 서비스의 이름을 배치할 위치입니다. _source\_service\_instance\_id_는 백업 소스의 서비스 인스턴스 ID이며 `bx cf service DISPLAY_NAME --guid`를 실행하여 얻을 수 있습니다. 여기서 _DISPLAY\_NAME_은 백업이 생성된 서비스의 이름입니다. 
+  _SERVICE_ 필드는 `compose-for-elasticsearch`여야 하며 _PLAN_ 필드는 사용자 환경에 따라 Standard 또는 Enterprise여야 합니다. _SERVICE\_INSTANCE\_NAME_은 새 서비스의 이름을 배치할 위치입니다. _source\_service\_instance\_id_는 백업 소스의 서비스 인스턴스 ID이며 `bx cf service DISPLAY_NAME --guid`를 실행하여 얻을 수 있습니다. 여기서 _DISPLAY\_NAME_은 백업이 생성된 서비스의 이름입니다. 
   
   엔터프라이즈 사용자는 `"cluster_id": "$CLUSTER_ID"` 매개변수를 사용하여 JSON 오브젝트에 배치할 클러스터도 지정해야 합니다.
   
@@ -89,5 +95,8 @@ bx service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instan
 ```
 
 예를 들어, 이전 버전의 {{site.data.keyword.composeForElasticsearch}} 서비스를 Elasticsearch 6.2.2가 실행되는 새 서비스로 복원하는 방법은 다음과 같습니다.
+
 ```
 bx service create compose-for-elasticsearch Standard migrated_elastic -c '{ "source_service_instance_id": "0269e284-dcac-4618-89a7-f79e3f1cea6a", "backup_id":"5a96d8a7e16c090018884566", "db_version":"6.2.2"  }'
+```
+

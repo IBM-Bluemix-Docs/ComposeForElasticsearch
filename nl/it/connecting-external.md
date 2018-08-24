@@ -16,25 +16,27 @@ lastupdated: "2017-07-13"
 
 Tutte le nuove distribuzioni {{site.data.keyword.composeForElasticsearch_full}} accettano solo le connessioni sicure (`https://`) TLS/SSL garantite da un certificato Let's Encrypt.
 
-Esistono diversi modi per collegarsi a Elasticsearch, a seconda del driver che stai utilizzando. {{site.data.keyword.composeForElasticsearch}} utilizza il formato URI per visualizzare i messaggi, che è formattato come:
+Puoi connetterti a Elasticsearch in diversi modi, a seconda del driver che stai utilizzando. {{site.data.keyword.composeForElasticsearch}} utilizza il formato URI per visualizzare i messaggi, che è formattato come:
 
 ```text
 https://[username]:[password]@[host]:[port]/
 ```
 
-Troverai la tua stringa di connessione nella pagina *Overview* del tuo servizio {{site.data.keyword.composeForElasticsearch}}.
+Puoi trovare la tua stringa di connessione nella pagina *Overview* del tuo servizio {{site.data.keyword.composeForElasticsearch}}.
 
-Gli esempi qui presenti coprono Node, Go, Java, Ruby e Python. Questi esempi configurano una connessione sicura a {{site.data.keyword.composeForElasticsearch}} quindi richiamano un'API cluster Elasticsearch per eseguire un controllo di integrità di base, che ti fornirà informazioni su cosa sta facendo il cluster. Per prendere familiarità con l'API Elasticsearch, ti suggeriamo di controllare Elasticsearch [reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html) per Elasticsearch 2.4.
+Gli esempi qui coprono Node, Go, Java, Ruby e Python. Questi esempi configurano una connessione sicura a {{site.data.keyword.composeForElasticsearch}} quindi richiamano un'API cluster Elasticsearch per eseguire un controllo di integrità di base, che ti fornisce informazioni su come sta funzionando il tuo cluster. Per prendere familiarità con l'API Elasticsearch, consulta il documento.Elasticsearch [Reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html) per Elasticsearch 2.4.
 
 Il codice completo per questo e i seguenti esempi può essere trovato all'indirizzo [github.com/compose-ex/elasticsearchconns.](https://github.com/compose-ex/elasticsearchconns).
 
 ## Node e Elasticsearch
 
 ### Installazione del client
+{: #installing-client-node}
 
 Crea il tuo progetto e quindi installa il pacchetto [`elasticsearch`](https://www.npmjs.com/package/elasticsearch) con `npm install elasticsearch --save`. Dopo l'installazione puoi scrivere il codice per il collegamento alla tua distribuzione.
 
 ### Creazione della connessione
+{: #creating-connection-node}
 
 Per prima cosa, dovrai utilizzare `require` per richiedere la libreria `elasticsearch` che hai installato nella tua cartella `node_modules` del progetto e salvata come una dipendenza nel file `package.json`.
 
@@ -42,7 +44,7 @@ Per prima cosa, dovrai utilizzare `require` per richiedere la libreria `elastics
 const elasticsearch = require('elasticsearch');
 ```
 
-Il pacchetto elasticsearch offre un prototipo client che utilizziamo per creare una connessione a Elasticsearch:
+Il pacchetto elasticsearch offre un prototipo Client che utilizzi per creare una connessione a Elasticsearch:
 
 ```javascript
 const client = new elasticsearch.Client({
@@ -53,9 +55,9 @@ const client = new elasticsearch.Client({
 });
 ```
 
-Iniziamo creando un variabile `client` e una connessione utilizzando il prototipo `Client` della libreria `elasticsearch`. Questo richiede, insieme ad altri parametri, una chiave `host` con un valore array che dovrebbe contenere i tuoi URL delle stringhe di connessione dalla pagina della panoramica.
+Inizia creando un variabile `client` e una connessione utilizzando il prototipo `Client` della libreria `elasticsearch`. Questo richiede, insieme ad altri parametri, una chiave `host` con un valore array che dovrebbe contenere i tuoi URL delle stringhe di connessione dalla pagina della panoramica.
 
-L'oggetto client implementa la [wide API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-4.html). In questo esempio, utilizziamo semplicemente questa API per eseguire una query per l'integrità del cluster tramite una chiamata `cluster.health`.
+L'oggetto client implementa la [wide API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-4.html). In questo esempio però, utilizzi semplicemente questa API per eseguire una query per l'integrità del cluster tramite una chiamata `cluster.health`.
 
 ```javascript
 client.cluster.health((err, res) => {
@@ -89,12 +91,13 @@ La chiamata restituisce un oggetto Javascript con i dettagli sull'integrità del
 ## Go e Elasticsearch
 
 ### Installazione del client
+{: #installing-client-go}
 
-Esistono alcuni driver che utilizzano il linguaggio Go. Noi utilizzeremo [Elastic](https://github.com/olivere/elastic) per questo esempio - consulta la documentazione e gli esempi nel sito [Elastic](https://olivere.github.io/elastic/) e [GoDocs](https://godoc.org/gopkg.in/olivere/elastic.v3) per Elastic. Come per la scrittura, Compose supporta Elasticsearch 2.4.0, il che significa che devi utilizzare la versione 3.0 del pacchetto Elastic. 
+Esistono alcuni driver che utilizzano il linguaggio Go. Questo esempio utilizza [Elastic](https://github.com/olivere/elastic) - consulta la documentazione e gli esempi nel sito [Elastic](https://olivere.github.io/elastic/) e [GoDocs](https://godoc.org/gopkg.in/olivere/elastic.v3) per Elastic. Come per la scrittura, Compose supporta Elasticsearch 2.4.0, il che significa che devi utilizzare la versione 3.0 del pacchetto Elastic. 
 
 Per ottenere il pacchetto Elastic, esegui `go get gopkg.in/olivere/elastic.v3` nel tuo terminale.
 
-Nell'esempio di codice, abbiamo inserito tutto il codice nella funzione `main`.  Per prima cosa, creiamo un `client` e inseriamo le stringhe di connessione nel metodo `SetURL`.
+Nell'esempio di codice, tutto il codice si trova nella funzione `main`.  Per prima cosa, crea un `client` e inserisci le stringhe di connessione nel metodo `SetURL`.
 
 ```go
 package main
@@ -117,7 +120,7 @@ func main() {
 			}
 ```
 
-Dopo aver configurato la connessione e aver creato il `client`, possiamo richiamare il rispettivo metodo `ClusterHealth` per configurare una richiesta di integrità del cluster. Richiamare il metodo `Do` in modo che esegua tale richiesta. Questo metodo restituisce la struttura `Health` e stampa i risultati nel tuo terminale. 
+Dopo aver configurato la connessione e aver creato il `client`, puoi richiamare il relativo metodo `ClusterHealth` per configurare una richiesta per l'integrità del cluster. Richiamare il metodo `Do` in modo che esegua tale richiesta. Questo metodo restituisce la struttura `Health` e stampa i risultati nel tuo terminale. 
 
 ```go
 // crea una variabile che archivia il risultato
@@ -139,12 +142,14 @@ Dopo aver configurato la connessione e aver creato il `client`, possiamo richiam
 ## Java e Elasticsearch
 
 ### Installazione del client
+{: #installing-client-java}
 
-Il client che stiamo utilizzando nel seguente esempio è [Jest](https://github.com/searchbox-io/Jest) che ti fornisce un client REST HTTP semplice per Java. Puoi seguire il loro manuale di installazione e visualizzare gli esempi di codice nel loro [Github repository](https://github.com/searchbox-io/Jest/tree/master/jest).
+Il client nel seguente esempio è [Jest](https://github.com/searchbox-io/Jest), che ti fornisce un facile client REST HTTP per Java. Puoi attenerti al relativo manuale di installazione e visualizzare gli esempi di codice nel relativo [repository Github](https://github.com/searchbox-io/Jest/tree/master/jest).
 
 ### Creazione di una connessione
+{: #creating-connection-java}
 
-Nell'esempio tutto il codice è contenuto nel metodo `main`. Per prima cosa, aggiungiamo ` BasicConfigurator.configure();` dalla libreria Log4j di Apache per visualizzare il processo di connessione nella console. Se non la aggiungi, continuerai a collegarti alla tua distribuzione ma riceverai un'avvertenza di utilizzo di Log4j. 
+Nell'esempio tutto il codice è contenuto nel metodo `main`. Per prima cosa, aggiungi ` BasicConfigurator.configure();` dalla libreria Log4j di Apache per visualizzare il processo di connessione nella console. Se non la aggiungi, puoi ancora connetterti alla tua distribuzione ma riceverai un'avvertenza che ti indica di utilizzare Log4j. 
 
 ```java
 public class ElasticsearchConnect {
@@ -164,7 +169,8 @@ public class ElasticsearchConnect {
                 .multiThreaded(true)
                 .build());
 ```
-Successivamente, creerai un nuovo `JestClientFactory`. `factory` ti fornirà un metodo `setHttpClientConfig` per configurare il tuo client. Utilizza `Arrays.asList` all'interno del metodo `Builder` di Jest per creare un array che contiene entrambe le tue stringhe di connessione Compose Elasticsearch. Quindi richiamerai il metodo `build` per creare la connessione. 
+Successivamente, creerai un nuovo `JestClientFactory`. `factory` ti fornisce un metodo `setHttpClientConfig` per configurare il tuo client. Utilizza `Arrays.asList` all'interno del metodo `Builder` di Jest per creare un array che contiene entrambe le tue stringhe di connessione Compose Elasticsearch. Richiami quindi il metodo `build` per creare la connessione. 
+
 ```java
         JestClient client = factory.getObject();
         Health health = new Health.Builder().build();
@@ -178,7 +184,7 @@ Successivamente, creerai un nuovo `JestClientFactory`. `factory` ti fornirà un 
 }
 ```
 
-Dopo aver creato la connessione, puoi creare una istanza `JestClient` dall'oggetto factory di connessione `factory.getObject()`. `JestClient` sarà utilizzato per richiamare il metodo `execute` per tutte le query Elasticsearch che hai creato. In questo esempio, `creiamo` una query `Health` per ricercare l'integrità del cluster utilizzando le classi del builder di Elasticsearch. 
+Dopo aver creato la connessione, puoi creare una istanza `JestClient` dall'oggetto factory di connessione `factory.getObject()`. `JestClient` è utilizzato per richiamare il metodo `execute` per tutte le query Elasticsearch che crei. Questo esempio utilizza `build` per creare una query `Health` per controllare l'integrità del cluster utilizzando le classi del builder di Elasticsearch. 
 
 Dopo aver creato una query, utilizza `JestResult` per ottenere i documenti e stamparli nel terminale come un oggetto JSON, quindi chiudi il client con `shutdownClient`. 
 
@@ -190,9 +196,12 @@ Dopo aver creato una query, utilizza `JestResult` per ottenere i documenti e sta
 ## Ruby e Elasticsearch
 
 ### Installazione del client
+{: #installing-client-ruby}
+
 Per utilizzare Elasticsearch con Ruby, installa [Elasticsearch Ruby gem](https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-api) `gem install elasticsearch`. Dopo l'installazione potrai eseguire `require` per richiedere la libreria nel tuo file Ruby. 
 
 ### Creazione di una connessione
+{: #creating-connection-ruby}
 
 Per prima cosa, dovrai utilizzare `require` per richiedere la libreria `elasticsearch` nel tuo file Ruby.
 
@@ -206,7 +215,7 @@ Quindi crea un nuovo client definendo una variabile e assegnandola al constructo
 client = Elasticsearch::Client.new urls: 'https://username:password@portal113-2.latest-elasticsearch.compose-3.composedb.com:10113/, https://username:password@portal164-1.latest-elasticsearch.compose-3.composedb.com:10164/'
 ```
 
-Per visualizzare l'integrità del tuo cluster Elasticsearch, dovrai semplicemente utilizzare la connessione `client` che hai creato e utilizzare le classi e i metodi forniti da [Elasticsearch API](http://www.rubydoc.info/gems/elasticsearch-api). Per questo esempio stiamo stampando un hash dei risultati dell'integrità del cluster nel terminale.
+Per visualizzare l'integrità del tuo cluster Elasticsearch, dovrai semplicemente utilizzare la connessione `client` che hai creato e utilizzare le classi e i metodi forniti da [Elasticsearch API](http://www.rubydoc.info/gems/elasticsearch-api). Questo esempio stampa un hash dei risultati dell'integrità del cluster nel terminale.
 
 ```ruby
 p client.cluster.health
@@ -219,10 +228,12 @@ p client.cluster.health
 ## Python e Elasticsearch
 
 ### Installazione del client
+{: #installing-client-python}
 
-Utilizzando Elasticsearch con Python dovrai installare la libreria utilizzando `pip install elasticsearch` e quindi importarla nel tuo progetto Elasticsearch. Dopo l'installazione dovrai `importare` la libreria nel tuo progetto Python.
+L'utilizzo di Elasticsearch con Python richiede che installi la libreria utilizzando `pip install elasticsearch` e quindi la importi nel tuo progetto Elasticsearch. Dopo l'installazione dovrai `importare` la libreria nel tuo progetto Python.
 
 ### Creazione di una connessione
+{: #creating-connection-python}
 
 Come per la connessione Ruby, dovrai prima importare Elasticsearch nel tuo file del progetto:
 
@@ -242,7 +253,7 @@ es = Elasticsearch(
 )
 ```
 
-Successivamente, per stampare l'integrità del cluster dovrai utilizzare la classe `cluster` per richiamare il metodo `health`, che viene stampato nel terminale utilizzando la funzione `print`. Le altre classi e metodi disponibili si trovano nella Elasticsearch API di Python [documentazione}(http://elasticsearch-py.readthedocs.io/en/master/api.html).
+Successivamente, per stampare l'integrità del cluster dovrai utilizzare la classe `cluster` per richiamare il metodo `health`, che viene stampato nel terminale utilizzando la funzione `print`. Altre classi e altri metodi disponibili si trovano nella [documentazione della API Elasticsearch](http://elasticsearch-py.readthedocs.io/en/master/api.html) di Python.
 
 ```python
 print(es.cluster.health())
@@ -254,9 +265,9 @@ Questo comando stamperà un dizionario dell'integrità del tuo cluster nel termi
 {u'status': u'green', u'number_of_nodes': 3, u'unassigned_shards': 0, u'number_of_pending_tasks': 0, u'number_of_in_flight_fetch': 0, u'timed_out': False, u'active_primary_shards': 21, u'task_max_waiting_in_queue_millis': 0, u'cluster_name': u'latest-elasticsearch', u'relocating_shards': 0, u'active_shards_percent_as_number': 100.0, u'active_shards': 57, u'initializing_shards': 0, u'number_of_data_nodes': 3, u'delayed_unassigned_shards': 0}
 ```
 
-## Collegamento a Elasticsearch nella riga di comando
+## Connessione a Elasticsearch nella riga di comando
 
-Per collegarti alla tua distribuzione Elasticsearch dalla riga di comando, {{site.data.keyword.composeForElasticsearch}} ti fornisce i comandi curl per le tue stringhe di connessione nel pannello _Connection Strings_ della pagina *Overview* del tuo servizio {{site.data.keyword.composeForElasticsearch}}.
+Per connetterti alla tua distribuzione Elasticsearch dalla riga di comando, {{site.data.keyword.composeForElasticsearch}} ti fornisce i comandi curl per le tue stringhe di connessione nel pannello _Connection Strings_ della pagina *Overview* del tuo servizio {{site.data.keyword.composeForElasticsearch}}.
 
 L'output nel tuo terminale sarà simile al seguente:
 ```shell

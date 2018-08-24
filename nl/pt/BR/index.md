@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2018-03-26"
+lastupdated: "2018-05-04"
 ---
 
 {:new_window: target="_blank"}
@@ -17,9 +17,7 @@ lastupdated: "2018-03-26"
 O {{site.data.keyword.composeForElasticsearch_full}} combina o poder de um
 mecanismo de procura de texto completa com os potenciais de indexação de um banco de
 dados de documento JSON. Juntos, eles criam uma ferramenta poderosa para análise de dados
-ricos em grandes volumes de dados. Com o Elasticsearch, sua procura pode ser pontuada
-para fins de exatidão, permitindo que você pesquise a fundo seu conjunto de dados em busca de
-correspondências próximas e quase perdas que você possa estar deixando passar.
+ricos em grandes volumes de dados. Com o Elasticsearch, sua procura pode ser pontuada com exatidão, para que você possa analisar seu conjunto de dados em relação a essas correspondências próximas e quase perdas que podem estar sendo perdidas.
 {:shortdesc}
 
 **Nota:** todas as instâncias de serviço do Compose que foram
@@ -31,9 +29,9 @@ usadas e acessadas diretamente em
 
 É possível criar um serviço do {{site.data.keyword.composeForElasticsearch}} por meio da página [{{site.data.keyword.composeForElasticsearch}}](https://console.{DomainName}/catalog/services/compose-for-elasticsearch/) no catálogo do {{site.data.keyword.cloud_notm}}.
 
-Escolha um nome do serviço e uma região, organização e espaço no qual provisionar o serviço. É possível usar o campo **Selecionar uma versão do banco de dados** para escolher nas versões do banco de dados disponíveis.
+Escolha um nome de serviço e uma região, uma organização e um espaço nos quais provisionar o serviço. É possível usar o campo **Selecionar uma versão do banco de dados** para escolher nas versões do banco de dados disponíveis.
 
-Quando você provisiona sua instância do {{site.data.keyword.composeForElasticsearch}}, é possível escolher os planos *Padrão* ou *Corporativo*. Com o plano *Corporativo*, é possível provisionar sua instância do {{site.data.keyword.composeForElasticsearch}} em um cluster disponível do {{site.data.keyword.composeEnterprise}}. O {{site.data.keyword.composeEnterprise}} fornece a segurança e o isolamento requeridos pela conformidade corporativa e usa rede dedicada para assegurar o desempenho dos bancos de dados implementados. Veja a [Documentação do Compose Enterprise](../ComposeEnterprise/index.html) para obter mais detalhes.
+Ao provisionar sua instância do {{site.data.keyword.composeForElasticsearch}}, é possível escolher os planos *Padrão* ou *Corporativo*. Com o plano *Corporativo*, é possível provisionar sua instância do {{site.data.keyword.composeForElasticsearch}} em um cluster disponível do {{site.data.keyword.composeEnterprise}}. O {{site.data.keyword.composeEnterprise}} fornece a segurança e o isolamento que são necessários para a conformidade corporativa e usa rede dedicada para assegurar o desempenho dos bancos de dados implementados. Consulte a  [ documentação do {{site.data.keyword.composeEnterprise}}  ](/docs/services/ComposeEnterprise/index.html)  para obter mais detalhes.
 
 ## Gerenciando {{site.data.keyword.composeForElasticsearch}}
 
@@ -45,12 +43,12 @@ Quando você provisiona sua instância do {{site.data.keyword.composeForElastics
 
 Para obter mais informações, veja [Configurações](./dashboard-settings.html).
 
-O {{site.data.keyword.composeForElasticsearch}} depende de funções do Cloud Foundry para gerenciar o acesso ao serviço. Somente usuários com a função de Desenvolvedor podem ver ou usar o painel de serviço. Para obter mais informações sobre as funções do Cloud Foundry, veja as páginas [Acesso ao Cloud Foundry](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) e [Gerenciando ao acesso ao Cloud Foundry](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+O {{site.data.keyword.composeForElasticsearch}} depende de funções do Cloud Foundry para gerenciar o acesso ao serviço. Somente usuários com a função de Desenvolvedor podem ver ou usar o painel de serviço. Para obter mais informações sobre as funções do Cloud Foundry, veja as páginas [Acesso ao Cloud Foundry](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) e [Gerenciando ao acesso ao Cloud Foundry](https://console.{DomainName}/docs/iam/mngcf.html#mngcf).
 {: .tip}
 
 ## Conectando-se ao {{site.data.keyword.composeForElasticsearch}}
 
-É possível se conectar a seu serviço usando as credenciais que são criadas junto com o serviço ou com as sequências de conexões e linha de comandos que são fornecidas na guia *Visão geral* de seu painel de serviço.
+É possível conectar-se ao serviço usando as credenciais criadas junto ao serviço ou com as sequências de conexões e a linha de comandos fornecidas na guia *Visão geral* de seu painel de serviço.
 
 ## Conectando um aplicativo {{site.data.keyword.cloud_notm}} ao {{site.data.keyword.composeForElasticsearch}}
 

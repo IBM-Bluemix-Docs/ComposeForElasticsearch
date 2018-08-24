@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2016,2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2017-12-05"
 
 Puoi gestire il tuo servizio {{site.data.keyword.composeForElasticsearch_full}} dal dashboard del servizio.
 
-La pagina _Overview_ ti mostra le informazioni sul tuo database {{site.data.keyword.cloud}} Compose. La panoramica include le informazioni di identificazione essenziali e l'utilizzo della risorsa corrente. Troverai inoltre una sezione per le stringhe di connessione che puoi utilizzare con gli strumenti o utilizzare gli strumenti per il collegamento al tuo database.
+La pagina _Overview_ ti mostra le informazioni sul tuo database {{site.data.keyword.cloud}} Compose. La panoramica include le informazioni di identificazione essenziali e l'utilizzo della risorsa corrente. Puoi anche trovare una sezione per le stringhe di connessione che puoi utilizzare per stabilire una connessione al tuo database.
 
 ## Deployment Details
 
@@ -27,7 +27,7 @@ Il pannello _Deployment Details_ mostra i dettagli del tuo servizio.
 
 Il tipo di database offerto dal servizio e la versione che il servizio utilizza. Se è disponibile una versione più recente del database, viene visualizzata una notifica, insieme a un link alla sezione [Aggiorna versione](/docs/services/ComposeForElasticsearch/dashboard-settings.html#upgrade-version) del tuo dashboard del servizio.
 
-### Name
+### ID
 
 Un identificativo interno per il servizio.
 
@@ -38,13 +38,13 @@ La dimensione del tuo database e la quantità di memoria fornita dal tuo piano d
 
 ## Stringhe di connessione
 
-Le stringhe di connessione possono essere utilizzate da alcune librerie client e contenere tutte le informazioni necessarie al collegamento di altre librerie. Puoi trovare come utilizzare una stringa di connessione al tuo servizio in [Connessione a un'applicazione esterna](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Le stringhe di connessione possono essere utilizzate da alcune librerie client. Esse contengono tutte le informazioni necessarie per la connessione di altre librerie. Puoi trovare come utilizzare una stringa di connessione al tuo servizio in [Connessione a un'applicazione esterna](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
-Troverai ogni stringa di connessione per il tuo servizio in una scheda differente nel pannello _Connection Strings_.
+Puoi trovare ciascuna stringa di connessione per il tuo servizio in una scheda differente nel pannello _Connection Strings_.
 
 ### HTTPS
 
-Una stringa di connessione formattata URI che può essere utilizzata da alcune librerie client e che contiene tutte le informazioni necessarie al collegamento di altre librerie. Puoi trovare come utilizzare la stringa di connessione per il collegamento in [Connessione a un'applicazione esterna](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Una stringa di connessione con formattazione URI che può essere utilizzata da qualche libreria client. Contiene tutte le informazioni necessarie per la connessione di altre librerie. Puoi trovare come utilizzare la stringa di connessione per il collegamento in [Connessione a un'applicazione esterna](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 ### Integrità
 
@@ -56,7 +56,7 @@ Puoi gestire il tuo servizio {{site.data.keyword.composeForElasticsearch}} trami
 
 ### Endpoint fondazione
 
-L'endpoint fondazione è formato dalla regione in cui risiede il servizio e dall'ID dell'istanza del servizio. Sarà all'inizio di ogni endpoint.
+L'endpoint fondazione è formato dalla regione in cui risiede il servizio e dall'ID dell'istanza del servizio. Si trova all'inizio di ogni endpoint.
 
 ### ID distribuzione
 

@@ -24,17 +24,19 @@ https://[username]:[password]@[host]:[port]/
 
 接続ストリングは {{site.data.keyword.composeForElasticsearch}} サービスの*「概要」*ページに表示されます。
 
-ここでの例は、Node、Go、Java、Ruby、Python をカバーします。 これらの例は、{{site.data.keyword.composeForElasticsearch}} へのセキュア接続をセットアップした後、Elasticsearch クラスター API を呼び出して基本的なヘルス・チェックを行います。ヘルス・チェックからクラスターの状況が通知されます。 Elasticsearch の API をよく理解するには、Elasticsearch 2.4 の Elasticsearch [リファレンス](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html)を調べることをお勧めします。
+ここでの例は、Node、Go、Java、Ruby、Python をカバーします。 これらの例は、{{site.data.keyword.composeForElasticsearch}} へのセキュア接続をセットアップした後、Elasticsearch クラスター API を呼び出して基本的なヘルス・チェックを行います。ヘルス・チェックからクラスターの状況が通知されます。 Elasticsearch の API をよく理解するには、Elasticsearch 2.4 の Elasticsearch [リファレンス](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html)を参照してください。
 
 この例と後続の例の全コードは、[github.com/compose-ex/elasticsearchconns](https://github.com/compose-ex/elasticsearchconns) に掲載されています。
 
 ## Node と Elasticsearch
 
 ### クライアントのインストール
+{: #installing-client-node}
 
 プロジェクトを作成した後に、`npm install elasticsearch --save` を使用して [`elasticsearch`](https://www.npmjs.com/package/elasticsearch) パッケージをインストールします。 パッケージがインストールされたら、デプロイメントに接続するためのコードを書くことができます。
 
 ### 接続の作成
+{: #creating-connection-node}
 
 まず、プロジェクトの `node_modules` フォルダーにインストールして `package.json` ファイルに従属関係として保存した `elasticsearch` ライブラリーを `require` する必要があります。
 
@@ -55,7 +57,7 @@ const client = new elasticsearch.Client({
 
 `elasticsearch` ライブラリーの `Client` プロトタイプを使用して変数 `client` と接続を作成することから始めます。 そのためにはさまざまなパラメーターを必要としますが、特に `host` キーの配列値には、「概要」ページの接続ストリング URL を含める必要があります。
 
-クライアント・オブジェクトは、[ワイド API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-4.html) を実装します。 ただし、この例では、`cluster.health` 呼び出しでクラスターの正常性を照会するためにだけ、その API を使用します。
+クライアント・オブジェクトは、[ワイド API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-4.html) を実装します。 ただし、この例では、`cluster.health` 呼び出しでクラスターの正常性を照会するために、その API を使用します。
 
 ```javascript
 client.cluster.health((err, res) => {
@@ -89,12 +91,13 @@ client.cluster.health((err, res) => {
 ## Go と Elasticsearch
 
 ### クライアントのインストール
+{: #installing-client-go}
 
 Go 言語でいくつかのドライバーを使用できます。 この例では、[Elastic](https://github.com/olivere/elastic) を使用します。[Elastic](https://olivere.github.io/elastic/) サイトと Elastic 用 [GoDoc](https://godoc.org/gopkg.in/olivere/elastic.v3) に掲載されている文書と例を参照してください。 この資料を作成している時点では、Compose は Elasticsearch 2.4.0 をサポートしています。つまり、バージョン 3.0 の Elastic パッケージを使用する必要があるということになります。 
 
 Elastic パッケージを取得するには、端末で `go get gopkg.in/olivere/elastic.v3` を実行します。
 
-コード例では、コードはすべて `main` 関数に置かれています。  まず、`client` を作成し、接続ストリングを `SetURL` メソッドに挿入します。
+コード例では、コードはすべて `main` 関数内にあります。  まず、`client` を作成し、接続ストリングを `SetURL` メソッドに挿入します。
 
 ```go
 package main
@@ -117,7 +120,7 @@ func main() {
 			}
 ```
 
-接続をセットアップして `client` を作成したら、その `ClusterHealth` メソッドを呼び出して、クラスターの正常性を確認する要求をセットアップできます。 その結果に対して `Do` を呼び出すと、その要求が実行されます。 これによって `Health` 構造体が返され、結果が端末に表示されます。 
+接続をセットアップして `client` を作成したら、その `ClusterHealth` メソッドを呼び出して、クラスターの正常性を確認する要求をセットアップできます。 その結果に対して `Do` を呼び出すと、その要求が実行されます。 このメソッドによって `Health` 構造体が返され、結果が端末に表示されます。 
 
 ```go
 // create a variable that stores the result 
@@ -139,12 +142,14 @@ func main() {
 ## Java と Elasticsearch
 
 ### クライアントのインストール
+{: #installing-client-java}
 
-次の例で使用するクライアントは、Java 用の簡単な HTTP REST クライアントを提供する [Jest](https://github.com/searchbox-io/Jest) です。 そのインストール・ガイドに従うとともに、[Github リポジトリー](https://github.com/searchbox-io/Jest/tree/master/jest)にあるコード例を参照してください。
+次の例のクライアントは、Java 用の簡単な HTTP REST クライアントを提供する [Jest](https://github.com/searchbox-io/Jest) です。 そのインストール・ガイドに従うとともに、[Github リポジトリー](https://github.com/searchbox-io/Jest/tree/master/jest)にあるコード例を参照してください。
 
 ### 接続の作成
+{: #creating-connection-java}
 
-この例では、`main` メソッド内にすべてのコードが含まれています。 まず、Apache の Log4j ライブラリーにある `BasicConfigurator.configure();` を追加して、接続プロセスをコンソールに表示します。 追加しなくてもデプロイメントに接続されますが、Log4j を使用するようにという警告を受け取ります。 
+この例では、`main` メソッド内にすべてのコードが含まれています。 まず、Apache の Log4j ライブラリーにある `BasicConfigurator.configure();` を追加して、接続プロセスをコンソールに表示します。 追加しなくてもデプロイメントに接続できますが、Log4j を使用するようにという警告を受け取ります。 
 
 ```java
 public class ElasticsearchConnect {
@@ -165,6 +170,7 @@ public class ElasticsearchConnect {
                 .build());
 ```
 次に、新しい `JestClientFactory` を作成します。 この `factory` は、クライアントを構成するための `setHttpClientConfig` メソッドを提供します。 Jest の `Builder` メソッド内で `Arrays.asList` を使用して、両方の Compose Elasticsearch 接続ストリングを含む配列を作成します。 次に、`build` メソッドを呼び出して接続を作成します。 
+
 ```java
         JestClient client = factory.getObject();
         Health health = new Health.Builder().build();
@@ -178,7 +184,7 @@ public class ElasticsearchConnect {
 }
 ```
 
-接続が作成されたら、接続ファクトリー・オブジェクト `factory.getObject()` から `JestClient` インスタンスを作成できます。 `JestClient` は、作成する Elasticsearch 照会に対して `execute` メソッドを呼び出すために使用されます。 この例では、Elasticsearch の builder クラスを使用して、クラスターの正常性を調べるための `Health` 照会を `build` します。 
+接続が作成されたら、接続ファクトリー・オブジェクト `factory.getObject()` から `JestClient` インスタンスを作成できます。 `JestClient` は、作成する Elasticsearch 照会に対して `execute` メソッドを呼び出すために使用されます。 この例では、`build` を使用して、Elasticsearch の builder クラスを使用してクラスターの正常性を調べるための `Health` 照会を作成します。 
 
 照会を作成したら、`JestResult` を使用してドキュメントを取得し、それを JSON オブジェクトとして端末に表示してから、`shutdownClient` を使用してクライアントを閉じます。 
 
@@ -190,9 +196,12 @@ public class ElasticsearchConnect {
 ## Ruby と Elasticsearch
 
 ### クライアントのインストール
+{: #installing-client-ruby}
+
 Ruby で Elasticsearch を使用するには、[Elasticsearch Ruby gem](https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-api) をインストールします (`gem install elasticsearch`)。 それがインストールされたら、Ruby ファイルの中にライブラリーを `require` できるようになります。 
 
 ### 接続の作成
+{: #creating-connection-ruby}
 
 まず、Ruby ファイルの中に `elasticsearch` ライブラリーを `require` する必要があります。
 
@@ -219,10 +228,12 @@ p client.cluster.health
 ## Python と Elasticsearch
 
 ### クライアントのインストール
+{: #installing-client-python}
 
 Python で Elasticsearch を使用するには、`pip install elasticsearch` を使用してライブラリーをインストールして、それを Elasticsearch プロジェクトにインポートする必要があります。 ライブラリーがインストールされたら、Python プロジェクトに `import` します。
 
 ### 接続の作成
+{: #creating-connection-python}
 
 Ruby 接続と同様に、まずプロジェクト・ファイルに Elasticsearch をインポートする必要があります。
 
@@ -242,7 +253,7 @@ es = Elasticsearch(
 )
 ```
 
-次に、クラスターの正常性を表示するために使用する必要があるのは、`health` メソッドを呼び出す `cluster` クラスだけです。正常性は `print` 関数を使用して端末に表示されます。 使用可能なその他のクラスとメソッドについては、Python の Elasticsearch API [資料}(http://elasticsearch-py.readthedocs.io/en/master/api.html) を参照してください。
+次に、クラスターの正常性を表示するために使用する必要があるのは、`health` メソッドを呼び出す `cluster` クラスだけです。正常性は `print` 関数を使用して端末に表示されます。 使用可能なその他のクラスとメソッドについては、Python の [Elasticsearch API 資料](http://elasticsearch-py.readthedocs.io/en/master/api.html)を参照してください。
 
 ```python
 print(es.cluster.health())

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2018-03-26"
+lastupdated: "2018-05-04"
 ---
 
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2018-03-26"
 # Informationen zu {{site.data.keyword.composeForElasticsearch}}
 {: #about-compose-for-elasticsearch}
 
-{{site.data.keyword.composeForElasticsearch_full}} vereint die Leistung einer Engine für die Volltextsuche mit den Indexierungsfähigkeiten einer JSON-Dokument-Datenbank. Gemeinsam bilden sie ein leistungsfähiges Tool zur Analyse komplexer Daten bei großen Datenvolumen. Mit Elasticsearch kann Ihre Suche mit Genauigkeits-Scores bewertet werden, was es Ihnen ermöglicht, Ihren Datensatz nach diesen jeweils größten Übereinstimmungen und Beinahe-Treffern zu durchsuchen, die Sie sonst überspringen würden.
+{{site.data.keyword.composeForElasticsearch_full}} vereint die Leistung einer Engine für die Volltextsuche mit den Indexierungsfähigkeiten einer JSON-Dokument-Datenbank. Gemeinsam bilden sie ein leistungsfähiges Tool zur Analyse komplexer Daten bei großen Datenvolumen. Mit Elasticsearch kann Ihre Suche mit Genauigkeits-Scores bewertet werden, was Ihnen ermöglicht, Ihren Datensatz nach genau solchen größten Übereinstimmungen und Beinahe-Treffern zu durchsuchen, die Sie andernfalls möglicherweise verpassen würden.
 {:shortdesc}
 
 **Hinweis:** Alle Compose-Serviceinstanzen, die vor dem 14. September 2016 bereitgestellt wurden und noch aktiv sind, können weiterhin verwendet werden und sind über [https://www.compose.com/](https://www.compose.com) zugänglich. Jede Compose-Serviceinstanz, die ab diesem Punkt bereitgestellt wird, ist direkt über Ihr {{site.data.keyword.cloud}}-Konto zugänglich und kann dort verwendet werden.
@@ -23,9 +23,9 @@ lastupdated: "2018-03-26"
 
 Sie können einen {{site.data.keyword.composeForElasticsearch}}-Service über die [{{site.data.keyword.composeForElasticsearch}}-Seite](https://console.{DomainName}/catalog/services/compose-for-elasticsearch/) im {{site.data.keyword.cloud_notm}}-Katalog erstellen.
 
-Wählen Sie einen Servicenamen und eine Region, eine Organisation und einen Bereich zur Bereitstellung des Service aus. Im Feld **Datenbankversion auswählen** können Sie eine der verfügbaren Datenbankversionen auswählen.
+Wählen Sie einen Servicenamen, eine Region, eine Organisation und einen Bereich zur Bereitstellung des Service aus. Im Feld **Datenbankversion auswählen** können Sie eine der verfügbaren Datenbankversionen auswählen.
 
-Bei der Bereitstellung Ihrer {{site.data.keyword.composeForElasticsearch}}-Instanz können Sie den Plan *Standard* oder *Enterprise* auswählen. Mit dem Plan *Enterprise* können Sie Ihre {{site.data.keyword.composeForElasticsearch}}-Instanz in einem {{site.data.keyword.composeEnterprise}}-Cluster bereitstellen. {{site.data.keyword.composeEnterprise}} stellt die für die Konformität mit Enterprise erforderliche Sicherheit und Isolation bereit und stellt mithilfe eines dedizierten Netzbetriebs die Leistung der bereitgestellten Datenbanken sicher. Weitere Details finden Sie in der [Dokumentation zu Compose Enterprise](../ComposeEnterprise/index.html).
+Bei der Bereitstellung Ihrer {{site.data.keyword.composeForElasticsearch}}-Instanz können Sie den Plan *Standard* oder *Enterprise* auswählen. Mit dem Plan *Enterprise* können Sie Ihre {{site.data.keyword.composeForElasticsearch}}-Instanz in einem {{site.data.keyword.composeEnterprise}}-Cluster bereitstellen. {{site.data.keyword.composeEnterprise}} stellt die für die Konformität mit Enterprise erforderliche Sicherheit und Isolation bereit und stellt mithilfe eines dedizierten Netzbetriebs die Leistung der bereitgestellten Datenbanken sicher. Weitere Details finden Sie in der Dokumentation zu [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html).
 
 ## {{site.data.keyword.composeForElasticsearch}} verwalten
 
@@ -37,7 +37,7 @@ Sie können Ihren Service über das Service-Dashboard verwalten. Hier finden Sie
 
 Weitere Informationen finden Sie im Abschnitt [Einstellungen](./dashboard-settings.html).
 
-{{site.data.keyword.composeForElasticsearch}} nutzt Cloud Foundry-Rollen, um den Zugriff auf den Service zu verwalten. Nur Benutzer mit der Entwicklerrolle können das Service-Dashboard anzeigen oder verwenden. Weitere Informationen zu Cloud Foundry-Rollen finden Sie auf den Seiten [Cloud Foundry-Zugriff](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) und [Cloud Foundry-Zugriff](https://console.bluemix.net/docs/iam/mngcf.html#mngcf) verwalten.
+{{site.data.keyword.composeForElasticsearch}} nutzt Cloud Foundry-Rollen, um den Zugriff auf den Service zu verwalten. Nur Benutzer mit der Entwicklerrolle können das Service-Dashboard anzeigen oder verwenden. Weitere Informationen zu Cloud Foundry-Rollen finden Sie auf den Seiten [Cloud Foundry-Zugriff](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) und [Cloud Foundry-Zugriff](https://console.{DomainName}/docs/iam/mngcf.html#mngcf) verwalten.
 {: .tip}
 
 ## Verbindung zu {{site.data.keyword.composeForElasticsearch}} herstellen

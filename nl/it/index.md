@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2018-03-26"
+lastupdated: "2018-05-04"
 ---
 
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2018-03-26"
 # Informazioni su {{site.data.keyword.composeForElasticsearch}}
 {: #about-compose-for-elasticsearch}
 
-{{site.data.keyword.composeForElasticsearch_full}} unisce la potenza di un motore di ricerca di testo completo con la forza dell'indicizzazione di un database del documento JSON. Insieme creano uno strumento potente per l'analisi dei dati su grandi volumi di dati. Con Elasticsearch, la tua ricerca può essere effettuata con esattezza, lasciandoti cercare approfonditamente nei tuoi dataset le strette corrispondenze e le quasi corrispondenze che potrebbero essere mancanti.
+{{site.data.keyword.composeForElasticsearch_full}} unisce la potenza di un motore di ricerca di testo completo con la forza dell'indicizzazione di un database del documento JSON. Insieme creano uno strumento potente per l'analisi dei dati su grandi volumi di dati. Con Elasticsearch, è possibile dare un punteggio all'esattezza delle tue ricerche, consentendoti di cercare approfonditamente nei tuoi dataset le strette corrispondenze e le quasi corrispondenze che potrebbero sfuggirti.
 {:shortdesc}
 
 **Nota:** tutte le istanze del servizio Compose di cui è stato eseguito il provisioning prima del 14 settembre 2016 che sono ancora attive e che possono ancora essere utilizzate a cui si può fare direttamente accesso da [https://www.compose.com/](https://www.compose.com). È possibile accedere direttamente a tutte le istanze del servizio Compose di cui è stato eseguito il provisioning da questo punto in avanti ed è possibile utilizzarle nel tuo account {{site.data.keyword.cloud}}.
@@ -25,7 +25,7 @@ Puoi creare un servizio {{site.data.keyword.composeForElasticsearch}} dalla pagi
 
 Scegli un nome del servizio, una regione, un'organizzazione e uno spazio in cui eseguire il provisioning del servizio. Puoi utilizzare il campo **Select a database version** per scegliere tra le versioni del database disponibili.
 
-Quando esegui il provisioning della tua istanza {{site.data.keyword.composeForElasticsearch}} puoi scegliere i piani *Standard* o *Enterprise*. Con il piano *Enterprise*, puoi eseguire il provisioning della tua istanza {{site.data.keyword.composeForElasticsearch}} in un cluster {{site.data.keyword.composeEnterprise}} disponibile. {{site.data.keyword.composeEnterprise}} fornisce la sicurezza e l'isolamento necessari per la conformità aziendale e utilizza la rete dedicata per garantire le prestazioni dei database distribuiti. Per ulteriori dettagli, consulta la [Documentazione aziendale Compose](../ComposeEnterprise/index.html).
+Quando esegui il provisioning della tua istanza {{site.data.keyword.composeForElasticsearch}}, puoi scegliere i piani *Standard* o *Enterprise*. Con il piano *Enterprise*, puoi eseguire il provisioning della tua istanza {{site.data.keyword.composeForElasticsearch}} in un cluster {{site.data.keyword.composeEnterprise}} disponibile. {{site.data.keyword.composeEnterprise}} fornisce la sicurezza e l'isolamento necessari per la conformità aziendale e utilizza la rete dedicata per garantire le prestazioni dei database distribuiti. Per ulteriori dettagli, vedi la [documentazione di {{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html).
 
 ## Gestione di {{site.data.keyword.composeForElasticsearch}}
 
@@ -37,12 +37,12 @@ Puoi gestire il tuo servizio dal dashboard del servizio. Qui puoi trovare le inf
 
 Per ulteriori informazioni, consulta [Impostazioni](./dashboard-settings.html).
 
-{{site.data.keyword.composeForElasticsearch}} si basa sui ruoli Cloud Foundry per gestire l'accesso al servizio. Solo gli utenti con il ruolo di sviluppatore possono visualizzare o utilizzare il dashboard del servizio. Per ulteriori informazioni sui ruoli Cloud Foundry, consulta le pagine [Cloud Foundry access](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess) e [Managing Cloud Foundry access](https://console.bluemix.net/docs/iam/mngcf.html#mngcf).
+{{site.data.keyword.composeForElasticsearch}} si basa sui ruoli Cloud Foundry per gestire l'accesso al servizio. Solo gli utenti con il ruolo di sviluppatore possono visualizzare o utilizzare il dashboard del servizio. Per ulteriori informazioni sui ruoli Cloud Foundry, consulta le pagine [Cloud Foundry access](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess) e [Managing Cloud Foundry access](https://console.{DomainName}/docs/iam/mngcf.html#mngcf).
 {: .tip}
 
 ## Connessione a {{site.data.keyword.composeForElasticsearch}}
 
-Puoi collegarti al tuo servizio utilizzando le credenziali create insieme al servizio o con le stringhe di connessione e la riga di comando forniti nella scheda *Overview* nel tuo dashboard del servizio.
+Puoi collegarti al tuo servizio con le credenziali create insieme al servizio o con le stringhe di connessione e la riga di comando forniti nella scheda *Overview* nel tuo dashboard del servizio.
 
 ## Connessione di un'applicazione {{site.data.keyword.cloud_notm}} a {{site.data.keyword.composeForElasticsearch}}
 

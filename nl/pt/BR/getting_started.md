@@ -14,7 +14,7 @@ lastupdated: "2018-02-16"
 
 
 # Tutorial de introdução
-Este tutorial usa o app de amostra [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) para demonstrar como usar o Node.js para se conectar a um serviço {{site.data.keyword.composeForElasticsearch_full}} usando as credenciais fornecidas. O aplicativo cria, lê e grava em um banco de dados utilizando os dados fornecidos por meio da interface da web do app.
+O tutorial de introdução usa o app de amostra [compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) para demonstrar como usar o Node.js para se conectar a um serviço {{site.data.keyword.composeForElasticsearch_full}} usando as credenciais fornecidas. O aplicativo cria, lê e grava em um banco de dados utilizando os dados fornecidos por meio da interface da web do app.
 {: shortdesc}
 
 ## Antes de iniciar
@@ -30,7 +30,7 @@ Também é necessário instalar o [Node.js](https://nodejs.org/) e [Git](https:/
 
 Escolha um nome do serviço e uma região, organização e espaço no qual provisionar o serviço e para o campo **Selecionar uma versão do banco de dados**, escolha _Versão preferencial mais recente_.
 
-Em seguida, escolha um plano de precificação para o seu serviço. É possível escolher os planos *Padrão* ou *Corporativo*. Com o plano *Corporativo*, é possível provisionar sua instância do {{site.data.keyword.composeForElasticsearch}} em um cluster disponível do {{site.data.keyword.composeEnterprise}}. O {{site.data.keyword.composeEnterprise}} fornece a segurança e o isolamento requeridos pela conformidade corporativa e usa rede dedicada para assegurar o desempenho dos bancos de dados implementados. Veja a documentação do [Compose Enterprise](../ComposeEnterprise/index.html) para obter mais detalhes.
+Em seguida, escolha um plano de precificação para o seu serviço. É possível escolher os planos *Padrão* ou *Corporativo*. Com o plano *Corporativo*, é possível provisionar sua instância do {{site.data.keyword.composeForElasticsearch}} em um cluster disponível do {{site.data.keyword.composeEnterprise}}. O {{site.data.keyword.composeEnterprise}} fornece a segurança e o isolamento requeridos pela conformidade corporativa e usa rede dedicada para assegurar o desempenho dos bancos de dados implementados. Consulte a documentação do  [ {{site.data.keyword.composeEnterprise}} ](/docs/services/ComposeEnterprise/index.html)  para obter mais detalhes.
 
 ## Etapa 2: Clonar o aplicativo de amostra Hello World por meio do Github
 
@@ -56,9 +56,75 @@ Use npm para instalar dependências.
   npm install
   ```
 
-## Etapa 4: Criar credenciais de serviço
+## Etapa 4: Fazer download e instalar a ferramenta da CLI do {{site.data.keyword.cloud_notm}}
 
-Antes de enviar o app por push para o {{site.data.keyword.cloud_notm}}, é possível executá-lo localmente para testar a conexão com a instância de serviço do {{site.data.keyword.composeForElasticsearch}}. Para se conectar ao serviço será necessário criar um conjunto de credenciais de serviço.
+A ferramenta da CLI do {{site.data.keyword.cloud_notm}} é o que você vai usar para se comunicar com o {{site.data.keyword.cloud_notm}} de seu terminal ou linha de comandos. Para obter detalhes, veja [Faça download e instale a CLI do {{site.data.keyword.cloud_notm}}](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
+
+## Etapa 5: Conectar-se ao  {{site.data.keyword.cloud_notm}}
+
+1. Conecte-se ao {{site.data.keyword.cloud_notm}} na ferramenta de linha de comandos e siga os prompts para efetuar login.
+
+  ```
+  ibmcloud login
+  ```
+
+  Se você tiver um ID de usuário federado, use o comando `ibmcloud login --sso` para efetuar login com seu ID de conexão única. Veja [Efetuando login com um ID federado](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) para saber mais.
+  {: .tip}
+
+2. Certifique-se de que você esteja direcionando para a organização e o espaço do {{site.data.keyword.cloud_notm}} corretos.
+
+  ```
+  ibmcloud target --cf
+  ```
+
+  Escolha nas opções fornecidas, usando os mesmos valores usados ao criar o serviço.
+
+## Etapa 6: Atualizar o arquivo manifest do app
+{: #update-manifest}
+
+O {{site.data.keyword.cloud_notm}} usa um arquivo manifest - `manifest.yml` para associar um aplicativo com um serviço. Siga estas etapas para criar o seu arquivo manifest.
+
+1. Em um editor, abra um novo arquivo e inclua o seguinte:
+
+  ```
+  ---
+  applications:
+  - name:    compose-elasticsearch-helloworld-nodejs
+    host:    compose-elasticsearch-helloworld-nodejs
+    memory:  128M
+    services:
+      - my-compose-for-elasticsearch-service
+  ```
+
+2. Mude o valor `host` para algo exclusivo. O host que você escolher determinará o subdomínio da URL do seu aplicativo: `<host>.mybluemix.net`.
+3. Mude o valor `name`. O valor que você escolher será o nome do app como aparece em seu painel do {{site.data.keyword.cloud_notm}}.
+4. Atualize o valor `services` para corresponder ao nome do serviço criado em [Criar uma instância de serviço do {{site.data.keyword.composeForElasticsearch}}](#create-service). 
+
+## Etapa 7: Empurre o app para  {{site.data.keyword.cloud_notm}}.
+
+Essa etapa falhará se o serviço não tiver concluído o fornecimento da Etapa 1. É possível verificar seu progresso acessando a visualização _Gerenciar_ do serviço.
+{: .tip}
+
+Quando você enviar por push o app, ele será automaticamente ligado ao serviço especificado no arquivo manifest.
+
+```
+ibmcloud cf push
+```
+
+## Etapa 8: Verificar se o app está conectado ao serviço {{site.data.keyword.composeForElasticsearch}}
+
+1. Navegue até o painel de serviço do {{site.data.keyword.composeForElasticsearch}}
+2. Selecione _Conexões_ no menu do painel. O seu aplicativo deve ser listado sob _Aplicativos conectados_.
+
+Se o seu aplicativo não estiver listado, repita as Etapas 7 e 8, inserindo os detalhes corretos no [manifest.yml](#update-manifest).
+
+## Etapa 9: Usar o app
+
+Agora, quando você visita `<host>.mybluemix.net/`, você será capaz de visualizar o conteúdo de sua coleção do {{site.data.keyword.composeForElasticsearch}}. Conforme você inclui palavras e as suas definições, elas são incluídas no banco de dados e exibidas. Se você parar e reiniciar o app verá que qualquer palavra e definição já incluída agora será listada.
+
+## Executando o app localmente
+
+Em vez de enviar o app por push para o {{site.data.keyword.cloud_notm}}, é possível executá-lo localmente para testar a conexão com a instância de serviço do {{site.data.keyword.composeForElasticsearch}}. Para se conectar ao serviço será necessário criar um conjunto de credenciais de serviço.
 
 1. No painel do {{site.data.keyword.cloud_notm}}, abra sua instância de serviço do {{site.data.keyword.composeForElasticsearch}}.
 2. Selecione _Credenciais de serviço_ no menu principal para abrir a visualização Credenciais de serviço.
@@ -82,79 +148,13 @@ Antes de enviar o app por push para o {{site.data.keyword.cloud_notm}}, é poss�
 Para evitar expor acidentalmente as suas credenciais ao enviar por push um aplicativo para o Github ou o {{site.data.keyword.cloud_notm}}, certifique-se de que o arquivo que contém as suas credenciais seja listado no arquivo ignorar relevante. Se você abrir `.cfignore` e `.gitignore` em seu diretório de aplicativo verá que `vcap-local.json` é listado em ambos, de maneira que isso não será incluído nos arquivos que serão transferidos por upload quando você enviar por push o app para Github ou {{site.data.keyword.cloud_notm}}.
 {: .tip}
 
-## Etapa 5: Executar o app localmente
+Agora inicie o servidor local.
 
 ```
 npm start
 ```
 
 O app agora está em execução em [http://localhost:8080](http://localhost:8080). É possível incluir palavras e definições no banco de dados do {{site.data.keyword.composeForElasticsearch}}. Quando você parar e reiniciar o app, qualquer palavra já incluída será exibida ao atualizar a página.
-
-O próximo estágio é conectar o seu app à sua instância de serviço e implementar o app no {{site.data.keyword.cloud_notm}}.
-
-## Etapa 6: Fazer download e instalar a ferramenta CLI do {{site.data.keyword.cloud_notm}}
-
-A ferramenta da CLI do {{site.data.keyword.cloud_notm}} é o que você vai usar para se comunicar com o {{site.data.keyword.cloud_notm}} de seu terminal ou linha de comandos. Para obter detalhes, veja [Faça download e instale a CLI do {{site.data.keyword.cloud_notm}}](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html).
-
-## Step 7: Conectar ao {{site.data.keyword.cloud_notm}}
-
-1. Conecte-se ao {{site.data.keyword.cloud_notm}} na ferramenta de linha de comandos e siga os prompts para efetuar login.
-
-  ```
-  bx login
-  ```
-
-  Se você tiver um ID do usuário federado, use o comando `bx login --sso` para efetuar login com o seu ID de conexão única. Veja [Efetuando login com um ID federado](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id) para saber mais.
-  {: .tip}
-
-2. Certifique-se de que você esteja direcionando para a organização e o espaço do {{site.data.keyword.cloud_notm}} corretos.
-
-  ```
-  bx target --cf
-  ```
-
-  Escolha nas opções fornecidas, usando os mesmos valores usados ao criar o serviço.
-
-## Etapa 8: Atualizar o arquivo manifest do app
-{: #update-manifest}
-
-O {{site.data.keyword.cloud_notm}} usa um arquivo manifest - `manifest.yml` para associar um aplicativo com um serviço. Siga estas etapas para criar o seu arquivo manifest.
-
-1. Em um editor, abra um novo arquivo e inclua o seguinte:
-
-  ```
-  ---
-  applications:
-  - name:    compose-elasticsearch-helloworld-nodejs
-    host:    compose-elasticsearch-helloworld-nodejs
-    memory:  128M
-    services:
-      - my-compose-for-elasticsearch-service
-  ```
-
-2. Mude o valor `host` para algo exclusivo. O host que você escolher determinará o subdomínio da URL do seu aplicativo: `<host>.mybluemix.net`.
-3. Mude o valor `name`. O valor que você escolher será o nome do app como aparece em seu painel do {{site.data.keyword.cloud_notm}}.
-4. Atualize o valor `services` para corresponder ao nome do serviço criado em [Criar uma instância de serviço do {{site.data.keyword.composeForElasticsearch}}](#create-service). 
-
-## Etapa 9: Enviar por push o app para o {{site.data.keyword.cloud_notm}}.
-
-Quando você enviar por push o app, ele será automaticamente ligado ao serviço especificado no arquivo manifest.
-
-```
-bx cf push
-```
-
-## Etapa 10: Verificar se o app está conectado ao serviço {{site.data.keyword.composeForElasticsearch}}
-
-1. Navegue até o painel de serviço do {{site.data.keyword.composeForElasticsearch}}
-2. Selecione _Conexões_ no menu do painel. O seu aplicativo deve ser listado sob _Aplicativos conectados_.
-
-Se o seu aplicativo não estiver listado, repita as Etapas 7 e 8, inserindo os detalhes corretos no [manifest.yml](#update-manifest).
-
-## Etapa 11: Usar o app
-
-Agora, quando você visita `<host>.mybluemix.net/`, você será capaz de visualizar o conteúdo de sua coleção do {{site.data.keyword.composeForElasticsearch}}. Conforme você inclui palavras e as suas definições, elas são incluídas no banco de dados e exibidas. Se você parar e reiniciar o app verá que qualquer palavra e definição já incluída agora será listada.
-
 
 ## Etapas seguintes
 
@@ -166,6 +166,7 @@ Para começar a explorar o serviço {{site.data.keyword.composeForElasticsearch}
 - [Backups](./dashboard-backups.html)
 - [Configurações](./dashboard-settings.html)
 
-Para obter informações sobre as credenciais que você criou para o aplicativo para se conectar ao seu serviço, veja [Credenciais disponíveis](./connecting-bluemix-app.html#available-credentials).
+Para obter informações sobre as credenciais criadas para que o aplicativo se conecte a seu serviço, consulte uma lista das [credenciais](/docs/services/ComposeForElasticsearch/connecting-bluemix-app.html#credentials) disponíveis.
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
+

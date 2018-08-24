@@ -14,7 +14,7 @@ lastupdated: "2018-02-16"
 
 
 # 概説チュートリアル
-このチュートリアルでは、[compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) サンプル・アプリケーションを使用して、用意されている資格情報を使用して Node.js で {{site.data.keyword.composeForElasticsearch_full}}サービスに接続する方法を示します。 アプリケーションは、アプリケーションの Web インターフェースを介して提供されるデータを使用して、データベースを作成し、データベースに対して読み取りおよび書き込みを行います。
+概説チュートリアルでは、[compose-elasticsearch-helloworld-nodejs](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) サンプル・アプリケーションを使用して、用意されている資格情報を使用して Node.js で {{site.data.keyword.composeForElasticsearch_full}} サービスに接続する方法を示します。 アプリケーションは、アプリケーションの Web インターフェースを介して提供されるデータを使用して、データベースを作成し、データベースに対して読み取りおよび書き込みを行います。
 {: shortdesc}
 
 ## 始めに
@@ -30,7 +30,7 @@ lastupdated: "2018-02-16"
 
 サービス名、およびサービスをプロビジョンする地域、組織、スペースを選択します。**「データベースのバージョンの選択 (Select a database version)」**フィールドでは_「最新の推奨バージョン (Latest Preferred Version)」_を選択します。
 
-次に、サービスの料金プランを選択します。 *標準*プランと*エンタープライズ*・プランのどちらかを選択できます。 *「エンタープライズ (Enterprise)」*プランを選択した場合は、使用可能な {{site.data.keyword.composeEnterprise}} クラスターに {{site.data.keyword.composeForElasticsearch}} インスタンスをプロビジョンできます。 {{site.data.keyword.composeEnterprise}} は、企業コンプライアンスで要求されるセキュリティーと分離を提供し、専用ネットワーキングを使用してデプロイ済みデータベースのパフォーマンスを確保します。 詳しくは、[Compose Enterprise](../ComposeEnterprise/index.html) 文書を参照してください。
+次に、サービスの料金プランを選択します。 *標準*プランと*エンタープライズ*・プランのどちらかを選択できます。 *「エンタープライズ (Enterprise)」*プランを選択した場合は、使用可能な {{site.data.keyword.composeEnterprise}} クラスターに {{site.data.keyword.composeForElasticsearch}} インスタンスをプロビジョンできます。 {{site.data.keyword.composeEnterprise}} は、企業コンプライアンスで要求されるセキュリティーと分離を提供し、専用ネットワーキングを使用してデプロイ済みデータベースのパフォーマンスを確保します。 詳しくは、[{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) 文書を参照してください。
 
 ## ステップ 2: Github から Hello World サンプル・アプリケーションを複製する
 
@@ -56,9 +56,75 @@ npm を使用して従属項目をインストールします。
   npm install
   ```
 
-## ステップ 4: サービス資格情報を作成する
+## ステップ 4: {{site.data.keyword.cloud_notm}} CLI ツールをダウンロードしてインストールする
 
-アプリケーションを {{site.data.keyword.cloud_notm}} にプッシュする前に、ローカル環境でアプリケーションを実行して {{site.data.keyword.composeForElasticsearch}} サービス・インスタンスへの接続をテストできます。 サービスに接続するには、一連のサービス資格情報を作成する必要があります。
+{{site.data.keyword.cloud_notm}} CLI ツールは、端末またはコマンド・ラインから {{site.data.keyword.cloud_notm}} と通信するために使用するツールです。 詳しくは、[{{site.data.keyword.cloud_notm}} CLI のダウンロードとインストール](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html)を参照してください。
+
+## ステップ 5: {{site.data.keyword.cloud_notm}} に接続する
+
+1. コマンド・ライン・ツールで {{site.data.keyword.cloud_notm}} に接続し、プロンプトに従ってログインします。
+
+  ```
+  ibmcloud login
+  ```
+
+  統合ユーザー ID がある場合は、`ibmcloud login --sso` コマンドを使用して、シングル・サインオン ID でログインします。 詳細については、[統合 ID によるログイン](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id)を参照してください。
+  {: .tip}
+
+2. 正しい {{site.data.keyword.cloud_notm}} 組織とスペースをターゲットとしていることを確認してください。
+
+  ```
+  ibmcloud target --cf
+  ```
+
+  サービス作成時に使用した値と同じ値を使用して、提供されたオプションから選択します。
+
+## ステップ 6: アプリケーションのマニフェスト・ファイルを更新する
+{: #update-manifest}
+
+{{site.data.keyword.cloud_notm}} はマニフェスト・ファイル - `manifest.yml` を使用して、アプリケーションをサービスに関連付けます。 マニフェスト・ファイルを作成するには、以下の手順に従います。
+
+1. エディターで新規ファイルを開き、以下を追加します。
+
+  ```
+  ---
+  applications:
+  - name:    compose-elasticsearch-helloworld-nodejs
+    host:    compose-elasticsearch-helloworld-nodejs
+    memory:  128M
+    services:
+      - my-compose-for-elasticsearch-service
+  ```
+
+2. `host` 値を固有のものに変更します。 アプリケーションの URL のサブドメインは、`<host>.mybluemix.net` のように、選択したホストによって決まります。
+3. `name` 値を変更します。 選択した値は、{{site.data.keyword.cloud_notm}} ダッシュボードでのアプリケーションの表示名になります。
+4. `services` 値を更新し、[{{site.data.keyword.composeForElasticsearch}} サービス・インスタンスの作成](#create-service)で作成したサービスの名前と一致させます。 
+
+## ステップ 7: アプリケーションを {{site.data.keyword.cloud_notm}} にプッシュする。
+
+ステップ 1 のサービスのプロビジョニングが完了していないと、このステップは失敗します。進行状況を確認するには、サービスの_「管理」_ビューに移動します。
+{: .tip}
+
+アプリケーションをプッシュすると、マニフェスト・ファイルで指定されたサービスに自動的にバインドされます。
+
+```
+ibmcloud cf push
+```
+
+## ステップ 8: アプリケーションが {{site.data.keyword.composeForElasticsearch}} サービスに接続していることを確認する
+
+1. {{site.data.keyword.composeForElasticsearch}} サービス・ダッシュボードにナビゲートします。
+2. ダッシュボード・メニューから_「接続」_を選択します。 アプリケーションが_「接続済みアプリケーション」_に表示されます。
+
+アプリケーションが表示されない場合は、ステップ 7 と 8 を再度実行し、[manifest.yml](#update-manifest) で正しい詳細情報を入力したことを確認します。
+
+## ステップ 9: アプリケーションを使用する
+
+`<host>.mybluemix.net/` にアクセスすると、{{site.data.keyword.composeForElasticsearch}} コレクションの内容を表示できます。 単語と定義を追加すると、データベースに追加され、表示されます。 アプリケーションを停止して再始動すると、追加した単語と定義が表示されます。
+
+## ローカルでアプリケーションを実行する
+
+アプリケーションを {{site.data.keyword.cloud_notm}} にプッシュする代わりに、ローカル環境でアプリケーションを実行して {{site.data.keyword.composeForElasticsearch}} サービス・インスタンスへの接続をテストできます。 サービスに接続するには、一連のサービス資格情報を作成する必要があります。
 
 1. {{site.data.keyword.cloud_notm}} ダッシュボードから、{{site.data.keyword.composeForElasticsearch}} サービス・インスタンスを開きます。
 2. メインメニューから_「サービス資格情報 (Service Credentials)」_を選択して、「サービス資格情報 (Service Credentials)」ビューを開きます。
@@ -83,79 +149,13 @@ npm を使用して従属項目をインストールします。
 アプリケーションを Github または {{site.data.keyword.cloud_notm}} にプッシュする際に、資格情報が誤って公開されないようにするには、資格情報を含むファイルが関連する無視ファイルにリストされていることを確認してください。 アプリケーション・ディレクトリーで `.cfignore` および `.gitignore` を開くと、`vcap-local.json` が両方にリストされていることがわかります。そのため、アプリケーションを Github または {{site.data.keyword.cloud_notm}} のいずれかにプッシュした場合にアップロードされるファイルには含まれません。
 {: .tip}
 
-## ステップ 5: ローカルでアプリケーションを実行する
+この時点で、ローカル・サーバーを始動します。
 
 ```
 npm start
 ```
 
 これで、アプリケーションが [http://localhost:8080](http://localhost:8080) で実行されます。 {{site.data.keyword.composeForElasticsearch}} データベースに単語と定義を追加できます。 アプリケーションを停止して再始動すると、追加した単語が、ページの最新表示時に表示されます。
-
-次のステージでは、アプリケーションをサービス・インスタンスに接続し、アプリケーションを {{site.data.keyword.cloud_notm}} にデプロイします。
-
-## ステップ 6: {{site.data.keyword.cloud_notm}} CLI ツールをダウンロードしてインストールする
-
-{{site.data.keyword.cloud_notm}} CLI ツールは、端末またはコマンド・ラインから {{site.data.keyword.cloud_notm}} と通信するために使用するツールです。 詳しくは、[{{site.data.keyword.cloud_notm}} CLI のダウンロードとインストール](https://console.{DomainName}/docs/cli/reference/bluemix_cli/download_cli.html)を参照してください。
-
-## ステップ 7: {{site.data.keyword.cloud_notm}} に接続する
-
-1. コマンド・ライン・ツールで {{site.data.keyword.cloud_notm}} に接続し、プロンプトに従ってログインします。
-
-  ```
-  bx login
-  ```
-
-  統合ユーザー ID がある場合は、`bx login --sso` コマンドを使用して、シングル・サインオン ID でログインします。 詳細については、[統合 ID によるログイン](https://console.{DomainName}/docs/cli/login_federated_id.html#federated_id)を参照してください。
-  {: .tip}
-
-2. 正しい {{site.data.keyword.cloud_notm}} 組織とスペースをターゲットとしていることを確認してください。
-
-  ```
-  bx target --cf
-  ```
-
-  サービス作成時に使用した値と同じ値を使用して、提供されたオプションから選択します。
-
-## ステップ 8: アプリケーションのマニフェスト・ファイルを更新する
-{: #update-manifest}
-
-{{site.data.keyword.cloud_notm}} はマニフェスト・ファイル - `manifest.yml` を使用して、アプリケーションをサービスに関連付けます。 マニフェスト・ファイルを作成するには、以下の手順に従います。
-
-1. エディターで新規ファイルを開き、以下を追加します。
-
-  ```
-  ---
-  applications:
-  - name:    compose-elasticsearch-helloworld-nodejs
-    host:    compose-elasticsearch-helloworld-nodejs
-    memory:  128M
-    services:
-      - my-compose-for-elasticsearch-service
-  ```
-
-2. `host` 値を固有のものに変更します。 アプリケーションの URL のサブドメインは、`<host>.mybluemix.net` のように、選択したホストによって決まります。
-3. `name` 値を変更します。 選択した値は、{{site.data.keyword.cloud_notm}} ダッシュボードでのアプリケーションの表示名になります。
-4. `services` 値を更新し、[{{site.data.keyword.composeForElasticsearch}} サービス・インスタンスの作成](#create-service)で作成したサービスの名前と一致させます。 
-
-## ステップ 9: アプリケーションを {{site.data.keyword.cloud_notm}} にプッシュする。
-
-アプリケーションをプッシュすると、マニフェスト・ファイルで指定されたサービスに自動的にバインドされます。
-
-```
-bx cf push
-```
-
-## ステップ 10: アプリケーションが {{site.data.keyword.composeForElasticsearch}} サービスに接続していることを確認する
-
-1. {{site.data.keyword.composeForElasticsearch}} サービス・ダッシュボードにナビゲートします。
-2. ダッシュボード・メニューから_「接続」_を選択します。 アプリケーションが_「接続済みアプリケーション」_に表示されます。
-
-アプリケーションが表示されない場合は、ステップ 7 と 8 を再度実行し、[manifest.yml](#update-manifest) で正しい詳細情報を入力したことを確認します。
-
-## ステップ 11: アプリケーションを使用する
-
-`<host>.mybluemix.net/` にアクセスすると、{{site.data.keyword.composeForElasticsearch}} コレクションの内容を表示できます。 単語と定義を追加すると、データベースに追加され、表示されます。 アプリケーションを停止して再始動すると、追加した単語と定義が表示されます。
-
 
 ## 次のステップ
 
@@ -167,6 +167,7 @@ bx cf push
 - [バックアップ](./dashboard-backups.html)
 - [設定](./dashboard-settings.html)
 
-アプリケーションからサービスに接続するために作成した資格情報については、[使用可能な資格情報](./connecting-bluemix-app.html#available-credentials)を参照してください。
+アプリケーションからサービスに接続するために作成した資格情報については、使用可能な[資格情報](/docs/services/ComposeForElasticsearch/connecting-bluemix-app.html#credentials)のリストを参照してください。
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
+

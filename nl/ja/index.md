@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016,2018
-lastupdated: "2018-03-26"
+lastupdated: "2018-05-04"
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +25,7 @@ lastupdated: "2018-03-26"
 
 サービス名、およびサービスをプロビジョンする地域、組織、スペースを選択します。 **「データベースのバージョンの選択 (Select a database version)」**フィールドを使用して、データベースの使用できるバージョンを選択できます。
 
-{{site.data.keyword.composeForElasticsearch}} インスタンスをプロビジョンするときに、*「標準」*プランか*「エンタープライズ (Enterprise)」*プランかを選択できます。 *「エンタープライズ (Enterprise)」*プランを選択した場合は、使用可能な {{site.data.keyword.composeEnterprise}} クラスターに {{site.data.keyword.composeForElasticsearch}} インスタンスをプロビジョンできます。 {{site.data.keyword.composeEnterprise}} は、企業コンプライアンスで要求されるセキュリティーと分離を提供し、専用ネットワーキングを使用してデプロイ済みデータベースのパフォーマンスを確保します。 詳しくは、[Compose Enterprise 文書](../ComposeEnterprise/index.html)を参照してください。
+{{site.data.keyword.composeForElasticsearch}} インスタンスをプロビジョンするときには、*標準*プランか*エンタープライズ*・プランを選択できます。 *「エンタープライズ (Enterprise)」*プランを選択した場合は、使用可能な {{site.data.keyword.composeEnterprise}} クラスターに {{site.data.keyword.composeForElasticsearch}} インスタンスをプロビジョンできます。 {{site.data.keyword.composeEnterprise}} は、企業コンプライアンスで要求されるセキュリティーと分離を提供し、専用ネットワーキングを使用してデプロイ済みデータベースのパフォーマンスを確保します。 詳しくは、[{{site.data.keyword.composeEnterprise}} 文書](/docs/services/ComposeEnterprise/index.html)を参照してください。
 
 ## {{site.data.keyword.composeForElasticsearch}} の管理
 
@@ -37,7 +37,7 @@ lastupdated: "2018-03-26"
 
 詳しくは、[設定](./dashboard-settings.html)を参照してください。
 
-{{site.data.keyword.composeForElasticsearch}} は、Cloud Foundry の役割を利用して、サービスへのアクセスを管理します。開発者役割を持つユーザーのみが、サービス・ダッシュボードを表示または使用できます。Cloud Foundry の役割について詳しくは、『[Cloud Foundry アクセス権限](https://console.bluemix.net/docs/iam/cfaccess.html#cfaccess)』および 『[Cloud Foundry のアクセス権限の管理](https://console.bluemix.net/docs/iam/mngcf.html#mngcf)』のページを参照してください。
+{{site.data.keyword.composeForElasticsearch}} は、Cloud Foundry の役割を利用して、サービスへのアクセスを管理します。 開発者役割を持つユーザーのみが、サービス・ダッシュボードを表示または使用できます。 Cloud Foundry の役割について詳しくは、『[Cloud Foundry アクセス権限](https://console.{DomainName}/docs/iam/cfaccess.html#cfaccess)』および 『[Cloud Foundry のアクセス権限の管理](https://console.{DomainName}/docs/iam/mngcf.html#mngcf)』のページを参照してください。
 {: .tip}
 
 ## {{site.data.keyword.composeForElasticsearch}} への接続

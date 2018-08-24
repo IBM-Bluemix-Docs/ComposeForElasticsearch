@@ -1,14 +1,14 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-elasticsearch" audience="service" href="/docs/services/ComposeForElasticsearch/index.html"}
+{: .toc subcollection="compose-for-elasticsearch" audience="service" arm="3663051" href="/docs/services/ComposeForElasticsearch/index.html"}
 Compose For Elasticsearch
 
 	{: .navgroup id="learn"}
 	index.md
 	getting_started.md
 	pricing.md
-	
+
 	{: .topicgroup}
 	Il dashboard del servizio
 		dashboard-overview.md
@@ -21,4 +21,13 @@ Compose For Elasticsearch
 	Connessione a Compose for Elasticsearch
 		connecting-bluemix-app.md
 		connecting-external.md
+	
+	upgrading.md
+	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	reference-versions.md
+	reference-architecture.md
+	reference-connections.md
+	reference-other-offerings.md
 	{: .navgroup-end}

@@ -2,7 +2,7 @@
 
 Copyright:
   years: 2016,2018
-lastupdated: "2017-12-05"
+lastupdated: "2018-05-07"
 ---
 
 {:new_window: target="_blank"}
@@ -15,7 +15,7 @@ lastupdated: "2017-12-05"
 
 É possível gerenciar seu serviço {{site.data.keyword.composeForElasticsearch_full}} do painel de serviço.
 
-A página _Visão geral_ mostra informações sobre seu banco de dados do Compose do {{site.data.keyword.cloud}}. A visão geral inclui informações essenciais de identificação e o uso do recurso atual. Você também localizará uma seção para sequências de conexões que podem ser usadas com ferramentas ou fazer uso de ferramentas para se conectar a seu banco de dados.
+A página _Visão geral_ mostra informações sobre seu banco de dados do Compose do {{site.data.keyword.cloud}}. A visão geral inclui informações essenciais de identificação e o uso do recurso atual. Também é possível localizar uma seção para as sequências de conexões que podem ser usadas para se conectar ao banco de dados.
 
 ## Detalhes da implementação
 
@@ -27,7 +27,7 @@ O painel _Detalhes da implementação_ mostra detalhes de seu serviço.
 
 O tipo de banco de dados que é oferecido pelo serviço e a versão do banco de dados que seu serviço usa. Se uma versão de banco de dados mais recente estiver disponível, uma notificação será exibida, junto a um link para a seção [Fazer upgrade da versão](/docs/services/ComposeForElasticsearch/dashboard-settings.html#upgrade-version) de seu painel de serviço.
 
-### Nome
+### ID
 
 Um identificador interno para o serviço.
 
@@ -38,13 +38,13 @@ O tamanho de seu banco de dados e a quantia de armazenamento fornecido por seu p
 
 ## Sequências de conexões
 
-As Sequências de conexões podem ser usadas por algumas bibliotecas do cliente e contêm todas as informações necessárias para outras bibliotecas se conectarem. É possível descobrir como usar uma Sequência de conexões para conectar-se a seu serviço em [Conectando um aplicativo externo](/docs/services/ComposeForElasticsearch/connecting-external.html).
+As Sequências de conexões podem ser usadas por algumas bibliotecas do cliente. Elas contêm todas as informações que são necessárias para que outras bibliotecas se conectem. É possível descobrir como usar uma Sequência de conexões para conectar-se a seu serviço em [Conectando um aplicativo externo](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
-Você localizará cada Sequência de conexões para seu serviço em uma guia diferente no painel _Sequências de conexões_.
+É possível localizar cada Sequência de conexões para seu serviço em uma guia diferente no painel _Sequências de conexões_.
 
 ### HTTPS
 
-Uma sequência de conexões formatadas por URI que pode ser usada por algumas bibliotecas do cliente e contém todas as informações necessárias para outras bibliotecas se conectarem. É possível descobrir como usar a Sequência de conexões para conectar-se em [Conectando um aplicativo externo](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Uma sequência de conexões formatada por URI que pode ser usada por algumas bibliotecas do cliente. Ela contém todas as informações necessárias para que outras bibliotecas se conectem. É possível descobrir como usar a Sequência de conexões para conectar-se em [Conectando um aplicativo externo](/docs/services/ComposeForElasticsearch/connecting-external.html).
 
 ### Funcionamento
 
@@ -56,7 +56,7 @@ Uma chamada de exemplo que é possível usar para descobrir o funcionamento do c
 
 ### Terminal de base
 
-O terminal base é composto pela região na qual o serviço reside e pelo ID da instância de serviço. Ela estará no início de cada terminal.
+O terminal base é composto pela região na qual o serviço reside e pelo ID da instância de serviço. Ele está no início de cada terminal.
 
 ### ID de implementação
 
