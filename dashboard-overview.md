@@ -35,6 +35,9 @@ An internal identifier for the service.
 
 The size of your database and the amount of storage that is provided by your service plan.
 
+## Recent Tasks
+
+Making administrative changes to your service (such as scaling, or taking a manual backup) starts a task. While task is running, the _Recent Tasks_ panel shows the task name and a progress bar.
 
 ## Connection Strings
 
