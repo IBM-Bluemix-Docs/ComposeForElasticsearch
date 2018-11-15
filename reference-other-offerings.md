@@ -26,4 +26,4 @@ You can find other useful database-related information in the [Compose Articles]
 
 When you have an available {{site.data.keyword.composeEnterprise}} cluster, you can select the Enterprise plan when you create the {{site.data.keyword.composeForElasticsearch}} service to provision the service onto your dedicated cluster.
 
-More information is available on the [{{site.data.keyword.composeEnterprise}} catalog page](https://console.{DomainName}/catalog/services/compose-enterprise) and in its [documentation](https://console.{DomainName}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
+More information is available on the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/services/compose-enterprise) and in its [documentation](https://{DomainName}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).

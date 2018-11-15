@@ -18,7 +18,7 @@ Deployable Versions| Preferred Version
 5.6.9, 6.2.2 | 6.2.2
 {: caption="Table 1. Elasticsearch versions" caption-side="top"}
 
-You can find the list of available versions on the {{site.data.keyword.composeForElasticsearch}} [catalog page](https://console.{DomainName}/catalog/services/compose-for-elasticsearch).
+You can find the list of available versions on the {{site.data.keyword.composeForElasticsearch}} [catalog page](https://{DomainName}/catalog/services/compose-for-elasticsearch).
 
 ## Preferred Version
 
