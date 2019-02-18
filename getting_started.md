@@ -162,11 +162,11 @@ To understand more about how the [compose-elasticsearch-helloworld-nodejs](https
 
 To start exploring your {{site.data.keyword.composeForElasticsearch}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](./dashboard-overview.html)
-- [Backups](./dashboard-backups.html)
-- [Settings](./dashboard-settings.html)
+- [Dashboard Overview](/docs/services/ComposeForElasticsearch?topic=services/ComposeForElasticsearch-dashboard-overview)
+- [Backups](/docs/services/ComposeForElasticsearch?topic=services/ComposeForElasticsearch-dashboard-backups)
+- [Settings](/docs/services/ComposeForElasticsearch?topic=services/ComposeForElasticsearch-dashboard-settings)
 
-For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForElasticsearch/connecting-bluemix-app.html#credentials).
+For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-ibmcloud-cf-app#credentials).
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
 

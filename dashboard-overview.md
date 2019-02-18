@@ -12,6 +12,7 @@ lastupdated: "2018-05-07"
 {:pre: .pre}
 
 # Dashboard Overview
+{: #dashboard-overview}
 
 You can manage your {{site.data.keyword.composeForElasticsearch_full}} service from the service dashboard.
 
@@ -25,7 +26,7 @@ The _Deployment Details_ pane shows details of your service.
 
 ### Type
 
-The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForElasticsearch/dashboard-settings.html#upgrade-version) section of your service dashboard.
+The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-settings#upgrade-version) section of your service dashboard.
 
 ### ID
 
@@ -41,13 +42,13 @@ Making administrative changes to your service (such as scaling, or taking a manu
 
 ## Connection Strings
 
-Connection Strings can be used by some client libraries. They contain all the information that is needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
+Connection Strings can be used by some client libraries. They contain all the information that is needed for other libraries to connect. You can find out how to use a Connection String to connect to your service in [Connecting an external application](/docs/services/ComposeForElasticsearch/?topic=compose-for-elasticsearch-external-app).
 
 You can find each Connection String for your service in a different tab in the _Connection Strings_ pane.
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries. It contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch/connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries. It contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-external-app).
 
 ### Health
 

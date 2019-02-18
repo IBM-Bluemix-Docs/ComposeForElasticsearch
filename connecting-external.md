@@ -12,7 +12,7 @@ lastupdated: "2017-07-13"
 {:pre: .pre}
 
 # Connecting an external application
-{: #connecting-external-app}
+{: #external-app}
 
 All new {{site.data.keyword.composeForElasticsearch_full}} deployments accept only TLS/SSL (`https://`) secured connections that are backed with a Let's Encrypt certificate.
 

@@ -11,8 +11,8 @@ lastupdated: "2018-06-18"
 {:pre: .pre}
 {:tip: .tip}
 
-# Configuring connections
-{: #connection-configuration}
+# Connection Architecture
+{: #connection-architecture}
 
 {{site.data.keyword.composeForElasticsearch_full}} database connections are managed by 2 HAProxy portals. Each portal has 64 MB of memory. The two portals allow for applications to maintain connectivity if one of the portals becomes unreachable.
 

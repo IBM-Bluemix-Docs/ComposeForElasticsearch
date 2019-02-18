@@ -13,6 +13,8 @@ lastupdated: "2017-10-20"
 {:tip: .tip}
 
 # Settings
+{: #dashboard-settings}
+
 Use these features to adapt your {{site.data.keyword.composeForElasticsearch_full}} service to suit your needs and requirements.
 
 ## Upgrade Version

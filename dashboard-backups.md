@@ -12,7 +12,7 @@ lastupdated: "2018-04-19"
 {:pre: .pre}
 
 # Managing backups
-{: #backups}
+{: #dashboard-backups}
 
 You can create and restore backups from the _Backups_ tab of the _Manage_ page of your service dashboard. Daily, weekly, monthly, and on-demand backups are available and retained according to the following schedule:
 
@@ -69,7 +69,7 @@ When you are restoring from a backup, your data is restored to the most recent m
 ### Restoring via CLI
 
 Use the following steps to restore a backup from a running Elasticsearch service to a new Elasticsearch service by using the {{site.data.keyword.cloud_notm}} CLI. 
-1. If you need to, [download and install the CLI](https://{DomainName}/docs/cli/index.html#overview). 
+1. If you need to, [download and install the CLI](/docs/cli?topic=cloud-cli-overview). 
 2. Find the backup that you would like to restore from on the _Backups_ page on your service and copy the backup ID.  
   **Or**  
   Use the `GET /2016-07/deployments/:id/backups` to find a backup and its ID through the Compose API. The Foundation Endpoint and the service instance ID are both shown in the service's _Overview_. For example: 
@@ -99,7 +99,7 @@ Use the following steps to restore a backup from a running Elasticsearch service
   <dd>The service instance ID of the source of the backup. You can obtain the value by running `ibmcloud cf service DISPLAY_NAME --guid`, where _DISPLAY\_NAME_ is the name of the service the backup is from. </dd>
   </dl>
 
-  You can use the optional JSON parameter "db_version" to specify which version of Elasticsearch to restore to. This parameter is also used to [upgrade to a major version of Elasticsearch](./upgrading.html).
+  You can use the optional JSON parameter "db_version" to specify which version of Elasticsearch to restore to. This parameter is also used to [upgrade to a major version of Elasticsearch](docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-upgrading).
   
   Enterprise users also need to specify which cluster to deploy to in the JSON object with the `"cluster_id": "$CLUSTER_ID"` parameter.
 
