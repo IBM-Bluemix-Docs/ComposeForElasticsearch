@@ -3,6 +3,9 @@
 Copyright:
   years: 2016,2018
 lastupdated: "2018-05-07"
+
+subcollection: compose-for-elasticsearch
+
 ---
 
 {:new_window: target="_blank"}
