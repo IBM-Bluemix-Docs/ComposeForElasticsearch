@@ -4,6 +4,8 @@ copyright:
   years: 2016,2018
 lastupdated: "2018-05-04"
 
+keywords: elasticsearch, compose
+
 subcollection: compose-for-elasticsearch
 
 ---
