@@ -35,5 +35,5 @@ When a new version is made available, its release is announced and the new versi
 
 
 To get a current list of available versions for your {{site.data.keyword.composeForElasticsearch}} service, you can use the 
-`GET /2016-07/deployments/:id/versions` endpoint. For more information, see the [API documentation](https://apidocs.compose.com/v1.0/reference#2016-07-get-deployments-versions)
+`GET /2016-07/deployments/:id/versions` endpoint. For more information, see the [API documentation](https://apidocs.compose.com/reference#2016-07-get-deployments-versions)
 

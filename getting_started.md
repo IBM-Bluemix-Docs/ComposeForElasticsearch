@@ -33,7 +33,7 @@ You can create a {{site.data.keyword.composeForElasticsearch}} service from the 
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise/index.html) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
 
 ## Step 2. Clone the Hello World sample app from GitHub
 
@@ -87,7 +87,7 @@ The {{site.data.keyword.cloud_notm}} CLI tool is what you use to communicate wit
 {{site.data.keyword.cloud_notm}} uses a manifest file - `manifest.yml` to associate an application with a service. Follow these steps to create your file.
 
 1. In an editor, open a new file and add the following text:
-  ```
+```
   ---
   applications:
   - name: compose-elasticsearch-helloworld-nodejs
@@ -135,17 +135,17 @@ Instead of pushing the app into {{site.data.keyword.cloud_notm}} you can run it 
 5. Your new credentials are now listed. Click **View credentials** in the corresponding row of the table to view the credentials, and click the **Copy** icon to copy your credentials.
 6. In your editor of choice, create a new file with the following, inserting your credentials.
 
-  ```
-  {
-    "services": {
-      "compose-for-elasticsearch": [
-        {
-          "credentials": INSERT YOUR CREDENTIALS HERE
-        }
-      ]
-    }
+```
+{
+  "services": {
+    "compose-for-elasticsearch": [
+      {
+        "credentials": INSERT YOUR CREDENTIALS HERE
+      }
+    ]
   }
-  ```
+}
+```
 6. Save the file as `vcap-local.json` in the directory where the sample app is located.
 
 To avoid accidentally exposing your credentials when you push an application to GitHub or {{site.data.keyword.cloud_notm}}, you should make sure that the file that contains your credentials is listed in the relevant ignore file. If you open `.cfignore` and `.gitignore` in your application directory you'll see that `vcap-local.json` is listed in both, so it won't be included in the files that are uploaded when you push the app to either GitHub or {{site.data.keyword.cloud_notm}}.
@@ -165,9 +165,9 @@ To understand more about how the [compose-elasticsearch-helloworld-nodejs](https
 
 To start exploring your {{site.data.keyword.composeForElasticsearch}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/services/ComposeForElasticsearch?topic=services/ComposeForElasticsearch-dashboard-overview)
-- [Backups](/docs/services/ComposeForElasticsearch?topic=services/ComposeForElasticsearch-dashboard-backups)
-- [Settings](/docs/services/ComposeForElasticsearch?topic=services/ComposeForElasticsearch-dashboard-settings)
+- [Dashboard Overview](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-overview)
+- [Backups](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-backups)
+- [Settings](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-settings)
 
 For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-ibmcloud-cf-app#credentials).
 
