@@ -61,7 +61,7 @@ Full documentation of breaking changes can be found in the [Elasticsearch docs](
 
 ### Migrating to a New Version
 
-To migrate to a new version of Elasticsearch, you need the [{{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/index.html#overview). The process is similar to [restoring backup through the CLI](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-backups), except that you will use the "db_version" field in the JSON to specify which version you are upgrading to. The full command is as follows.
+To migrate to a new version of Elasticsearch, you need the [{{site.data.keyword.cloud_notm}} CLI](https://{DomainName}/docs/cli/index.html#overview). The process is similar to [restoring backup through the CLI](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-backups), except that you will use the "db_version" field in the JSON to specify which version you are upgrading to. The full command is as follows.
 
 ``` 
 ibmcloud service create SERVICE PLAN SERVICE_INSTANCE_NAME -c '{"source_service_instance_id": "$SERVICE_INSTANCE_ID", "backup_id": ""$BACKUP_ID", "db_version":"$VERSION_NUMBER" }'

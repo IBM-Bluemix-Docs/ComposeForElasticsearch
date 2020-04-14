@@ -22,7 +22,8 @@ Compose For Elasticsearch
 	Connecting to Compose for Elasticsearch
 		connecting-bluemix-app.md
 		connecting-external.md
-	
+
+	/databases-for-elasticsearch/databases-for-elasticsearch-compose-migrating
 	upgrading.md
 	{: .navgroup-end}
 

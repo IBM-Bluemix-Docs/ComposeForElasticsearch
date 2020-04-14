@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016,2018
-lastupdated: "2018-02-16"
+  years: 2016,2020
+lastupdated: "2020-04-13"
 
 subcollection: compose-for-elasticsearch
 
@@ -14,9 +14,15 @@ subcollection: compose-for-elasticsearch
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:important: .important}
 
 
 # Getting started tutorial
+{: #getting-started}
+
+{{site.data.keyword.composeForElasticsearch_full}} is no longer the latest service offering. The next generation is {{site.data.keyword.databases-for-elasticsearch_full}}. If you were considering a {{site.data.keyword.composeForElasticsearch}} deployment, please look into provisioning [{{site.data.keyword.databases-for-elasticsearch}}](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started) instead.
+{: .important}
+
 The getting started tutorial uses a [sample app](https://github.com/IBM-Cloud/compose-elasticsearch-helloworld-nodejs) to demonstrate how to use Node.js to connect to an {{site.data.keyword.composeForElasticsearch_full}} service by using the provided credentials. The application uses a web interface to create, read from, and write data to a database.
 {: shortdesc}
 
@@ -29,11 +35,11 @@ You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-sc
 ## Step 1. Create a {{site.data.keyword.composeForElasticsearch}} service instance
 {: #create-service}
 
-You can create a {{site.data.keyword.composeForElasticsearch}} service from the [{{site.data.keyword.composeForElasticsearch}} page](https://{DomainName}/catalog/services/compose-for-elasticsearch/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.composeForElasticsearch}} service from the [{{site.data.keyword.composeForElasticsearch}} page](https://{DomainName}/catalogcompose-for-elasticsearch/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForElasticsearch}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
 
 ## Step 2. Clone the Hello World sample app from GitHub
 
@@ -165,11 +171,11 @@ To understand more about how the [compose-elasticsearch-helloworld-nodejs](https
 
 To start exploring your {{site.data.keyword.composeForElasticsearch}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-overview)
-- [Backups](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-backups)
-- [Settings](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-settings)
+- [Dashboard Overview](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-overview)
+- [Backups](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-backups)
+- [Settings](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-settings)
 
-For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/services/ComposeForElasticsearch?topic=compose-for-elasticsearch-ibmcloud-cf-app#credentials).
+For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-ibmcloud-cf-app#credentials).
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
 
