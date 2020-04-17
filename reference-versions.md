@@ -18,12 +18,7 @@ subcollection: compose-for-elasticsearch
 
 # Versions
 
-Deployable Versions| Preferred Version
-----------|-----------
-5.6.9, 6.5.2 | 6.5.2
-{: caption="Table 1. Elasticsearch versions" caption-side="top"}
-
-You can find the list of available versions on the {{site.data.keyword.composeForElasticsearch}} [catalog page](https://{DomainName}/catalogcompose-for-elasticsearch).
+You can find the list of available versions on the {{site.data.keyword.composeForElasticsearch}} [catalog page](https://{DomainName}/catalogcompose-for-elasticsearch) or from the [`GET /2016-07/deployments/:id/versions`](https://apidocs.compose.com/reference#2016-07-get-deployments-versions) API endpoint. 
 
 ## Preferred Version
 
@@ -32,8 +27,4 @@ The preferred version is typically the newest version of Redis that is available
 ### New Preferred Version Protocol
 
 When a new version is made available, its release is announced and the new version is made available for deployment. After the release date there is an approximately 7-day window where the newest version is available, but is not yet the preferred version. This window allows users to deploy and test the new version while still having the current version available to them. At the end of the 7-day window, the new version is set as the preferred version, or a new date for this change is announced.
-
-
-To get a current list of available versions for your {{site.data.keyword.composeForElasticsearch}} service, you can use the 
-`GET /2016-07/deployments/:id/versions` endpoint. For more information, see the [API documentation](https://apidocs.compose.com/reference#2016-07-get-deployments-versions)
 
