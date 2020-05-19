@@ -4,7 +4,7 @@ copyright:
   years: 2016,2020
 lastupdated: "2020-04-13"
 
-subcollection: compose-for-elasticsearch
+subcollection: ComposeForElasticsearch
 
 ---
 
@@ -171,11 +171,11 @@ To understand more about how the [compose-elasticsearch-helloworld-nodejs](https
 
 To start exploring your {{site.data.keyword.composeForElasticsearch}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-overview)
-- [Backups](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-backups)
-- [Settings](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-dashboard-settings)
+- [Dashboard Overview](/docs/ComposeForElasticsearch?topic=ComposeForElasticsearch-dashboard-overview)
+- [Backups](/docs/ComposeForElasticsearch?topic=ComposeForElasticsearch-dashboard-backups)
+- [Settings](/docs/ComposeForElasticsearch?topic=ComposeForElasticsearch-dashboard-settings)
 
-For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-ibmcloud-cf-app#credentials).
+For more information about the credentials you created for the application to connect to your service, see a list of the available [credentials](/docs/ComposeForElasticsearch?topic=ComposeForElasticsearch-ibmcloud-cf-app#credentials).
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-elasticsearch-signup
 

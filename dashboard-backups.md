@@ -6,7 +6,7 @@ lastupdated: "2018-04-19"
 
 keywords: elasticsearch, compose
 
-subcollection: compose-for-elasticsearch
+subcollection: ComposeForElasticsearch
 
 ---
 
@@ -104,7 +104,7 @@ Use the following steps to restore a backup from a running Elasticsearch service
   <dd>The service instance ID of the source of the backup. You can obtain the value by running `ibmcloud cf service DISPLAY_NAME --guid`, where _DISPLAY\_NAME_ is the name of the service the backup is from. </dd>
   </dl>
 
-  You can use the optional JSON parameter "db_version" to specify which version of Elasticsearch to restore to. This parameter is also used to [upgrade to a major version of Elasticsearch](/docs/ComposeForElasticsearch?topic=compose-for-elasticsearch-upgrading).
+  You can use the optional JSON parameter "db_version" to specify which version of Elasticsearch to restore to. This parameter is also used to [upgrade to a major version of Elasticsearch](/docs/ComposeForElasticsearch?topic=ComposeForElasticsearch-upgrading).
   
   Enterprise users also need to specify which cluster to deploy to in the JSON object with the `"cluster_id": "$CLUSTER_ID"` parameter.
 

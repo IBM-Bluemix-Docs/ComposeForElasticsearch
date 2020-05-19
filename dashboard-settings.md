@@ -6,7 +6,7 @@ lastupdated: "2017-10-20"
 
 keywords: elasticsearch, compose
 
-subcollection: compose-for-elasticsearch
+subcollection: ComposeForElasticsearch
 
 ---
 
