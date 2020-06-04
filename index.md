@@ -30,7 +30,7 @@ The latest and greatest Elasticsearch service is [{{site.data.keyword.databases-
 
 ## Creating a {{site.data.keyword.composeForElasticsearch}} service instance
 
-You can create a {{site.data.keyword.composeForElasticsearch}} service from the [{{site.data.keyword.composeForElasticsearch}} page](https://{DomainName}/catalogcompose-for-elasticsearch/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.composeForElasticsearch}} service from the [{{site.data.keyword.composeForElasticsearch}} page](https://{DomainName}/catalog/compose-for-elasticsearch/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, and a region, organization, and space to provision the service in. You can use the **Select a database version** field to choose from the available database versions.
 
