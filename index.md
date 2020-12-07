@@ -42,7 +42,7 @@ You can manage your service from the service dashboard. Here you can find inform
 
 - Manage your backups
 - Allocate more resources for your service 
-- Use whitelists to restrict access to your databases.
+- Use allowlists to restrict access to your databases.
 
 For more information, see [Settings](/docs/ComposeForElasticsearch?topic=ComposeForElasticsearch-dashboard-settings).
 

@@ -17,7 +17,7 @@ subcollection: ComposeForElasticsearch
 
 An {{site.data.keyword.composeForElasticsearch_full}} service is configured with three identical data nodes. Each has 2 GB of storage and 204 MB of memory, which is equal to two units of resources. The service _includes_ replication and high-availability, so each unit and the price per unit _includes_ the cost of the resources across all three nodes.
 
-The base configuration also includes the two HAProxy capsules with 64 MB each to support authentication, HTTPS, and IP whitelisting. 
+The base configuration also includes the two HAProxy capsules with 64 MB each to support authentication, HTTPS, and IP allowlisting. 
 
 The base service configuration has a set price. Check the catalog tiles on {{site.data.keyword.cloud_notm}} for base pricing in your local currency. For example, the base price in US dollars is $36/month.
 

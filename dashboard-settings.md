@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2016,2018
-lastupdated: "2017-10-20"
+  years: 2016,2020
+lastupdated: "2020-12-07"
 
 keywords: elasticsearch, compose
 
@@ -41,11 +41,11 @@ You can increase or reduce the amount of storage that is allocated to your servi
 When the scaling is complete the _Deployment Details_ pane updates to show the current usage and the new value for the available storage.
 
 
-## Using Whitelists
+## Using allowlists
 
-If you want to restrict access to your databases, you can whitelist specific IP addresses or ranges of IP addresses on your service. When there are no IP addresses in the whitelist, the whitelist is disabled and the deployment accepts connections from any system on the internet.
+If you want to restrict access to your databases, you can allowlist specific IP addresses or ranges of IP addresses on your service. When there are no IP addresses in the allowlist, the allowlist is disabled and the deployment accepts connections from any system on the internet.
 
-![Whitelisting IP addresses](./images/elastic_search-whitelist-show.png "The whitelist fields.")
+![Allowlisting IP addresses](./images/elastic_search-allowlist-show.png "The allowlist fields.")
 
 ### IP addresses
 The *IP* field can take a single complete IPv4 address or IPv6 address with or without a netmask. Without a netmask, incoming connections must come from exactly that IP address. 
@@ -57,11 +57,11 @@ Although the IP entry allows for IPv6, no Compose deployments are currently avai
 To allow a connection from a specified range of IP addresses, use a netmask. The IP address must be fully specified. That means entering, for example, `192.168.1.0/24` rather than `192.168.1/24`.
 
 ### Description
-The *Description* can be any user-significant text for identifying the whitelist entry - a customer name, project identifier, or employee number, for example. The description field is required.
+The *Description* can be any user-significant text for identifying the allowlist entry - a customer name, project identifier, or employee number, for example. The description field is required.
 
 ### Compose Services
-Whitelist entries are automatically added to Compose's servers to allow them to connect.
+Allowlist entries are automatically added to Compose's servers to allow them to connect.
 
 ### Removal
-To remove an IP address or netmask from the Whitelist, click the *Remove* entry displayed next to it.
-When all entries on the whitelist are removed, the whitelist is disabled and all IP addresses are accepted by the TCP access portals.
+To remove an IP address or netmask from the allowlist, click the *Remove* entry displayed next to it.
+When all entries on the allowlist are removed, the allowlist is disabled and all IP addresses are accepted by the TCP access portals.
